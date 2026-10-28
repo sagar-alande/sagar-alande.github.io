@@ -36,8 +36,32 @@ table.cmp .c{text-align:center}
 .dot{display:inline-block;width:14px;height:14px;border-radius:50%;background:#0E1A2B}
 </style>
 <style>
-html,body{margin:0;background:#FFFFFF;overflow-x:hidden}
-#fit{width:1816px;transform-origin:top left}
+html,body{margin:0;overflow-x:hidden}
+/* Backdrop around the centered artboard: navy base with glows in the three learning-type colors */
+body{
+  min-height:100vh;
+  background:
+    radial-gradient(ellipse 45% 55% at 0% 15%, rgba(79,70,229,.55), transparent 70%),
+    radial-gradient(ellipse 40% 50% at 100% 40%, rgba(15,118,110,.50), transparent 70%),
+    radial-gradient(ellipse 45% 45% at 0% 85%, rgba(180,83,9,.40), transparent 70%),
+    radial-gradient(ellipse 40% 45% at 100% 95%, rgba(79,70,229,.40), transparent 70%),
+    #0B1422;
+  background-attachment:fixed;
+}
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;
+  background-image:radial-gradient(rgba(255,255,255,.07) 1px, transparent 1px);
+  background-size:26px 26px;
+}
+#fit{width:1816px;transform-origin:top left;position:relative}
+#fit > div{border-radius:22px;overflow:hidden;box-shadow:0 30px 90px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.06)}
+/* Hover feedback */
+.chip,.rc{transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+.chip:hover{transform:translateY(-3px);box-shadow:0 10px 22px rgba(14,26,43,.16)}
+.rc:hover{transform:translateY(-3px);border-color:#B9BEF0;box-shadow:0 12px 28px rgba(14,26,43,.10)}
+table.cmp tbody tr td{transition:background .15s ease}
+table.cmp tbody tr:hover td{background:#EEF0FC}
+@media (prefers-reduced-motion: reduce){.chip,.rc,table.cmp tbody tr td{transition:none}.chip:hover,.rc:hover{transform:none}}
 </style>
 </head>
 <body>
@@ -193,9 +217,12 @@ Sources: Cloud Simplified. (2024, April 29). <i>What is generative AI | Unraveli
 (function(){
   var el=document.getElementById('fit');
   function fit(){
-    var s=Math.min(1,document.documentElement.clientWidth/1816);
-    el.style.transform='scale('+s+')';
-    document.body.style.height=(el.offsetHeight*s)+'px';
+    var vw=document.documentElement.clientWidth;
+    var gutter=vw>=900?48:12;
+    var s=Math.min(1,(vw-gutter*2)/1816);
+    var x=(vw-1816*s)/2;
+    el.style.transform='translate('+x+'px,'+gutter+'px) scale('+s+')';
+    document.body.style.height=(el.offsetHeight*s+gutter*2)+'px';
   }
   window.addEventListener('resize',fit);
   window.addEventListener('load',fit);
