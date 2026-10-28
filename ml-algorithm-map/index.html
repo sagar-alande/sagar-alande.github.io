@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Machine Learning Algorithm Map</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#FFFFFF}
+a{color:#3730A3}a:hover{color:#1E1B6B}
+.ln{position:absolute;overflow:visible;fill:none;stroke-width:2.5;stroke-linecap:round}
+.lane{position:absolute;top:148px;height:532px;border-radius:22px}
+.box{position:absolute;top:360px;height:296px;box-sizing:border-box;background:#FFFFFF;border-radius:16px}
+.fl{position:absolute;top:374px;font-size:13.5px;line-height:19px;color:#4A5568}
+.fl b{font-family:'Space Grotesk',sans-serif;font-size:17.5px;line-height:24px;color:#0E1A2B}
+.chip{position:absolute;height:60px;box-sizing:border-box;padding:0 12px;display:flex;align-items:center;background:#FFFFFF;border-radius:11px;font-size:15px;line-height:22px;font-weight:600;color:#0E1A2B;box-shadow:0 1px 2px rgba(14,26,43,.08)}
+.cs{border:1.5px solid #B9BEF0}.cs .n{color:#3730A3}
+.ct{border:1.5px solid #9ED5CD}.ct .n{color:#0F766E}
+.cu{border:1.5px solid #EDC995}.cu .n{color:#B45309}
+.n{font-family:'Space Grotesk',sans-serif;font-weight:700;margin-right:7px}
+.tg{display:inline-block;font-size:10.5px;line-height:15px;font-weight:700;letter-spacing:.06em;color:#334155;border:1px solid #A3ACB9;border-radius:4px;padding:0 4px;margin-right:4px}
+.pill{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:5px 10px;border-radius:999px;color:#FFFFFF}
+.ps{background:#3730A3}.pt{background:#0F766E}.pu{background:#B45309}
+.rc{display:flex;flex-direction:column;gap:8px;background:#F7F8FA;border:1px solid #E2E6EC;border-radius:16px;padding:18px 20px}
+.rh{display:flex;align-items:center;gap:8px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:17px;color:#0E1A2B}
+.num{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:700;color:#FFFFFF}
+.rp{margin:0;font-size:14.5px;line-height:1.45;color:#334155}
+table.cmp{width:1472px;border-collapse:separate;border-spacing:0;table-layout:fixed;font-size:15px;line-height:1.4}
+table.cmp th{text-align:left;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#FFFFFF;background:#0E1A2B;padding:16px 12px}
+table.cmp th:first-child{border-radius:12px 0 0 0}
+table.cmp th:last-child{border-radius:0 12px 0 0}
+table.cmp td{padding:13px 12px;border-bottom:1px solid #E2E6EC;vertical-align:middle;color:#0E1A2B}
+table.cmp tr:nth-child(even) td{background:#F7F8FA}
+table.cmp .c{text-align:center}
+.dot{display:inline-block;width:14px;height:14px;border-radius:50%;background:#0E1A2B}
+</style>
+<style>
+html,body{margin:0;background:#FFFFFF;overflow-x:hidden}
+#fit{width:1600px;transform-origin:top left}
+</style>
+</head>
+<body>
+<div id="fit">
+<div style="width: 1600px; height: 3000px; box-sizing: border-box; display: flex; flex-direction: column; font-family: Inter, sans-serif; color: #0E1A2B; background: #FFFFFF">
+
+<header style="background: #0E1A2B; padding: 64px 64px 56px; display: flex; justify-content: space-between; align-items: center; gap: 48px">
+<div style="display: flex; flex-direction: column; gap: 22px; max-width: 920px">
+<p style="margin: 0; font-size: 14px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: #9FB0FF">AIML-501 · Visual Framework · Sagar Alande</p>
+<h1 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 84px; line-height: .98; font-weight: 700; letter-spacing: -.02em; color: #FFFFFF">Machine Learning<br>Algorithm Map</h1>
+<p style="margin: 0; font-size: 20px; line-height: 1.55; color: #C9D3E3; max-width: 820px">Twelve algorithms organized by how they learn, which model family they belong to, and where they are used. Follow the map from top to bottom, then use each number to find the details in the comparison chart.</p>
+<div style="display: flex; gap: 40px; margin-top: 6px">
+<div style="display: flex; flex-direction: column"><span style="font-family: 'Space Grotesk', sans-serif; font-size: 52px; font-weight: 700; line-height: 1; color: #FFFFFF">12</span><span style="font-size: 14px; color: #9AA8BF; margin-top: 6px">algorithms</span></div>
+<div style="width: 1px; background: #2C3B55"></div>
+<div style="display: flex; flex-direction: column"><span style="font-family: 'Space Grotesk', sans-serif; font-size: 52px; font-weight: 700; line-height: 1; color: #FFFFFF">3</span><span style="font-size: 14px; color: #9AA8BF; margin-top: 6px">learning types</span></div>
+<div style="width: 1px; background: #2C3B55"></div>
+<div style="display: flex; flex-direction: column"><span style="font-family: 'Space Grotesk', sans-serif; font-size: 52px; font-weight: 700; line-height: 1; color: #FFFFFF">4</span><span style="font-size: 14px; color: #9AA8BF; margin-top: 6px">data domains</span></div>
+</div>
+</div>
+<figure style="margin: 0; display: flex; flex-direction: column; align-items: center; gap: 14px">
+<div style="width: 400px; height: 400px; box-sizing: border-box; border-radius: 50%; border: 1.5px solid #3A4A66; background: #142238; display: flex; flex-direction: column; align-items: center; padding-top: 16px">
+<span style="font-size: 14px; font-weight: 600; color: #C9D3E3">Artificial Intelligence</span>
+<div style="margin-top: 8px; width: 312px; height: 312px; box-sizing: border-box; border-radius: 50%; border: 1.5px solid #4A5F86; background: #1B2D4A; display: flex; flex-direction: column; align-items: center; padding-top: 14px">
+<span style="font-size: 14px; font-weight: 600; color: #DDE5F2">Machine Learning</span>
+<div style="margin-top: 8px; width: 226px; height: 226px; box-sizing: border-box; border-radius: 50%; border: 1.5px solid #6378A8; background: #253C63; display: flex; flex-direction: column; align-items: center; padding-top: 14px">
+<span style="font-size: 14px; font-weight: 600; color: #EEF2F9">Deep Learning</span>
+<div style="margin-top: 10px; width: 136px; height: 136px; box-sizing: border-box; border-radius: 50%; background: #4F46E5; display: flex; align-items: center; justify-content: center; text-align: center">
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 17px; font-weight: 700; line-height: 1.2; color: #FFFFFF">Generative<br>AI</span>
+</div>
+</div>
+</div>
+</div>
+<figcaption style="font-size: 13px; line-height: 1.5; color: #9AA8BF; text-align: center">Each field sits inside the one before it (Costa &amp; Trojahan, 2024).<br>Deep learning: items 7, 8, 9, 12 · Generative AI: items 9, 12</figcaption>
+</figure>
+</header>
+
+<div style="padding: 48px 64px 56px; display: flex; flex-direction: column; gap: 48px; flex-grow: 1">
+
+<section aria-label="Legend" style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px; padding: 18px 24px; border: 1px solid #E2E6EC; border-radius: 16px">
+<span style="font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #4A5568">Color = learning type</span>
+<span class="pill ps">Supervised</span><span class="pill pt">Self-supervised</span><span class="pill pu">Unsupervised</span>
+<span style="width: 1px; height: 28px; background: #D5DBE3"></span>
+<span style="font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #4A5568">Tags = domain</span>
+<span style="font-size: 14px; color: #334155"><span class="tg">TAB</span>Tabular</span>
+<span style="font-size: 14px; color: #334155"><span class="tg">CV</span>Vision</span>
+<span style="font-size: 14px; color: #334155"><span class="tg">NLP</span>Language</span>
+<span style="font-size: 14px; color: #334155"><span class="tg">GEN</span>Generative AI</span>
+</section>
+
+<section aria-label="Concept map" style="display: flex; flex-direction: column; gap: 18px">
+<div style="display: flex; align-items: baseline; gap: 16px"><span style="font-family: 'Space Grotesk', sans-serif; font-size: 18px; font-weight: 700; color: #4F46E5">01</span><h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 34px; letter-spacing: -.01em">How the algorithms are organized</h2></div>
+<div style="position: relative; width: 1472px; height: 680px">
+
+<div class="lane" style="left: 0px; width: 760px; background: #F1F2FC"></div>
+<div class="lane" style="left: 784px; width: 216px; height: 388px; background: #E9F5F3"></div>
+<div class="lane" style="left: 1024px; width: 448px; height: 460px; background: #FCF3E8"></div>
+
+<svg class="ln" width="8" height="48" viewBox="0 0 8 48" preserveAspectRatio="none" style="position: absolute; left: 732px; top: 72px; width: 8px; height: 48px; stroke: #8A94A6"><path d="M 4 0 L 4 48"></path></svg>
+<svg class="ln" width="868" height="8" viewBox="0 0 868 8" preserveAspectRatio="none" style="position: absolute; left: 380px; top: 116px; width: 868px; height: 8px; stroke: #8A94A6"><path d="M 0 4 L 868 4"></path></svg>
+<svg class="ln" width="8" height="55" viewBox="0 0 8 55" preserveAspectRatio="none" style="position: absolute; left: 376px; top: 120px; width: 8px; height: 55px; stroke: #3730A3"><defs><marker id="dc-arrow-head-filled-1" orient="auto" markerWidth="5" markerHeight="5" refX="2" refY="2" overflow="visible"><path d="M0 0 L4 2 L0 4 Z" fill="#3730A3" stroke="none" style="stroke: none; fill: #3730A3; fill: context-stroke"/></marker></defs><path d="M 4 0 L 4 50" marker-end="url(#dc-arrow-head-filled-1)"></path></svg>
+<svg class="ln" width="8" height="55" viewBox="0 0 8 55" preserveAspectRatio="none" style="position: absolute; left: 888px; top: 120px; width: 8px; height: 55px; stroke: #0F766E"><defs><marker id="dc-arrow-head-filled-2" orient="auto" markerWidth="5" markerHeight="5" refX="2" refY="2" overflow="visible"><path d="M0 0 L4 2 L0 4 Z" fill="#0F766E" stroke="none" style="stroke: none; fill: #0F766E; fill: context-stroke"/></marker></defs><path d="M 4 0 L 4 50" marker-end="url(#dc-arrow-head-filled-2)"></path></svg>
+<svg class="ln" width="8" height="55" viewBox="0 0 8 55" preserveAspectRatio="none" style="position: absolute; left: 1244px; top: 120px; width: 8px; height: 55px; stroke: #B45309"><defs><marker id="dc-arrow-head-filled-3" orient="auto" markerWidth="5" markerHeight="5" refX="2" refY="2" overflow="visible"><path d="M0 0 L4 2 L0 4 Z" fill="#B45309" stroke="none" style="stroke: none; fill: #B45309; fill: context-stroke"/></marker></defs><path d="M 4 0 L 4 50" marker-end="url(#dc-arrow-head-filled-3)"></path></svg>
+
+<svg class="ln" width="8" height="48" viewBox="0 0 8 48" preserveAspectRatio="none" style="position: absolute; left: 376px; top: 264px; width: 8px; height: 48px; stroke: #3730A3"><path d="M 4 0 L 4 48"></path></svg>
+<svg class="ln" width="370" height="8" viewBox="0 0 370 8" preserveAspectRatio="none" style="position: absolute; left: 248px; top: 308px; width: 370px; height: 8px; stroke: #3730A3"><path d="M 0 4 L 370 4"></path></svg>
+<svg class="ln" width="8" height="47" viewBox="0 0 8 47" preserveAspectRatio="none" style="position: absolute; left: 244px; top: 312px; width: 8px; height: 47px; stroke: #3730A3"><defs><marker id="dc-arrow-head-filled-4" orient="auto" markerWidth="5" markerHeight="5" refX="2" refY="2" overflow="visible"><path d="M0 0 L4 2 L0 4 Z" fill="#3730A3" stroke="none" style="stroke: none; fill: #3730A3; fill: context-stroke"/></marker></defs><path d="M 4 0 L 4 42" marker-end="url(#dc-arrow-head-filled-4)"></path></svg>
+<svg class="ln" width="8" height="47" viewBox="0 0 8 47" preserveAspectRatio="none" style="position: absolute; left: 614px; top: 312px; width: 8px; height: 47px; stroke: #3730A3"><defs><marker id="dc-arrow-head-filled-5" orient="auto" markerWidth="5" markerHeight="5" refX="2" refY="2" overflow="visible"><path d="M0 0 L4 2 L0 4 Z" fill="#3730A3" stroke="none" style="stroke: none; fill: #3730A3; fill: context-stroke"/></marker></defs><path d="M 4 0 L 4 42" marker-end="url(#dc-arrow-head-filled-5)"></path></svg>
+<svg class="ln" width="8" height="95" viewBox="0 0 8 95" preserveAspectRatio="none" style="position: absolute; left: 888px; top: 264px; width: 8px; height: 95px; stroke: #0F766E"><defs><marker id="dc-arrow-head-filled-6" orient="auto" markerWidth="5" markerHeight="5" refX="2" refY="2" overflow="visible"><path d="M0 0 L4 2 L0 4 Z" fill="#0F766E" stroke="none" style="stroke: none; fill: #0F766E; fill: context-stroke"/></marker></defs><path d="M 4 0 L 4 90" marker-end="url(#dc-arrow-head-filled-6)"></path></svg>
+<svg class="ln" width="8" height="48" viewBox="0 0 8 48" preserveAspectRatio="none" style="position: absolute; left: 1244px; top: 264px; width: 8px; height: 48px; stroke: #B45309"><path d="M 4 0 L 4 48"></path></svg>
+<svg class="ln" width="214" height="8" viewBox="0 0 214 8" preserveAspectRatio="none" style="position: absolute; left: 1144px; top: 308px; width: 214px; height: 8px; stroke: #B45309"><path d="M 0 4 L 214 4"></path></svg>
+<svg class="ln" width="8" height="47" viewBox="0 0 8 47" preserveAspectRatio="none" style="position: absolute; left: 1140px; top: 312px; width: 8px; height: 47px; stroke: #B45309"><defs><marker id="dc-arrow-head-filled-7" orient="auto" markerWidth="5" markerHeight="5" refX="2" refY="2" overflow="visible"><path d="M0 0 L4 2 L0 4 Z" fill="#B45309" stroke="none" style="stroke: none; fill: #B45309; fill: context-stroke"/></marker></defs><path d="M 4 0 L 4 42" marker-end="url(#dc-arrow-head-filled-7)"></path></svg>
+<svg class="ln" width="8" height="47" viewBox="0 0 8 47" preserveAspectRatio="none" style="position: absolute; left: 1354px; top: 312px; width: 8px; height: 47px; stroke: #B45309"><defs><marker id="dc-arrow-head-filled-8" orient="auto" markerWidth="5" markerHeight="5" refX="2" refY="2" overflow="visible"><path d="M0 0 L4 2 L0 4 Z" fill="#B45309" stroke="none" style="stroke: none; fill: #B45309; fill: context-stroke"/></marker></defs><path d="M 4 0 L 4 42" marker-end="url(#dc-arrow-head-filled-8)"></path></svg>
+
+<div style="position: absolute; left: 576px; top: 0px; width: 320px; height: 72px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; background: #0E1A2B; border-radius: 16px; color: #FFFFFF; font-family: 'Space Grotesk', sans-serif; font-size: 25px; font-weight: 700; letter-spacing: -.01em">Machine Learning</div>
+
+<div style="position: absolute; left: 230px; top: 176px; width: 300px; height: 88px; box-sizing: border-box; padding: 8px; display: flex; align-items: center; justify-content: center; text-align: center; background: #3730A3; border-radius: 14px; color: #E7E8FF; font-size: 14.5px; line-height: 20px"><span><b style="font-family: 'Space Grotesk', sans-serif; font-size: 23px; line-height: 31px; color: #FFFFFF">Supervised</b><br>Learns from labeled examples</span></div>
+<div style="position: absolute; left: 796px; top: 176px; width: 192px; height: 88px; box-sizing: border-box; padding: 8px; display: flex; align-items: center; justify-content: center; text-align: center; background: #0F766E; border-radius: 14px; color: #DDF3EF; font-size: 13.5px; line-height: 18px"><span><b style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; line-height: 28px; color: #FFFFFF">Self-supervised</b><br>Makes its own labels</span></div>
+<div style="position: absolute; left: 1098px; top: 176px; width: 300px; height: 88px; box-sizing: border-box; padding: 8px; display: flex; align-items: center; justify-content: center; text-align: center; background: #B45309; border-radius: 14px; color: #FFF1E0; font-size: 14.5px; line-height: 20px"><span><b style="font-family: 'Space Grotesk', sans-serif; font-size: 23px; line-height: 31px; color: #FFFFFF">Unsupervised</b><br>Finds structure without labels</span></div>
+
+<div class="box" style="left: 20px; width: 456px; border: 1.5px solid #C9CDF3"></div>
+<div class="box" style="left: 496px; width: 244px; height: 224px; border: 1.5px solid #C9CDF3"></div>
+<div class="box" style="left: 804px; width: 176px; height: 152px; border: 1.5px solid #A9DAD3"></div>
+<div class="box" style="left: 1044px; width: 200px; height: 224px; border: 1.5px solid #F0D3AC"></div>
+<div class="box" style="left: 1264px; width: 188px; height: 152px; border: 1.5px solid #F0D3AC"></div>
+
+<div class="fl" style="left: 38px; width: 420px"><b>Classical ML</b><br>Predicts labels or numbers from features</div>
+<div class="fl" style="left: 512px; width: 212px"><b>Deep Learning</b><br>Images and sequences</div>
+<div class="fl" style="left: 820px; width: 144px"><b>Foundation</b><br>Pretrained models</div>
+<div class="fl" style="left: 1060px; width: 168px"><b>Classical ML</b><br>Groups and compresses</div>
+<div class="fl" style="left: 1280px; width: 156px"><b>Generative</b><br>Creates new data</div>
+
+<div class="chip cs" style="left: 38px; top: 432px; width: 204px"><span><span class="n">1</span>Linear Regression<br><span class="tg">TAB</span></span></div>
+<div class="chip cs" style="left: 254px; top: 432px; width: 204px"><span><span class="n">2</span>Logistic Regression<br><span class="tg">TAB</span><span class="tg">NLP</span></span></div>
+<div class="chip cs" style="left: 38px; top: 504px; width: 204px"><span><span class="n">3</span>Decision Tree<br><span class="tg">TAB</span></span></div>
+<div class="chip cs" style="left: 254px; top: 504px; width: 204px"><span><span class="n">4</span>Random Forest<br><span class="tg">TAB</span></span></div>
+<div class="chip cs" style="left: 38px; top: 576px; width: 204px"><span><span class="n">5</span>SVM<br><span class="tg">TAB</span><span class="tg">CV</span><span class="tg">NLP</span></span></div>
+<div class="chip cs" style="left: 254px; top: 576px; width: 204px"><span><span class="n">6</span>KNN<br><span class="tg">TAB</span><span class="tg">CV</span></span></div>
+<div class="chip cs" style="left: 512px; top: 432px; width: 212px"><span><span class="n">7</span>CNN<br><span class="tg">CV</span></span></div>
+<div class="chip cs" style="left: 512px; top: 504px; width: 212px"><span><span class="n">8</span>RNN and LSTM<br><span class="tg">NLP</span></span></div>
+<div class="chip ct" style="left: 820px; top: 432px; width: 144px"><span><span class="n">9</span>Transformer<br><span class="tg">CV</span><span class="tg">NLP</span><span class="tg">GEN</span></span></div>
+<div class="chip cu" style="left: 1060px; top: 432px; width: 168px"><span><span class="n">10</span>K-means<br><span class="tg">TAB</span><span class="tg">CV</span></span></div>
+<div class="chip cu" style="left: 1060px; top: 504px; width: 168px"><span><span class="n">11</span>PCA<br><span class="tg">TAB</span><span class="tg">CV</span></span></div>
+<div class="chip cu" style="left: 1280px; top: 432px; width: 156px"><span><span class="n">12</span>GAN<br><span class="tg">CV</span><span class="tg">GEN</span></span></div>
+
+</div>
+</section>
+
+<section aria-label="How the algorithms connect" style="display: flex; flex-direction: column; gap: 18px">
+<div style="display: flex; align-items: baseline; gap: 16px"><span style="font-family: 'Space Grotesk', sans-serif; font-size: 18px; font-weight: 700; color: #4F46E5">02</span><h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 34px; letter-spacing: -.01em">How they connect across the map</h2></div>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px">
+<div class="rc"><div class="rh"><span class="num" style="background: #3730A3">3</span>Decision Tree<span style="color: #8A94A6">→</span><span class="num" style="background: #3730A3">4</span>Random Forest</div><p class="rp">A forest is many trees voting together, which cuts the overfitting of a single tree.</p></div>
+<div class="rc"><div class="rh"><span class="num" style="background: #3730A3">8</span>RNN<span style="color: #8A94A6">→</span><span class="num" style="background: #0F766E">9</span>Transformer</div><p class="rp">Attention replaced step by step reading for most language tasks.</p></div>
+<div class="rc"><div class="rh"><span class="num" style="background: #3730A3">6</span>KNN<span style="color: #8A94A6">vs.</span><span class="num" style="background: #B45309">10</span>K-means</div><p class="rp">Both measure distance between points, but only KNN uses labels to make a prediction.</p></div>
+<div class="rc"><div class="rh"><span class="num" style="background: #3730A3">2</span>Logistic Regression<span style="color: #8A94A6">vs.</span><span class="num" style="background: #3730A3">5</span>SVM</div><p class="rp">Both draw a boundary between classes. SVM pushes for the widest possible gap.</p></div>
+<div class="rc"><div class="rh"><span class="num" style="background: #3730A3">7</span>CNN<span style="color: #8A94A6">→</span><span class="num" style="background: #B45309">12</span>GAN</div><p class="rp">Image GANs are usually built from CNN layers to create and judge images.</p></div>
+<div class="rc"><div class="rh"><span class="num" style="background: #B45309">11</span>PCA<span style="color: #8A94A6">→</span>other models</div><p class="rp">Often runs first to shrink many features before another model trains.</p></div>
+</div>
+</section>
+
+<section aria-label="Comparison chart" style="display: flex; flex-direction: column; gap: 18px">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 24px">
+<div style="display: flex; align-items: baseline; gap: 16px"><span style="font-family: 'Space Grotesk', sans-serif; font-size: 18px; font-weight: 700; color: #4F46E5">03</span><h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 34px; letter-spacing: -.01em">Comparison chart</h2></div>
+<span style="font-size: 14px; color: #4A5568">A dot marks each domain where the algorithm is commonly used in practice</span>
+</div>
+<table class="cmp">
+
+<thead><tr><th style="width: 56px">#</th><th style="width: 236px">Algorithm</th><th style="width: 164px">Type</th><th class="c" style="width: 80px">Tabular</th><th class="c" style="width: 80px">Vision</th><th class="c" style="width: 80px">NLP</th><th class="c" style="width: 80px">Gen AI</th><th style="width: 440px">How it works</th><th style="width: 256px">Example uses</th></tr></thead>
+<tbody>
+<tr><td><span class="num" style="background: #3730A3">1</span></td><td><b>Linear Regression</b></td><td><span class="pill ps">Supervised</span></td><td class="c"><span class="dot" role="img" aria-label="Yes"></span></td><td class="c"></td><td class="c"></td><td class="c"></td><td>Fits the straight line that keeps predicted numbers closest to the actual values.</td><td>House prices, sales forecasts</td></tr>
+<tr><td><span class="num" style="background: #3730A3">2</span></td><td><b>Logistic Regression</b></td><td><span class="pill ps">Supervised</span></td><td class="c"><span class="dot" role="img" aria-label="Yes"></span></td><td class="c"></td><td class="c"><span class="dot" role="img" aria-label="Yes"></span></td><td class="c"></td><td>Turns a weighted sum of features into a yes or no probability using an S-shaped curve.</td><td>Credit default risk, spam filtering</td></tr>
+<tr><td><span class="num" style="background: #3730A3">3</span></td><td><b>Decision Tree</b></td><td><span class="pill ps">Supervised</span></td><td class="c"><span class="dot" role="img" aria-label="Yes"></span></td><td class="c"></td><td class="c"></td><td class="c"></td><td>Asks a chain of yes or no questions, each chosen to make the groups more pure.</td><td>Loan approval, fruit sorting</td></tr>
+<tr><td><span class="num" style="background: #3730A3">4</span></td><td><b>Random Forest</b></td><td><span class="pill ps">Supervised</span></td><td class="c"><span class="dot" role="img" aria-label="Yes"></span></td><td class="c"></td><td class="c"></td><td class="c"></td><td>Trains many decision trees on random samples of the data and lets them vote.</td><td>Fraud detection, customer churn</td></tr>
+<tr><td><span class="num" style="background: #3730A3">5</span></td><td><b>Support Vector Machine</b></td><td><span class="pill ps">Supervised</span></td><td class="c"><span class="dot" role="img" aria-label="Yes"></span></td><td class="c"><span class="dot" role="img" aria-label="Yes"></span></td><td class="c"><span class="dot" role="img" aria-label="Yes"></span></td><td class="c"></td><td>Draws the boundary that leaves the widest possible gap between classes.</td><td>Text categorization, handwritten digits</td></tr>
+<tr><td><span class="num" style="background: #3730A3">6</span></td><td><b>K Nearest Neighbors</b></td><td><span class="pill ps">Supervised</span></td><td class="c"><span class="dot" role="img" aria-label="Yes"></span></td><td class="c"><span class="dot" role="img" aria-label="Yes"></span></td><td class="c"></td><td class="c"></td><td>Labels a new point by a majority vote of its k closest labeled neighbors.</td><td>Product recommendations, image matching</td></tr>
+<tr><td><span class="num" style="background: #3730A3">7</span></td><td><b>Convolutional Neural Network</b></td><td><span class="pill ps">Supervised</span></td><td class="c"></td><td class="c"><span class="dot" role="img" aria-label="Yes"></span></td><td class="c"></td><td class="c"></td><td>Slides small filters over an image to find edges, then shapes, then whole objects.</td><td>Medical image screening, pedestrian detection</td></tr>
+<tr><td><span class="num" style="background: #3730A3">8</span></td><td><b>RNN and LSTM</b></td><td><span class="pill ps">Supervised</span></td><td class="c"></td><td class="c"></td><td class="c"><span class="dot" role="img" aria-label="Yes"></span></td><td class="c"></td><td>Reads a sequence one step at a time while carrying a memory of earlier steps forward.</td><td>Speech recognition, next word prediction</td></tr>
+<tr><td><span class="num" style="background: #0F766E">9</span></td><td><b>Transformer</b></td><td><span class="pill pt">Self-supervised</span></td><td class="c"></td><td class="c"><span class="dot" role="img" aria-label="Yes"></span></td><td class="c"><span class="dot" role="img" aria-label="Yes"></span></td><td class="c"><span class="dot" role="img" aria-label="Yes"></span></td><td>Uses attention to relate every word to every other word, then predicts the next word.</td><td>ChatGPT, machine translation</td></tr>
+<tr><td><span class="num" style="background: #B45309">10</span></td><td><b>K-means Clustering</b></td><td><span class="pill pu">Unsupervised</span></td><td class="c"><span class="dot" role="img" aria-label="Yes"></span></td><td class="c"><span class="dot" role="img" aria-label="Yes"></span></td><td class="c"></td><td class="c"></td><td>Assigns points to the nearest of k centers and moves the centers until they settle.</td><td>Customer segmentation, image color compression</td></tr>
+<tr><td><span class="num" style="background: #B45309">11</span></td><td><b>Principal Component Analysis</b></td><td><span class="pill pu">Unsupervised</span></td><td class="c"><span class="dot" role="img" aria-label="Yes"></span></td><td class="c"><span class="dot" role="img" aria-label="Yes"></span></td><td class="c"></td><td class="c"></td><td>Rotates the data onto a few new axes that hold the most variation.</td><td>Feature reduction, face recognition</td></tr>
+<tr><td><span class="num" style="background: #B45309">12</span></td><td><b>Generative Adversarial Network</b></td><td><span class="pill pu">Unsupervised</span></td><td class="c"></td><td class="c"><span class="dot" role="img" aria-label="Yes"></span></td><td class="c"></td><td class="c"><span class="dot" role="img" aria-label="Yes"></span></td><td>A generator makes fake samples and a discriminator tries to catch them until the fakes look real.</td><td>Image synthesis, image super-resolution</td></tr>
+</tbody>
+</table>
+</section>
+
+<footer style="margin-top: auto; border-top: 1px solid #E2E6EC; padding-top: 16px; font-size: 13px; line-height: 1.55; color: #4A5568">
+Sources: Cloud Simplified. (2024, April 29). <i>What is generative AI | Unraveling the differences between AI, ML, DL, and GenAI</i> [Video]. YouTube. https://www.youtube.com/watch?v=lp_BTL_yADU · Costa, B., &amp; Trojahan, M. (2024, August 28). <i>What are the differences between AI, ML, DL, and Gen AI?</i> e-Core. https://www.e-core.com/na-en/articles/differences-between-ai-ml-dl-gen-ai
+</footer>
+
+</div>
+</div>
+</div>
+<script>
+(function(){
+  var el=document.getElementById('fit');
+  function fit(){
+    var s=Math.min(1,document.documentElement.clientWidth/1600);
+    el.style.transform='scale('+s+')';
+    document.body.style.height=(el.offsetHeight*s)+'px';
+  }
+  window.addEventListener('resize',fit);
+  window.addEventListener('load',fit);
+  fit();
+})();
+</script>
+</body>
+</html>
