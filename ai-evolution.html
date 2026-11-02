@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Evolution Timeline | Sagar S. Alande</title>
+  <meta name="description" content="A visual timeline of major milestones in the history of artificial intelligence.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+  .page-wrap { padding: 30px 16px 56px; }
+  .back-link { display: block; max-width: 1040px; margin: 0 auto 16px; color: #1d4ed8; text-decoration: none; font-weight: 600; font-family: Arial, sans-serif; }
+  .back-link:hover { text-decoration: underline; }
+
+  #ai-timeline-artifact {
+    font-family: Arial, sans-serif;
+    max-width: 1040px;
+    margin: auto;
+    padding: 34px 20px 44px;
+    color: #122033;
+    background:
+      radial-gradient(circle at top right, rgba(37, 99, 235, 0.08), transparent 26%),
+      radial-gradient(circle at top left, rgba(14, 165, 233, 0.07), transparent 28%),
+      linear-gradient(180deg, #f8fbff 0%, #ffffff 32%, #f9fbff 100%);
+    border-radius: 28px;
+  }
+
+  #ai-timeline-artifact .artifact-header {
+    text-align: center;
+    margin-bottom: 28px;
+  }
+
+  #ai-timeline-artifact .header-badge {
+    display: inline-block;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: #1d4ed8;
+    background: rgba(37, 99, 235, 0.09);
+    border: 1px solid rgba(37, 99, 235, 0.16);
+    padding: 8px 14px;
+    border-radius: 999px;
+    margin-bottom: 14px;
+  }
+
+  #ai-timeline-artifact h2 {
+    margin: 0 0 10px;
+    font-size: 2.15rem;
+    line-height: 1.2;
+    color: #0f172a;
+  }
+
+  #ai-timeline-artifact .artifact-header p {
+    max-width: 860px;
+    margin: 0 auto;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #475569;
+  }
+
+  #ai-timeline-artifact .artifact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(255px, 100%), 1fr));
+    gap: 20px;
+  }
+
+  #ai-timeline-artifact .artifact-card {
+    background: linear-gradient(180deg, #ffffff, #f8fbff);
+    border-radius: 22px;
+    padding: 22px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 8px 22px rgba(15, 23, 42, 0.06);
+    transition: all 0.28s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  #ai-timeline-artifact .artifact-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.03), transparent 45%);
+    pointer-events: none;
+  }
+
+  #ai-timeline-artifact .artifact-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 36px rgba(15, 23, 42, 0.12);
+    border-color: #cddcf5;
+  }
+
+  #ai-timeline-artifact .artifact-card h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 1.18rem;
+    color: #0f172a;
+  }
+
+  #ai-timeline-artifact .artifact-card h4 {
+    margin: 0 0 10px;
+    font-size: 1rem;
+    color: #1d4ed8;
+  }
+
+  #ai-timeline-artifact .artifact-card p {
+    margin: 0 0 12px;
+    color: #475569;
+    font-size: 0.97rem;
+    line-height: 1.72;
+  }
+
+  #ai-timeline-artifact .artifact-card p:last-child {
+    margin-bottom: 0;
+  }
+
+  #ai-timeline-artifact .wide-card {
+    grid-column: 1 / -1;
+    width: 900px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  #ai-timeline-artifact .hero-card {
+    background: linear-gradient(135deg, #eff6ff, #ffffff 55%, #f0f9ff);
+    border: 1px solid #d8e6fb;
+  }
+
+  #ai-timeline-artifact .process-intro {
+    background: linear-gradient(135deg, #f8fafc, #ffffff 50%, #f0f9ff);
+  }
+
+  #ai-timeline-artifact .highlight-card {
+    background: linear-gradient(135deg, #eef7ff, #ffffff 52%, #f8fbff);
+    border-left: 6px solid #2563eb;
+  }
+
+  #ai-timeline-artifact .value-card {
+    background: linear-gradient(135deg, #f8fbff, #ffffff 50%, #eff6ff);
+  }
+
+  #ai-timeline-artifact .reflection-card {
+    background: linear-gradient(135deg, #f7fbff, #ffffff 55%, #f8fafc);
+  }
+
+  #ai-timeline-artifact .stage-card {
+    min-height: 100%;
+  }
+
+  #ai-timeline-artifact .stage-tag {
+    display: inline-block;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #1e40af;
+    background: #e0ecff;
+    padding: 7px 12px;
+    border-radius: 999px;
+    margin-bottom: 14px;
+  }
+
+  #ai-timeline-artifact .stage-desc {
+    font-weight: 600;
+    color: #334155 !important;
+  }
+
+  #ai-timeline-artifact .sub-block {
+    background: #f8fbff;
+    border: 1px solid #e6eef9;
+    border-radius: 16px;
+    padding: 16px 16px 14px;
+    margin-bottom: 14px;
+  }
+
+  #ai-timeline-artifact .sub-block:last-child {
+    margin-bottom: 0;
+  }
+
+  #ai-timeline-artifact .sub-block p {
+    margin-bottom: 8px;
+  }
+
+  #ai-timeline-artifact .reflection-section-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    margin: 18px 0 0;
+  }
+
+  #ai-timeline-artifact .bottom-reflection-grid {
+    grid-template-columns: 1fr;
+    margin-top: 18px;
+  }
+
+  #ai-timeline-artifact .reflection-panel {
+    background: linear-gradient(180deg, #fbfdff, #f5f9ff);
+    border: 1px solid #dfeaf8;
+    border-radius: 18px;
+    padding: 18px 18px 16px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.85);
+  }
+
+  #ai-timeline-artifact .reflection-panel ul {
+    margin: 0;
+    padding-left: 18px;
+  }
+
+  #ai-timeline-artifact .reflection-panel li {
+    margin-bottom: 10px;
+    color: #475569;
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+
+  #ai-timeline-artifact .reflection-panel li:last-child {
+    margin-bottom: 0;
+  }
+
+  #ai-timeline-artifact .reflection-quote {
+    margin-top: 20px !important;
+    padding: 18px 18px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #eff6ff, #f8fbff);
+    border: 1px solid #dbeafe;
+    color: #1e3a8a !important;
+    font-weight: 600;
+  }
+
+  #ai-timeline-artifact .artifact-btn-row {
+    display: flex;
+    margin: 10px 0 4px;
+    grid-column: 1 / -1;
+  }
+
+  #ai-timeline-artifact .center-btn {
+    justify-content: center;
+  }
+
+  #ai-timeline-artifact .know-more-btn {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.96rem;
+    padding: 13px 24px;
+    border-radius: 999px;
+    display: inline-block;
+    transition: all 0.25s ease;
+    letter-spacing: 0.01em;
+  }
+
+  #ai-timeline-artifact .primary-btn {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: #ffffff;
+    box-shadow: 0 12px 26px rgba(37, 99, 235, 0.28);
+  }
+
+  #ai-timeline-artifact .primary-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 34px rgba(37, 99, 235, 0.36);
+    background: linear-gradient(135deg, #1d4ed8, #1e40af);
+  }
+
+  @media (max-width: 768px) {
+    #ai-timeline-artifact {
+      padding: 24px 14px 32px;
+      border-radius: 20px;
+    }
+
+    #ai-timeline-artifact h2 {
+      font-size: 1.72rem;
+    }
+
+    #ai-timeline-artifact .artifact-card {
+      padding: 18px;
+      border-radius: 18px;
+    }
+
+    #ai-timeline-artifact .artifact-grid {
+      gap: 16px;
+    }
+
+    #ai-timeline-artifact .reflection-section-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="topbar">
+    <a class="brand" href="index.html">Sagar S Alande</a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="insight.html">From Website to Insight</a>
+      <a href="artifacts.html" class="active">Artifacts</a>
+      <a href="about.html">About Me</a>
+    </nav>
+  </div>
+  <div class="hero hero-page">
+    <div class="hero-text">
+      <h1>AI Evolution Timeline</h1>
+    </div>
+  </div>
+</header>
+
+<main class="page-wrap">
+<a class="back-link" href="artifacts.html">← Back to Artifacts</a>
+
+<div id="ai-timeline-artifact">
+
+  <div class="artifact-header">
+    <div class="header-badge">Visual Learning Artifact</div>
+    <h2>AI Evolution Timeline</h2>
+    <p>
+      A visual learning artifact documenting the major milestones in the history of artificial intelligence,
+      from early computational thinking to modern large language models. This timeline was created to show
+      how AI evolved through changing ideas, technical breakthroughs, and shifts in the way machines learn,
+      reason, and generate outputs.
+    </p>
+  </div>
+
+  <!-- TOP BUTTON -->
+  <div class="artifact-btn-row center-btn">
+    <a class="know-more-btn primary-btn" href="https://claude.ai/public/artifacts/50ec449b-a242-4d48-bad4-ad53ae4cb503" target="_blank" rel="noopener noreferrer">
+      Explore the Timeline
+    </a>
+  </div>
+
+  <div class="artifact-grid">
+
+    <!-- TITLE -->
+    <div class="artifact-card wide-card hero-card">
+      <h3>Title</h3>
+      <p>
+        AI Evolution Timeline — Visual Learning Artifact
+      </p>
+    </div>
+
+    <!-- OBJECTIVE -->
+    <div class="artifact-card wide-card">
+      <h3>Objective</h3>
+      <p>
+        The objective of this artifact was to understand how artificial intelligence has evolved over time,
+        not just as a set of technical inventions, but as a progression of ideas shaped by limitations,
+        experimentation, and breakthroughs. Instead of simply memorizing famous milestones, I wanted to
+        study how one stage of AI influenced the next and how the field moved from rule-based logic to
+        machine learning, deep learning, and modern generative AI.
+      </p>
+    </div>
+
+    <!-- WHAT IS IT -->
+    <div class="artifact-card wide-card">
+      <h3>What is it?</h3>
+      <p>
+        This artifact is a visual timeline that presents major moments in the development of artificial
+        intelligence in chronological order. It captures the shift from early theories of computation and
+        intelligence to symbolic AI, statistical machine learning, neural networks, deep learning, and
+        transformer-based systems.
+      </p>
+      <p>
+        The purpose of using a timeline format was to make the evolution easier to follow. Instead of reading
+        disconnected facts, the viewer can see how each phase of AI was built on the strengths and weaknesses
+        of the phase before it.
+      </p>
+    </div>
+
+    <!-- PROCESS INTRO -->
+    <div class="artifact-card wide-card process-intro">
+      <h3>Process</h3>
+      <p>
+        The work followed a structured flow:
+        <strong>identify milestones → understand significance → organize chronologically → simplify concepts → design visually</strong>.
+        The focus was not only on collecting events, but on presenting them in a way that clearly explains
+        their role in the larger story of AI.
+      </p>
+    </div>
+
+    <!-- TIMELINE STAGE CARDS -->
+    <div class="artifact-card stage-card">
+      <div class="stage-tag">Stage 1</div>
+      <h3>Early Foundations</h3>
+      <p class="stage-desc">
+        The earliest phase focused on the theoretical roots of computation, logic, and machine intelligence.
+      </p>
+      <p>
+        This stage includes the foundational thinking that made artificial intelligence possible in the first
+        place. The work of early researchers helped define what it means for a machine to process information,
+        make logical decisions, and simulate aspects of human reasoning.
+      </p>
+      <p>
+        The main takeaway from this stage is that AI did not begin with modern models. It started with
+        questions about whether intelligence itself could be described in a formal, computational way.
+      </p>
+    </div>
+
+    <div class="artifact-card stage-card">
+      <div class="stage-tag">Stage 2</div>
+      <h3>Symbolic AI Era</h3>
+      <p class="stage-desc">
+        The field moved toward rule-based systems where intelligence was represented through symbols,
+        explicit logic, and human-defined rules.
+      </p>
+      <p>
+        During this stage, AI development focused on trying to make machines reason using structured
+        knowledge and formal instructions. This period created optimism that intelligence could be
+        engineered through logical rules alone.
+      </p>
+      <p>
+        The key learning here was that symbolic systems worked well in controlled settings, but they
+        struggled when the real world became too messy, uncertain, or data-heavy.
+      </p>
+    </div>
+
+    <div class="artifact-card stage-card">
+      <div class="stage-tag">Stage 3</div>
+      <h3>Machine Learning Shift</h3>
+      <p class="stage-desc">
+        AI gradually shifted from manually coded reasoning toward systems that could learn patterns from data.
+      </p>
+      <p>
+        This stage marked an important change in mindset. Instead of telling machines exactly what to do
+        through hard-coded rules, researchers started building systems that could improve their performance
+        by learning from examples.
+      </p>
+      <p>
+        The biggest takeaway from this phase was that learning from data allowed AI systems to adapt better,
+        but success now depended heavily on data quality, feature design, and evaluation.
+      </p>
+    </div>
+
+    <div class="artifact-card stage-card">
+      <div class="stage-tag">Stage 4</div>
+      <h3>Deep Learning Breakthrough</h3>
+      <p class="stage-desc">
+        Neural networks became practical at scale and started outperforming earlier methods in vision,
+        speech, and pattern recognition tasks.
+      </p>
+      <p>
+        This stage represents the moment when advances in data availability, computation power, and training
+        techniques made deeper neural architectures effective in real-world problems.
+      </p>
+      <p>
+        What stood out most here was that the core idea of neural networks had existed earlier, but the
+        ecosystem around them had to mature before they could truly succeed at scale.
+      </p>
+    </div>
+
+    <div class="artifact-card stage-card">
+      <div class="stage-tag">Stage 5</div>
+      <h3>Modern AI and Generative Systems</h3>
+      <p class="stage-desc">
+        Transformer-based architectures and large language models changed how AI systems handle language,
+        generation, reasoning, and interaction.
+      </p>
+      <p>
+        This stage reflects the movement into modern AI, where systems can generate text, summarize ideas,
+        answer questions, and support real-world workflows across many domains.
+      </p>
+      <p>
+        The strongest learning here was that modern AI is no longer just about isolated models. It is about
+        scalable systems, user interaction, multimodal capability, and responsible real-world use.
+      </p>
+    </div>
+
+    <!-- OVERALL PROGRESS -->
+    <div class="artifact-card wide-card highlight-card">
+      <h3>Overall Progress</h3>
+      <p>
+        The strongest shift across this artifact was moving from seeing AI as a list of disconnected inventions
+        to understanding it as a continuous chain of ideas. Each phase in the timeline showed how limitations
+        in one generation of AI often created the motivation for the next breakthrough. This changed the way I
+        interpret new AI developments, because I now see them as part of a larger evolution rather than as
+        isolated innovations.
+      </p>
+    </div>
+
+    <!-- DETAILED PROCESS -->
+    <div class="artifact-card wide-card">
+      <h3>Stage-by-Stage Takeaways</h3>
+
+      <div class="sub-block">
+        <h4>Early Foundations</h4>
+        <p><strong>Focus:</strong> logic, computation, and the possibility of machine intelligence.</p>
+        <p><strong>Main Idea:</strong> intelligence could potentially be expressed in formal rules and processes.</p>
+        <p><strong>Takeaway:</strong> AI began as a conceptual and mathematical question before it became an engineering discipline.</p>
+      </div>
+
+      <div class="sub-block">
+        <h4>Symbolic AI</h4>
+        <p><strong>Focus:</strong> knowledge representation, rules, and structured reasoning.</p>
+        <p><strong>Main Idea:</strong> machines could act intelligently if provided with enough human-defined logic.</p>
+        <p><strong>Takeaway:</strong> symbolic systems were powerful, but they struggled with ambiguity and scale.</p>
+      </div>
+
+      <div class="sub-block">
+        <h4>Machine Learning</h4>
+        <p><strong>Focus:</strong> learning patterns directly from data instead of depending only on explicit rules.</p>
+        <p><strong>Main Idea:</strong> better performance comes from training on examples and adapting based on results.</p>
+        <p><strong>Takeaway:</strong> the role of data became central to AI progress.</p>
+      </div>
+
+      <div class="sub-block">
+        <h4>Deep Learning</h4>
+        <p><strong>Focus:</strong> multi-layer neural networks, representation learning, and large-scale training.</p>
+        <p><strong>Main Idea:</strong> deeper architectures can automatically learn complex patterns from raw inputs.</p>
+        <p><strong>Takeaway:</strong> success depended not only on ideas, but also on compute power and large datasets.</p>
+      </div>
+
+      <div class="sub-block">
+        <h4>Modern Generative AI</h4>
+        <p><strong>Focus:</strong> transformers, language models, generation, and interactive systems.</p>
+        <p><strong>Main Idea:</strong> AI can now create, assist, converse, summarize, and support broad user workflows.</p>
+        <p><strong>Takeaway:</strong> the modern stage of AI is as much about usability and integration as it is about model performance.</p>
+      </div>
+    </div>
+
+    <!-- TOOLS -->
+    <div class="artifact-card wide-card">
+      <h3>Tools</h3>
+      <p>
+        Claude Artifacts for timeline creation, generative AI-assisted structuring, content organization,
+        chronological mapping, and visual storytelling.
+      </p>
+    </div>
+
+    <!-- VALUE -->
+    <div class="artifact-card wide-card value-card">
+      <h3>Value</h3>
+      <p>
+        This artifact demonstrates my ability to take a broad and technically rich subject and convert it
+        into a clear, structured, and visually engaging learning experience. It shows that I can connect
+        historical progression with technical understanding rather than presenting information as isolated facts.
+      </p>
+      <p>
+        It also reflects my ability to communicate technical content in a way that is easier to follow,
+        especially for viewers who may not already have deep background knowledge in AI.
+      </p>
+    </div>
+
+    <!-- REFLECTION -->
+    <div class="artifact-card wide-card reflection-card">
+      <h3>Reflection — What you learned</h3>
+      <p>
+        This activity helped me understand that AI is not just a collection of algorithms. It is an evolving
+        field shaped by repeated cycles of ideas, limitations, improvements, and new ways of thinking.
+      </p>
+
+      <div class="reflection-section-grid">
+        <div class="reflection-panel">
+          <h4>Key Learnings</h4>
+          <ul>
+            <li>AI did not evolve suddenly; each breakthrough built on earlier concepts and failures.</li>
+            <li>Many modern systems are improvements of older ideas rather than completely new inventions.</li>
+            <li>Data and computation played a major role in determining which ideas succeeded in practice.</li>
+            <li>Deep learning became powerful not only because of theory, but because scale became possible.</li>
+            <li>Modern AI is increasingly about systems, usability, and real-world application.</li>
+          </ul>
+        </div>
+
+        <div class="reflection-panel">
+          <h4>Key Skills Developed</h4>
+          <ul>
+            <li><strong>Conceptual linking:</strong> I learned to connect different eras of AI into one continuous story.</li>
+            <li><strong>Simplification:</strong> I practiced explaining technical history in a clearer and more accessible way.</li>
+            <li><strong>Visualization thinking:</strong> I used a timeline format to make progression easier to follow.</li>
+            <li><strong>Analytical thinking:</strong> I focused on understanding why each transition happened, not just what happened.</li>
+            <li><strong>Technical communication:</strong> I translated complex ideas into a format suitable for learning and presentation.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="reflection-section-grid bottom-reflection-grid">
+        <div class="reflection-panel">
+          <h4>Gaps &amp; Next Steps</h4>
+          <ul>
+            <li><strong>Go deeper technically:</strong> Study transformers, attention mechanisms, and scaling in more detail.</li>
+            <li><strong>Read milestone papers:</strong> Explore landmark research that defined each phase of AI.</li>
+            <li><strong>Connect history to practice:</strong> Relate these AI shifts to real-world systems in analytics, finance, and enterprise workflows.</li>
+            <li><strong>Build similar artifacts:</strong> Create focused timelines for NLP, computer vision, and recommendation systems.</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="reflection-quote">
+        “Understanding AI is not just about knowing the latest models. It is about seeing how each idea evolved from the strengths and limitations of the one before it.”
+      </p>
+    </div>
+
+    <!-- BOTTOM BUTTON -->
+    <div class="artifact-btn-row center-btn">
+      <a class="know-more-btn primary-btn" href="https://claude.ai/public/artifacts/50ec449b-a242-4d48-bad4-ad53ae4cb503" target="_blank" rel="noopener noreferrer">
+        Explore the Timeline
+      </a>
+    </div>
+
+  </div>
+</div>
+</main>
+
+<footer class="site-footer">
+  © 2026 Sagar S. Alande
+</footer>
+
+</body>
+</html>

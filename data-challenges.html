@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Challenges in AI | Sagar S. Alande</title>
+  <meta name="description" content="Scenario-based learning on missing, noisy, imbalanced, and time-series data in machine learning.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+  .page-wrap { padding: 30px 16px 56px; }
+  .back-link { display: block; max-width: 1040px; margin: 0 auto 16px; color: #1d4ed8; text-decoration: none; font-weight: 600; font-family: Arial, sans-serif; }
+  .back-link:hover { text-decoration: underline; }
+
+  #data-challenges-artifact {
+    font-family: Arial, sans-serif;
+    max-width: 1040px;
+    margin: auto;
+    padding: 34px 20px 44px;
+    color: #122033;
+    background:
+      radial-gradient(circle at top right, rgba(37, 99, 235, 0.08), transparent 26%),
+      radial-gradient(circle at top left, rgba(14, 165, 233, 0.07), transparent 28%),
+      linear-gradient(180deg, #f8fbff 0%, #ffffff 32%, #f9fbff 100%);
+    border-radius: 28px;
+  }
+
+  .artifact-header {
+    text-align: center;
+    margin-bottom: 28px;
+  }
+
+  .header-badge {
+    display: inline-block;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: #1d4ed8;
+    background: rgba(37, 99, 235, 0.09);
+    border: 1px solid rgba(37, 99, 235, 0.16);
+    padding: 8px 14px;
+    border-radius: 999px;
+    margin-bottom: 14px;
+  }
+
+  #data-challenges-artifact h2 {
+    margin: 0 0 10px;
+    font-size: 2.15rem;
+    line-height: 1.2;
+    color: #0f172a;
+  }
+
+  .artifact-header p {
+    max-width: 860px;
+    margin: 0 auto;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #475569;
+  }
+
+  .artifact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(255px, 100%), 1fr));
+    gap: 20px;
+  }
+
+  .artifact-card {
+    background: linear-gradient(180deg, #ffffff, #f8fbff);
+    border-radius: 22px;
+    padding: 22px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 8px 22px rgba(15, 23, 42, 0.06);
+    transition: all 0.28s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .artifact-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.03), transparent 45%);
+    pointer-events: none;
+  }
+
+  .artifact-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 36px rgba(15, 23, 42, 0.12);
+    border-color: #cddcf5;
+  }
+
+  .artifact-card h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 1.18rem;
+    color: #0f172a;
+  }
+
+  .artifact-card h4 {
+    margin: 0 0 10px;
+    font-size: 1rem;
+    color: #1d4ed8;
+  }
+
+  .artifact-card p {
+    margin: 0 0 12px;
+    color: #475569;
+    font-size: 0.97rem;
+    line-height: 1.72;
+  }
+
+  .artifact-card p:last-child {
+    margin-bottom: 0;
+  }
+
+  .wide-card {
+    grid-column: 1 / -1;
+    width: 900px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .hero-card {
+    background: linear-gradient(135deg, #eff6ff, #ffffff 55%, #f0f9ff);
+    border: 1px solid #d8e6fb;
+  }
+
+  .process-intro {
+    background: linear-gradient(135deg, #f8fafc, #ffffff 50%, #f0f9ff);
+  }
+
+  .highlight-card {
+    background: linear-gradient(135deg, #eef7ff, #ffffff 52%, #f8fbff);
+    border-left: 6px solid #2563eb;
+  }
+
+  .value-card {
+    background: linear-gradient(135deg, #f8fbff, #ffffff 50%, #eff6ff);
+  }
+
+  .reflection-card {
+    background: linear-gradient(135deg, #f7fbff, #ffffff 55%, #f8fafc);
+  }
+
+  .scenario-card {
+    min-height: 100%;
+  }
+
+  .scenario-tag {
+    display: inline-block;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #1e40af;
+    background: #e0ecff;
+    padding: 7px 12px;
+    border-radius: 999px;
+    margin-bottom: 14px;
+  }
+
+  .scenario-desc {
+    font-weight: 600;
+    color: #334155 !important;
+  }
+
+  .sub-block {
+    background: #f8fbff;
+    border: 1px solid #e6eef9;
+    border-radius: 16px;
+    padding: 16px 16px 14px;
+    margin-bottom: 14px;
+  }
+
+  .sub-block:last-child {
+    margin-bottom: 0;
+  }
+
+  .sub-block p {
+    margin-bottom: 8px;
+  }
+
+  .reflection-section-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    margin: 18px 0 0;
+  }
+
+  .bottom-reflection-grid {
+    grid-template-columns: 1fr;
+    margin-top: 18px;
+  }
+
+  .reflection-panel {
+    background: linear-gradient(180deg, #fbfdff, #f5f9ff);
+    border: 1px solid #dfeaf8;
+    border-radius: 18px;
+    padding: 18px 18px 16px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.85);
+  }
+
+  .reflection-panel ul {
+    margin: 0;
+    padding-left: 18px;
+  }
+
+  .reflection-panel li {
+    margin-bottom: 10px;
+    color: #475569;
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+
+  .reflection-panel li:last-child {
+    margin-bottom: 0;
+  }
+
+  .reflection-quote {
+    margin-top: 20px !important;
+    padding: 18px 18px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #eff6ff, #f8fbff);
+    border: 1px solid #dbeafe;
+    color: #1e3a8a !important;
+    font-weight: 600;
+  }
+
+  .artifact-btn-row {
+    display: flex;
+    margin: 10px 0 4px;
+    grid-column: 1 / -1;
+  }
+
+  .center-btn {
+    justify-content: center;
+  }
+
+  .know-more-btn {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.96rem;
+    padding: 13px 24px;
+    border-radius: 999px;
+    display: inline-block;
+    transition: all 0.25s ease;
+    letter-spacing: 0.01em;
+  }
+
+  .primary-btn {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: #ffffff;
+    box-shadow: 0 12px 26px rgba(37, 99, 235, 0.28);
+  }
+
+  .primary-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 34px rgba(37, 99, 235, 0.36);
+    background: linear-gradient(135deg, #1d4ed8, #1e40af);
+  }
+
+  @media (max-width: 768px) {
+    #data-challenges-artifact {
+      padding: 24px 14px 32px;
+      border-radius: 20px;
+    }
+
+    #data-challenges-artifact h2 {
+      font-size: 1.72rem;
+    }
+
+    .artifact-card {
+      padding: 18px;
+      border-radius: 18px;
+    }
+
+    .artifact-grid {
+      gap: 16px;
+    }
+
+    .reflection-section-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="topbar">
+    <a class="brand" href="index.html">Sagar S Alande</a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="insight.html">From Website to Insight</a>
+      <a href="artifacts.html" class="active">Artifacts</a>
+      <a href="about.html">About Me</a>
+    </nav>
+  </div>
+  <div class="hero hero-page">
+    <div class="hero-text">
+      <h1>Data Challenges in AI</h1>
+    </div>
+  </div>
+</header>
+
+<main class="page-wrap">
+<a class="back-link" href="artifacts.html">← Back to Artifacts</a>
+
+<div id="data-challenges-artifact">
+
+  <div class="artifact-header">
+    <div class="header-badge">AI-Guided Learning Artifact</div>
+    <h2>Data Challenges in AI</h2>
+    <p>
+      A scenario-based learning artifact documenting how real-world machine learning data challenges
+      were explored through guided interaction with an AI coach. The activity focused on missing data,
+      noisy data, imbalanced datasets, and time-series issues, with each scenario approached through
+      diagnosis, strategy design, validation, and reflection.
+    </p>
+  </div>
+
+  <!-- TOP BUTTON -->
+  <div class="artifact-btn-row center-btn">
+    <a class="know-more-btn primary-btn" href="https://student.schoolai.com/student-space?sessionId=cmn58u180017jqw60aq8ywb7x" target="_blank" rel="noopener noreferrer">
+      Explore the Learning Session
+    </a>
+  </div>
+
+  <div class="artifact-grid">
+
+    <!-- TITLE -->
+    <div class="artifact-card wide-card hero-card">
+      <h3>Title</h3>
+      <p>
+        Data Challenges in AI — Scenario-Based Learning Artifact
+      </p>
+    </div>
+
+    <!-- OBJECTIVE -->
+    <div class="artifact-card wide-card">
+      <h3>Objective</h3>
+      <p>
+        The objective of this activity was to strengthen my ability to handle real-world data
+        challenges in machine learning in a more practical and decision-driven way. Instead of
+        focusing only on techniques, I wanted to understand how to diagnose problems, choose the
+        right strategy based on data behavior, connect technical decisions with business impact,
+        and validate whether the chosen approach actually improves model performance.
+      </p>
+    </div>
+
+    <!-- WHAT IS IT -->
+    <div class="artifact-card wide-card">
+      <h3>What is it?</h3>
+      <p>
+        This artifact captures an interactive learning journey completed through an AI coaching
+        system where each scenario presented a different data challenge commonly seen in machine
+        learning projects. The scenarios were explored through step-by-step reasoning, follow-up
+        questioning, and structured validation, making the experience feel closer to a real project
+        discussion than a standard theory exercise.
+      </p>
+    </div>
+
+    <!-- PROCESS INTRO -->
+    <div class="artifact-card wide-card process-intro">
+      <h3>Process</h3>
+      <p>
+        The learning followed a consistent pattern across all scenarios:
+        <strong>understand → validate → decide → implement → evaluate → refine</strong>.
+        Each scenario pushed the thinking one level deeper, moving from identifying the issue to
+        choosing methods, validating outcomes, and refining the approach where needed.
+      </p>
+    </div>
+
+    <!-- SCENARIO CARDS -->
+    <div class="artifact-card scenario-card">
+      <div class="scenario-tag">Scenario 1</div>
+      <h3>Missing Data</h3>
+      <p class="scenario-desc">
+        A housing price dataset contained missing values in critical features such as house size
+        and number of bedrooms.
+      </p>
+      <p>
+        I began by quantifying nulls, checking missingness patterns, and understanding whether the
+        issue was random, systematic, or related to upstream gaps. From there, I explored median
+        imputation, grouped imputation, model-based imputation, and missingness indicators.
+      </p>
+      <p>
+        The key learning was that missing data should not be filled blindly. The method should depend
+        on feature importance, scale of missingness, and whether the chosen strategy improves the model
+        against a baseline.
+      </p>
+    </div>
+
+    <div class="artifact-card scenario-card">
+      <div class="scenario-tag">Scenario 2</div>
+      <h3>Noisy Data</h3>
+      <p class="scenario-desc">
+        A customer churn dataset contained noise in satisfaction ratings and usage metrics due to
+        inconsistent scales, entry errors, and measurement variation.
+      </p>
+      <p>
+        Here, the focus shifted from “cleaning data” to first proving what was actual noise and what
+        was valid business variation. I used ideas like distribution profiling, Z-score, IQR, and
+        business validation before deciding whether to transform, cap, smooth, or remove values.
+      </p>
+      <p>
+        This scenario showed that over-cleaning can damage real signal. The better approach is to
+        reduce the effect of bad data while preserving meaningful variation that the model should learn.
+      </p>
+    </div>
+
+    <div class="artifact-card scenario-card">
+      <div class="scenario-tag">Scenario 3</div>
+      <h3>Imbalanced Dataset</h3>
+      <p class="scenario-desc">
+        A loan default dataset had a strong class imbalance, with very few default cases compared to
+        non-default cases.
+      </p>
+      <p>
+        I started by checking whether the imbalance was truly affecting model behavior instead of
+        treating skew alone as the problem. From there, I explored oversampling, undersampling,
+        SMOTE, class weights, and tree-based ensemble models.
+      </p>
+      <p>
+        The biggest shift came during evaluation. Accuracy was not enough. The discussion moved
+        toward recall, precision, F1-score, confusion matrix, and business cost of missing a defaulter.
+      </p>
+    </div>
+
+    <div class="artifact-card scenario-card">
+      <div class="scenario-tag">Scenario 4</div>
+      <h3>Time-Series Challenges</h3>
+      <p class="scenario-desc">
+        A fintech DAU series had missing daily timestamps, weekly seasonality, and a slow upward trend.
+      </p>
+      <p>
+        This scenario required a different mindset because missing timestamps affect temporal structure,
+        not just values. I first reindexed the series to a continuous timeline, then explored time-based
+        interpolation, weekday-aware methods, and STL-style seasonal reasoning.
+      </p>
+      <p>
+        Validation became more advanced as well. I considered short and long hold-out gaps, MAE/RMSE,
+        weekday-average preservation, lag-7 seasonality checks, and threshold-based pass/fail criteria.
+      </p>
+    </div>
+
+    <!-- OVERALL PROGRESS -->
+    <div class="artifact-card wide-card highlight-card">
+      <h3>Overall Progress</h3>
+      <p>
+        The strongest shift across this activity was the progression from simply identifying data issues
+        to designing, validating, and iterating solutions. Instead of relying on one fixed method, I
+        consistently used a baseline-first mindset, escalated only when needed, and connected technical
+        methods with business impact — especially in finance-oriented scenarios.
+      </p>
+    </div>
+
+    <!-- DETAILED PROCESS -->
+    <div class="artifact-card wide-card">
+      <h3>Scenario-by-Scenario Takeaways</h3>
+
+      <div class="sub-block">
+        <h4>Missing Data</h4>
+        <p><strong>Diagnose:</strong> quantify nulls, inspect patterns (MCAR/MAR/MNAR), and check upstream pipeline issues.</p>
+        <p><strong>Solutions:</strong> remove small non-critical gaps, median/grouped imputation, model-based imputation, missingness indicator.</p>
+        <p><strong>Validation:</strong> baseline vs imputed models, cross-validation, RMSE/MAE/R².</p>
+        <p><strong>Decision Rule:</strong> choose method based on feature importance and missingness scale.</p>
+      </div>
+
+      <div class="sub-block">
+        <h4>Noisy Data</h4>
+        <p><strong>Diagnose:</strong> profile distributions, detect outliers using Z-score/IQR, check inconsistent scales, validate against business logic.</p>
+        <p><strong>Solutions:</strong> scale/normalize, transform using log, cap or remove true errors, smooth continuous noise, preserve valid variation.</p>
+        <p><strong>Validation:</strong> compare feature distributions, summary statistics, model metrics, and interpretability.</p>
+      </div>
+
+      <div class="sub-block">
+        <h4>Imbalanced Data</h4>
+        <p><strong>Diagnose:</strong> quantify class distribution, build baseline, check business cost of errors.</p>
+        <p><strong>Solutions:</strong> oversampling, undersampling, SMOTE, class weights, ensemble methods, anomaly-detection thinking where relevant.</p>
+        <p><strong>Validation:</strong> precision, recall, F1-score, confusion matrix, cross-validation, overfitting checks on minority class.</p>
+      </div>
+
+      <div class="sub-block">
+        <h4>Time-Series (Seasonality + Missing Timestamps)</h4>
+        <p><strong>Diagnose:</strong> reindex to continuous timeline, visualize, inspect trend/seasonality, review ACF/PACF.</p>
+        <p><strong>Solutions:</strong> reindex + time-based interpolation as baseline, weekday-median, STL-style seasonal handling, gap-aware alternatives.</p>
+        <p><strong>Validation:</strong> short and long hold-out gaps, MAE/RMSE, weekday-average comparison, lag-7 seasonality check, forward-chaining CV, thresholds.</p>
+      </div>
+    </div>
+
+    <!-- TOOLS -->
+    <div class="artifact-card wide-card">
+      <h3>Tools</h3>
+      <p>
+        School AI for guided interaction and iterative feedback
+      </p>
+    </div>
+
+    <!-- VALUE -->
+    <div class="artifact-card wide-card value-card">
+      <h3>Value</h3>
+      <p>
+        This artifact demonstrates a structured, production-oriented approach to handling machine
+        learning data challenges. It highlights not only technical awareness, but also decision-making,
+        validation discipline, and the ability to connect model performance with real business impact.
+      </p>
+      <p>
+        It reflects how I approach data problems in practical environments: start simple, validate
+        assumptions, protect real signal, and use measurable evidence before moving to more complex methods.
+      </p>
+    </div>
+
+    <!-- REFLECTION -->
+    <div class="artifact-card wide-card reflection-card">
+      <h3>Reflection — What you learned</h3>
+      <p>
+        This activity shifted my perspective from applying techniques to making informed decisions.
+      </p>
+
+      <div class="reflection-section-grid">
+        <div class="reflection-panel">
+          <h4>Key Learnings</h4>
+          <ul>
+            <li>Data issues must be validated before being treated as problems.</li>
+            <li>There is no single best method — the approach depends on context, scale, and impact.</li>
+            <li>Validation is critical — decisions should be based on measurable outcomes.</li>
+            <li>Business context plays a major role in technical decisions.</li>
+            <li>In time-series problems, preserving structure is more important than simply filling gaps.</li>
+          </ul>
+        </div>
+
+        <div class="reflection-panel">
+          <h4>Key Skills Developed</h4>
+          <ul>
+            <li><strong>Problem scoping:</strong> I learned to always evaluate impact and business cost before taking action.</li>
+            <li><strong>Method selection:</strong> I start with simple baselines and only move to complex solutions when needed.</li>
+            <li><strong>Validation discipline:</strong> I rely on hold-outs, cross-validation, and distribution checks instead of single metrics.</li>
+            <li><strong>Combining domain knowledge and statistics:</strong> I use business context to avoid removing valid signals.</li>
+            <li><strong>Practical tooling mindset:</strong> I applied concepts using tools like Pandas, Scikit-learn, STL, SMOTE, and ensemble models.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="reflection-section-grid bottom-reflection-grid">
+        <div class="reflection-panel">
+          <h4>Gaps &amp; Next Steps</h4>
+          <ul>
+            <li><strong>More hands-on practice:</strong> Run hold-out tests, imputation experiments, and model comparisons on real or synthetic datasets.</li>
+            <li><strong>Advanced methods:</strong> Explore IterativeImputer, Balanced Random Forest, CatBoost/LightGBM with class weights, and time-series models like Prophet, ARIMA, and LSTM.</li>
+            <li><strong>Monitoring:</strong> Design simple frameworks to track data drift and model degradation in production.</li>
+            <li><strong>Ethics &amp; privacy:</strong> Review fairness, compliance, and data privacy considerations, especially for financial datasets.</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="reflection-quote">
+        “Solving data challenges is not about applying techniques first. It is about understanding
+        the data, validating assumptions, and making decisions that balance accuracy, stability,
+        and real-world impact.”
+      </p>
+    </div>
+
+    <!-- BOTTOM BUTTON -->
+    <div class="artifact-btn-row center-btn">
+      <a class="know-more-btn primary-btn" href="https://student.schoolai.com/student-space?sessionId=cmn58u180017jqw60aq8ywb7x" target="_blank" rel="noopener noreferrer">
+        Explore the Learning Session
+      </a>
+    </div>
+
+  </div>
+</div>
+</main>
+
+<footer class="site-footer">
+  © 2026 Sagar S. Alande
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Self-Assessment Journey | Sagar S. Alande</title>
+  <meta name="description" content="How my technical thinking, leadership mindset, and professional direction evolved through the AIML course.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+  .page-wrap { max-width: 1100px; margin: 0 auto; padding: 20px 16px 40px; }
+  .back-link { display: inline-block; margin: 10px 10px 0; color: #1d4ed8; text-decoration: none; font-weight: 600; font-family: Arial, sans-serif; }
+  .back-link:hover { text-decoration: underline; }
+
+  #aiml-growth-portfolio,
+  #aiml-growth-portfolio * {
+    box-sizing: border-box;
+  }
+
+  #aiml-growth-portfolio {
+    font-family: Arial, sans-serif;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 20px 10px 40px;
+    color: #1e293b;
+    overflow-x: hidden;
+  }
+
+  .hero-section,
+  .content-card,
+  .summary-grid,
+  .summary-box,
+  .visual-grid,
+  .visual-row,
+  .visual-bars,
+  .bar-group,
+  .comparison-grid,
+  .comparison-column,
+  .reflection-grid,
+  .reflection-box,
+  .framework-grid,
+  .framework-box {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .hero-section {
+    background: linear-gradient(135deg, #0f172a, #1e3a8a 60%, #2563eb);
+    color: white;
+    border-radius: 24px;
+    padding: 34px 20px;
+    text-align: center;
+    box-shadow: 0 14px 32px rgba(15, 23, 42, 0.20);
+    margin-bottom: 22px;
+    overflow: hidden;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.14);
+    border: 1px solid rgba(255,255,255,0.18);
+    font-size: 0.85rem;
+    margin-bottom: 12px;
+  }
+
+  .hero-section h1 {
+    margin: 0 0 10px;
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  .hero-subtitle {
+    max-width: 760px;
+    margin: 0 auto 22px;
+    line-height: 1.7;
+    font-size: 1rem;
+    color: #dbeafe;
+  }
+
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    width: 100%;
+  }
+
+  .stat-card {
+    background: rgba(255,255,255,0.10);
+    border: 1px solid rgba(255,255,255,0.14);
+    border-radius: 16px;
+    padding: 16px 12px;
+    backdrop-filter: blur(8px);
+    min-width: 0;
+  }
+
+  .stat-number {
+    display: block;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+  }
+
+  .stat-label {
+    display: block;
+    font-size: 0.9rem;
+    color: #e2e8f0;
+    line-height: 1.4;
+  }
+
+  .content-card {
+    background: linear-gradient(180deg, #ffffff, #f8fbff);
+    border-radius: 20px;
+    padding: 22px 18px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+    margin-bottom: 18px;
+    overflow: hidden;
+  }
+
+  .content-card h2 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 1.35rem;
+    color: #0f172a;
+    line-height: 1.3;
+  }
+
+  .content-card p {
+    line-height: 1.8;
+    margin: 0;
+    color: #334155;
+  }
+
+  .summary-grid,
+  .reflection-grid,
+  .framework-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .summary-box,
+  .framework-box,
+  .reflection-box {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 18px;
+    border: 1px solid #dbeafe;
+    overflow: hidden;
+  }
+
+  .summary-box h3,
+  .framework-box h3,
+  .reflection-box h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #1d4ed8;
+    font-size: 1.05rem;
+    line-height: 1.3;
+  }
+
+  .highlight-box {
+    background: linear-gradient(180deg, #eff6ff, #ffffff);
+    border: 1px solid #bfdbfe;
+  }
+
+  .section-header p {
+    margin-top: 0;
+    margin-bottom: 16px;
+    color: #475569;
+  }
+
+  .visual-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .visual-row {
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: 16px;
+    align-items: center;
+  }
+
+  .visual-label {
+    font-weight: 600;
+    color: #0f172a;
+    line-height: 1.4;
+    word-break: break-word;
+  }
+
+  .visual-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .bar-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .bar-tag {
+    width: 52px;
+    flex: 0 0 52px;
+    font-size: 0.86rem;
+    font-weight: 600;
+  }
+
+  .before-tag {
+    color: #dc2626;
+  }
+
+  .after-tag {
+    color: #16a34a;
+  }
+
+  .bar-track {
+    flex: 1;
+    min-width: 0;
+    height: 14px;
+    background: #e5e7eb;
+    border-radius: 999px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .bar-fill {
+    height: 100%;
+    border-radius: 999px;
+  }
+
+  .before-fill {
+    background: linear-gradient(90deg, #fca5a5, #ef4444);
+  }
+
+  .after-fill {
+    background: linear-gradient(90deg, #86efac, #22c55e);
+  }
+
+  .comparison-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .comparison-column {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 20px 18px;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+  }
+
+  .before-column {
+    border-top: 5px solid #ef4444;
+  }
+
+  .after-column {
+    border-top: 5px solid #22c55e;
+  }
+
+  .comparison-title-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+
+  .comparison-title-row h3 {
+    margin: 0;
+    font-size: 1.05rem;
+  }
+
+  .status-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    flex: 0 0 12px;
+  }
+
+  .before-dot {
+    background: #ef4444;
+  }
+
+  .after-dot {
+    background: #22c55e;
+  }
+
+  .comparison-column ul,
+  .framework-box ul,
+  .reflection-box ul {
+    margin: 0;
+    padding-left: 20px;
+    line-height: 1.8;
+    color: #334155;
+  }
+
+  .reflection-card {
+    background: linear-gradient(180deg, #f8fbff, #eef5ff);
+    border-left: 6px solid #3b82f6;
+  }
+
+  .reflection-intro {
+    margin-bottom: 18px !important;
+  }
+
+  .full-width-box {
+    margin-top: 16px;
+  }
+
+  .reflection-quote {
+    margin: 22px 0 0;
+    padding: 16px 18px;
+    background: #ffffff;
+    border-left: 5px solid #2563eb;
+    border-radius: 14px;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.7;
+    color: #1e3a8a;
+  }
+
+  .timeline {
+    position: relative;
+    margin-top: 10px;
+    padding-left: 18px;
+    border-left: 3px solid #bfdbfe;
+  }
+
+  .timeline-item {
+    position: relative;
+    padding-left: 22px;
+    margin-bottom: 24px;
+  }
+
+  .timeline-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .timeline-marker {
+    position: absolute;
+    left: -10px;
+    top: 6px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #2563eb;
+    box-shadow: 0 0 0 4px #dbeafe;
+  }
+
+  .timeline-content h3 {
+    margin: 0 0 8px;
+    font-size: 1.02rem;
+    color: #1d4ed8;
+  }
+
+  .timeline-content p {
+    margin: 0;
+  }
+
+  .intro-card {
+    border-left: 6px solid #2563eb;
+  }
+
+  .summary-card {
+    border-left: 6px solid #0ea5e9;
+  }
+
+  .visual-card {
+    border-left: 6px solid #14b8a6;
+    background: linear-gradient(180deg, #f8fffe, #f5fbff);
+  }
+
+  .evolution-card {
+    border-left: 6px solid #6366f1;
+    background: linear-gradient(180deg, #f8fbff, #eef4ff);
+  }
+
+  .timeline-card {
+    border-left: 6px solid #8b5cf6;
+  }
+
+  .framework-card {
+    border-left: 6px solid #f59e0b;
+  }
+
+  .closing-card {
+    border-left: 6px solid #22c55e;
+    background: linear-gradient(180deg, #f8fffb, #ffffff);
+  }
+
+  @media (max-width: 1000px) {
+    .hero-stats,
+    .summary-grid,
+    .reflection-grid,
+    .framework-grid,
+    .comparison-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 780px) {
+    #aiml-growth-portfolio {
+      padding: 16px 8px 30px;
+    }
+
+    .hero-section {
+      padding: 28px 16px;
+      border-radius: 20px;
+    }
+
+    .hero-section h1 {
+      font-size: 1.65rem;
+    }
+
+    .content-card {
+      padding: 18px 14px;
+      border-radius: 18px;
+    }
+
+    .visual-row {
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+
+    .visual-label {
+      margin-bottom: 2px;
+    }
+  }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="topbar">
+    <a class="brand" href="index.html">Sagar S Alande</a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="insight.html">From Website to Insight</a>
+      <a href="artifacts.html" class="active">Artifacts</a>
+      <a href="about.html">About Me</a>
+    </nav>
+  </div>
+  <div class="hero hero-page">
+    <div class="hero-text">
+      <h1>Self-Assessment Journey</h1>
+    </div>
+  </div>
+</header>
+
+<main class="page-wrap">
+<a class="back-link" href="artifacts.html">← Back to Artifacts</a>
+
+<div id="aiml-growth-portfolio">
+
+  <section class="hero-section">
+    <div class="hero-badge">Professional Growth Artifact</div>
+    <h1>My AI/ML Leadership Evolution</h1>
+    <p class="hero-subtitle">
+      A reflection of how my technical thinking, leadership mindset, and professional direction evolved through the AIML course.
+    </p>
+
+    <div class="hero-stats">
+      <div class="stat-card">
+        <span class="stat-number">2</span>
+        <span class="stat-label">Self-Assessments Compared</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">1</span>
+        <span class="stat-label">Clear Growth Journey</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">5</span>
+        <span class="stat-label">Core Objectives Defined</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-card intro-card">
+    <h2>Introduction</h2>
+    <p>
+      This artifact captures how I evolved during the AIML course. It reflects the shift in how I think about leadership, problem-solving, communication, and the use of AI/ML in real systems. What started as a learning journey became a clearer professional direction. Over time, I moved from mostly focusing on technical execution to thinking more about business value, adoption, communication, and real-world impact.
+    </p>
+  </section>
+
+  <section class="content-card summary-card">
+    <h2>Transformation Summary</h2>
+    <div class="summary-grid">
+      <div class="summary-box">
+        <h3>Before the Course</h3>
+        <p>
+          My strengths were mainly in data systems, SQL, structured problem-solving, and execution. I was comfortable working on complex systems, but my view of AI/ML was still developing, especially in terms of practical application, communication, and leadership impact.
+        </p>
+      </div>
+
+      <div class="summary-box highlight-box">
+        <h3>After the Course</h3>
+        <p>
+          By the end of the course, my perspective became much broader. I developed a stronger understanding of how AI/ML can be applied in real business environments, how it should be communicated to stakeholders, and how leadership plays a key role in adoption, trust, and meaningful implementation.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-card visual-card">
+    <div class="section-header">
+      <h2>Growth Comparison</h2>
+      <p>A visual comparison of how my confidence and capability changed from the start to the end of the course.</p>
+    </div>
+
+    <div class="visual-grid">
+
+      <div class="visual-row">
+        <div class="visual-label">AI/ML Understanding</div>
+        <div class="visual-bars">
+          <div class="bar-group">
+            <span class="bar-tag before-tag">Before</span>
+            <div class="bar-track">
+              <div class="bar-fill before-fill" style="width: 58%;"></div>
+            </div>
+          </div>
+          <div class="bar-group">
+            <span class="bar-tag after-tag">After</span>
+            <div class="bar-track">
+              <div class="bar-fill after-fill" style="width: 95%;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="visual-row">
+        <div class="visual-label">Stakeholder Communication</div>
+        <div class="visual-bars">
+          <div class="bar-group">
+            <span class="bar-tag before-tag">Before</span>
+            <div class="bar-track">
+              <div class="bar-fill before-fill" style="width: 35%;"></div>
+            </div>
+          </div>
+          <div class="bar-group">
+            <span class="bar-tag after-tag">After</span>
+            <div class="bar-track">
+              <div class="bar-fill after-fill" style="width: 95%;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="visual-row">
+        <div class="visual-label">AI/ML Adoption Thinking</div>
+        <div class="visual-bars">
+          <div class="bar-group">
+            <span class="bar-tag before-tag">Before</span>
+            <div class="bar-track">
+              <div class="bar-fill before-fill" style="width: 55%;"></div>
+            </div>
+          </div>
+          <div class="bar-group">
+            <span class="bar-tag after-tag">After</span>
+            <div class="bar-track">
+              <div class="bar-fill after-fill" style="width: 92%;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="visual-row">
+        <div class="visual-label">Leadership Confidence</div>
+        <div class="visual-bars">
+          <div class="bar-group">
+            <span class="bar-tag before-tag">Before</span>
+            <div class="bar-track">
+              <div class="bar-fill before-fill" style="width: 70%;"></div>
+            </div>
+          </div>
+          <div class="bar-group">
+            <span class="bar-tag after-tag">After</span>
+            <div class="bar-track">
+              <div class="bar-fill after-fill" style="width: 96%;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="visual-row">
+        <div class="visual-label">Adaptability and Growth Mindset</div>
+        <div class="visual-bars">
+          <div class="bar-group">
+            <span class="bar-tag before-tag">Before</span>
+            <div class="bar-track">
+              <div class="bar-fill before-fill" style="width: 62%;"></div>
+            </div>
+          </div>
+          <div class="bar-group">
+            <span class="bar-tag after-tag">After</span>
+            <div class="bar-track">
+              <div class="bar-fill after-fill" style="width: 94%;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="content-card evolution-card">
+    <div class="section-header">
+      <h2>Before vs After</h2>
+      <p>A direct comparison of how my thinking and capabilities changed during the course.</p>
+    </div>
+
+    <div class="comparison-grid">
+
+      <div class="comparison-column before-column">
+        <div class="comparison-title-row">
+          <div class="status-dot before-dot"></div>
+          <h3>Before</h3>
+        </div>
+        <ul>
+          <li>Focused mainly on technical execution and system reliability</li>
+          <li>Strong in structured thinking, SQL, and working with data-heavy systems</li>
+          <li>Limited confidence in applying AI/ML to real business problems</li>
+          <li>Less comfortable explaining AI concepts to non-technical stakeholders</li>
+          <li>Viewed AI/ML more as a technical area than a leadership opportunity</li>
+          <li>Had less focus on adoption, trust, and business alignment</li>
+        </ul>
+      </div>
+
+      <div class="comparison-column after-column">
+        <div class="comparison-title-row">
+          <div class="status-dot after-dot"></div>
+          <h3>After</h3>
+        </div>
+        <ul>
+          <li>Stronger understanding of how AI/ML fits into real systems and workflows</li>
+          <li>Better at linking technical solutions with business value and outcomes</li>
+          <li>More confident in explaining technical ideas in simpler terms</li>
+          <li>Started thinking about AI/ML from both technical and leadership perspectives</li>
+          <li>Improved focus on adoption, usability, trust, and responsible use</li>
+          <li>Clearer direction toward becoming an AI-driven data professional</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="content-card reflection-card">
+    <h2>Reflection</h2>
+    <p class="reflection-intro">
+      This course helped me move from only understanding systems and data to thinking more deeply about how AI/ML can be used in real environments. It also changed how I look at communication, leadership, and the practical side of adopting new technologies.
+    </p>
+
+    <div class="reflection-grid">
+
+      <div class="reflection-box">
+        <h3>What I Learned</h3>
+        <ul>
+          <li>I learned that AI/ML is not only about models but about solving real problems in a practical way.</li>
+          <li>I understood that technical knowledge alone is not enough if the solution is not clearly communicated or adopted by stakeholders.</li>
+          <li>I learned how leadership plays an important role in introducing AI/ML into real business environments.</li>
+          <li>I developed a better understanding of how AI/ML can support business decisions, efficiency, and long-term improvement.</li>
+          <li>I also learned that responsible use, trust, and usability are important parts of any AI/ML solution.</li>
+        </ul>
+      </div>
+
+      <div class="reflection-box">
+        <h3>Key Skills Developed</h3>
+        <ul>
+          <li><strong>Applied thinking:</strong> I became better at connecting AI/ML concepts with practical business use cases.</li>
+          <li><strong>Communication:</strong> I improved my ability to explain technical ideas in a simpler and more understandable way.</li>
+          <li><strong>Leadership awareness:</strong> I developed a better understanding of how change, trust, and adoption affect technical initiatives.</li>
+          <li><strong>Iterative learning:</strong> I became more comfortable improving ideas step by step instead of expecting everything to be complete at once.</li>
+          <li><strong>Strategic thinking:</strong> I started looking at AI/ML not only from a technical side but also from a value and impact perspective.</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="reflection-box full-width-box">
+      <h3>Reflection</h3>
+      <ul>
+        <li>This course showed me that my growth was not only in learning AI/ML concepts but also in changing how I think about leadership and professional development.</li>
+        <li>One of the biggest changes for me was moving from technical execution to thinking more about business impact, communication, and real-world use.</li>
+        <li>I also realized that learning works better for me when I build understanding in small steps, reflect on it, and improve over time.</li>
+        <li>Overall, this course gave me more clarity on the direction I want to take and helped me see how I can combine my technical background with AI/ML in a more meaningful way.</li>
+      </ul>
+    </div>
+
+    <blockquote class="reflection-quote">
+      “This course helped me see AI/ML not just as a technical skill, but as a way to build better solutions, communicate more clearly, and grow into a stronger professional.”
+    </blockquote>
+  </section>
+
+  <section class="content-card timeline-card">
+    <h2>How My Thinking Evolved</h2>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <h3>Starting Point</h3>
+          <p>
+            I entered the course with a strong data and systems background, but with a more limited view of AI/ML in terms of leadership and practical implementation.
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <h3>During the Course</h3>
+          <p>
+            As I worked through the course, I started connecting AI/ML concepts with business use cases, real-world challenges, stakeholder communication, and change management.
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <h3>Current Direction</h3>
+          <p>
+            I now see AI/ML as an area where I can combine my professional experience, technical background, and leadership growth to create practical and meaningful solutions.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-card framework-card">
+    <h2>My Personal Framework Going Forward</h2>
+
+    <div class="framework-grid">
+      <div class="framework-box">
+        <h3>Mission</h3>
+        <p>
+          My mission is to use AI/ML to improve real systems and make them more efficient. I want to build solutions that are simple, reliable, and actually useful for the business.
+        </p>
+      </div>
+
+      <div class="framework-box">
+        <h3>Objectives</h3>
+        <ul>
+          <li>Apply AI/ML knowledge in real-world systems</li>
+          <li>Become an AI-driven data professional</li>
+          <li>Build strong end-to-end solution capability</li>
+          <li>Improve communication with stakeholders</li>
+          <li>Apply learning through small iterations</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-card closing-card">
+    <h2>Closing Reflection</h2>
+    <p>
+      This framework shows where I am today and where I want to go. It brings together my work experience, what I’ve learned, and my values. My goal is to grow into someone who can use AI/ML to build solutions that actually make a difference and are useful in real situations.
+    </p>
+  </section>
+
+</div>
+</main>
+
+<footer class="site-footer">
+  © 2026 Sagar S. Alande
+</footer>
+
+</body>
+</html>

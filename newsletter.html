@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Industry Newsletter | Sagar S. Alande</title>
+  <meta name="description" content="A live monthly publication on how AI is applied in real business environments across industries.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+  .back-link { display: block; max-width: 1120px; margin: 24px auto 0; padding: 0 16px; color: #1d4ed8; text-decoration: none; font-weight: 600; font-family: Arial, sans-serif; }
+  .back-link:hover { text-decoration: underline; }
+
+  #newsletter-showcase {
+    font-family: Arial, sans-serif;
+    max-width: 1120px;
+    margin: auto;
+    padding: 20px 16px 42px;
+    color: #102033;
+  }
+
+  .newsletter-shell {
+    background:
+      radial-gradient(circle at top left, rgba(37, 99, 235, 0.08), transparent 28%),
+      radial-gradient(circle at top right, rgba(14, 165, 233, 0.08), transparent 28%),
+      linear-gradient(180deg, #f8fbff 0%, #ffffff 40%, #f7fbff 100%);
+    border-radius: 30px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 18px 50px rgba(15, 23, 42, 0.08);
+    padding: 34px 28px 36px;
+    overflow: hidden;
+  }
+
+  .newsletter-hero {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 30px;
+    align-items: center;
+    margin-bottom: 28px;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: #1d4ed8;
+    background: rgba(37, 99, 235, 0.09);
+    border: 1px solid rgba(37, 99, 235, 0.16);
+    padding: 8px 14px;
+    border-radius: 999px;
+    margin-bottom: 14px;
+  }
+
+  .hero-left h2 {
+    margin: 0 0 10px;
+    font-size: 2.3rem;
+    line-height: 1.15;
+    color: #0f172a;
+  }
+
+  .hero-subtext {
+    margin: 0;
+    font-size: 1.02rem;
+    line-height: 1.75;
+    color: #475569;
+    max-width: 620px;
+  }
+
+  .hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0 22px;
+  }
+
+  .hero-tags span {
+    background: #eff6ff;
+    color: #1e3a8a;
+    padding: 9px 13px;
+    border-radius: 999px;
+    font-size: 0.86rem;
+    font-weight: 700;
+    border: 1px solid #dbeafe;
+  }
+
+  .hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .primary-btn {
+    text-decoration: none;
+    border-radius: 999px;
+    padding: 13px 22px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: all 0.28s ease;
+    display: inline-block;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: #ffffff;
+    box-shadow: 0 14px 30px rgba(37, 99, 235, 0.28);
+  }
+
+  .primary-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 20px 36px rgba(37, 99, 235, 0.34);
+    background: linear-gradient(135deg, #1d4ed8, #1e40af);
+  }
+
+  .large-btn {
+    padding: 15px 28px;
+    font-size: 1rem;
+  }
+
+  .preview-window {
+    position: relative;
+    background: linear-gradient(180deg, #ffffff, #f8fbff);
+    border: 1px solid #dbeafe;
+    border-radius: 24px;
+    box-shadow: 0 24px 50px rgba(15, 23, 42, 0.12);
+    overflow: hidden;
+    transform: perspective(1200px) rotateY(-6deg) rotateX(2deg);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+  }
+
+  .preview-window:hover {
+    transform: perspective(1200px) rotateY(-2deg) rotateX(0deg) translateY(-4px);
+    box-shadow: 0 30px 60px rgba(15, 23, 42, 0.16);
+  }
+
+  .preview-topbar {
+    display: flex;
+    gap: 8px;
+    padding: 14px 16px;
+    background: linear-gradient(180deg, #eff6ff, #f8fbff);
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .preview-topbar span {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #bfd7ff;
+  }
+
+  .preview-content {
+    padding: 22px;
+  }
+
+  .preview-label {
+    font-size: 0.76rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #2563eb;
+    margin-bottom: 10px;
+  }
+
+  .preview-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 18px;
+  }
+
+  .preview-line,
+  .preview-footer-line,
+  .mini-line {
+    height: 10px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #dbeafe, #eff6ff);
+  }
+
+  .preview-line {
+    margin-bottom: 10px;
+    width: 100%;
+  }
+
+  .preview-line.short {
+    width: 68%;
+  }
+
+  .preview-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: 18px 0;
+  }
+
+  .mini-card {
+    background: #fbfdff;
+    border: 1px solid #e5eefc;
+    border-radius: 16px;
+    padding: 14px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .mini-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+  }
+
+  .mini-tag {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #1d4ed8;
+    margin-bottom: 10px;
+  }
+
+  .mini-line {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+
+  .mini-line.small {
+    width: 70%;
+    height: 8px;
+  }
+
+  .preview-footer-line {
+    width: 42%;
+    height: 10px;
+    margin-top: 8px;
+  }
+
+  .impact-strip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 6px 0 26px;
+  }
+
+  .impact-card,
+  .action-card,
+  .value-panel,
+  .roadmap-block,
+  .reflection-card {
+    background: linear-gradient(180deg, #ffffff, #f8fbff);
+    border: 1px solid #e2e8f0;
+    border-radius: 22px;
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.05);
+  }
+
+  .impact-card {
+    padding: 20px;
+  }
+
+  .impact-card h3 {
+    margin: 0 0 8px;
+    font-size: 1rem;
+    color: #0f172a;
+  }
+
+  .impact-card p {
+    margin: 0;
+    color: #475569;
+    line-height: 1.65;
+    font-size: 0.95rem;
+  }
+
+  .content-block {
+    margin-top: 24px;
+  }
+
+  .block-heading {
+    margin-bottom: 16px;
+  }
+
+  .section-kicker {
+    display: inline-block;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #2563eb;
+    margin-bottom: 8px;
+  }
+
+  .block-heading h3 {
+    margin: 0;
+    font-size: 1.55rem;
+    color: #0f172a;
+  }
+
+  .action-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .action-card {
+    padding: 22px;
+    transition: all 0.28s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .action-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.04), transparent 46%);
+    pointer-events: none;
+  }
+
+  .action-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 34px rgba(15, 23, 42, 0.1);
+    border-color: #cfe0fb;
+  }
+
+  .action-number {
+    width: 42px;
+    height: 42px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    margin-bottom: 16px;
+    box-shadow: 0 10px 20px rgba(37, 99, 235, 0.22);
+  }
+
+  .action-card h4,
+  .value-panel h4,
+  .reflection-panel h4 {
+    margin: 0 0 10px;
+    color: #0f172a;
+    font-size: 1rem;
+    line-height: 1.45;
+  }
+
+  .action-card p,
+  .value-panel p,
+  .reflection-panel li {
+    margin: 0;
+    color: #475569;
+    line-height: 1.7;
+    font-size: 0.95rem;
+  }
+
+  .value-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .value-panel {
+    padding: 22px;
+  }
+
+  .reflection-card {
+    padding: 24px;
+    background: linear-gradient(135deg, #f7fbff, #ffffff 55%, #f8fafc);
+  }
+
+  .reflection-section-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    margin: 18px 0 0;
+  }
+
+  .bottom-reflection-grid {
+    grid-template-columns: 1fr;
+    margin-top: 18px;
+  }
+
+  .reflection-panel {
+    background: linear-gradient(180deg, #fbfdff, #f5f9ff);
+    border: 1px solid #dfeaf8;
+    border-radius: 18px;
+    padding: 18px 18px 16px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.85);
+  }
+
+  .reflection-panel ul {
+    margin: 0;
+    padding-left: 18px;
+  }
+
+  .reflection-panel li {
+    margin-bottom: 10px;
+  }
+
+  .reflection-panel li:last-child {
+    margin-bottom: 0;
+  }
+
+  .reflection-quote {
+    margin-top: 20px;
+    padding: 18px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #eff6ff, #f8fbff);
+    border: 1px solid #dbeafe;
+    color: #1e3a8a;
+    font-weight: 600;
+    line-height: 1.7;
+  }
+
+  .roadmap-block {
+    padding: 24px;
+    background: linear-gradient(135deg, #f8fbff, #ffffff 55%, #eef6ff);
+  }
+
+  .roadmap-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .roadmap-pill {
+    padding: 12px 16px;
+    border-radius: 999px;
+    background: #ffffff;
+    border: 1px solid #dbeafe;
+    color: #1e3a8a;
+    font-weight: 700;
+    font-size: 0.92rem;
+    box-shadow: 0 8px 18px rgba(15, 23, 42, 0.05);
+  }
+
+  .artifact-footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 28px;
+  }
+
+  @media (max-width: 980px) {
+    .newsletter-hero,
+    .impact-strip,
+    .action-grid,
+    .value-grid,
+    .preview-grid,
+    .reflection-section-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .preview-window {
+      transform: none;
+    }
+  }
+
+  @media (max-width: 768px) {
+    #newsletter-showcase {
+      padding: 18px 8px 28px;
+    }
+
+    .newsletter-shell {
+      padding: 24px 16px 24px;
+      border-radius: 22px;
+    }
+
+    .hero-left h2 {
+      font-size: 1.82rem;
+    }
+
+    .hero-buttons {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .primary-btn {
+      text-align: center;
+    }
+
+    .action-card,
+    .value-panel,
+    .impact-card,
+    .reflection-card,
+    .roadmap-block {
+      padding: 18px;
+    }
+  }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="topbar">
+    <a class="brand" href="index.html">Sagar S Alande</a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="insight.html">From Website to Insight</a>
+      <a href="artifacts.html" class="active">Artifacts</a>
+      <a href="about.html">About Me</a>
+    </nav>
+  </div>
+  <div class="hero hero-page">
+    <div class="hero-text">
+      <h1>AI Industry Newsletter</h1>
+    </div>
+  </div>
+</header>
+
+<main>
+<a class="back-link" href="artifacts.html">← Back to Artifacts</a>
+
+<div id="newsletter-showcase">
+
+  <div class="newsletter-shell">
+
+    <!-- HERO -->
+    <div class="newsletter-hero">
+      <div class="hero-left">
+        <div class="hero-badge">Featured AI Publication</div>
+        <h2>AI Industry Newsletter</h2>
+        <p class="hero-subtext">
+          A live monthly publication focused on how AI is being applied in real business environments
+          across industries.
+        </p>
+
+        <div class="hero-tags">
+          <span>Monthly Publication</span>
+          <span>AI Trend Analysis</span>
+          <span>Business Impact Focus</span>
+          <span>GitHub Hosted</span>
+        </div>
+
+        <div class="hero-buttons">
+          <a class="primary-btn" href="https://sagar-alande.github.io/newsletter-site/" target="_blank" rel="noopener noreferrer">
+            View Live Newsletter
+          </a>
+        </div>
+      </div>
+
+      <!-- PREVIEW -->
+      <div class="hero-right">
+        <div class="preview-window">
+          <div class="preview-topbar">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="preview-content">
+            <div class="preview-label">Live Preview</div>
+            <div class="preview-title">AI Industry Newsletter</div>
+
+            <div class="preview-line short"></div>
+            <div class="preview-line"></div>
+            <div class="preview-line"></div>
+
+            <div class="preview-grid">
+              <div class="mini-card">
+                <div class="mini-tag">Industry 1</div>
+                <div class="mini-line"></div>
+                <div class="mini-line small"></div>
+              </div>
+              <div class="mini-card">
+                <div class="mini-tag">Industry 2</div>
+                <div class="mini-line"></div>
+                <div class="mini-line small"></div>
+              </div>
+              <div class="mini-card">
+                <div class="mini-tag">Industry 3</div>
+                <div class="mini-line"></div>
+                <div class="mini-line small"></div>
+              </div>
+            </div>
+
+            <div class="preview-footer-line"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- QUICK IMPACT -->
+    <div class="impact-strip">
+      <div class="impact-card">
+        <h3>Purpose</h3>
+        <p>Translate AI developments into business-relevant insights.</p>
+      </div>
+      <div class="impact-card">
+        <h3>Format</h3>
+        <p>Built as a recurring monthly publication with a clean digital experience.</p>
+      </div>
+      <div class="impact-card">
+        <h3>Direction</h3>
+        <p>Evolving toward an automated and scalable publishing workflow.</p>
+      </div>
+    </div>
+
+    <!-- ACTIONS -->
+    <div class="content-block">
+      <div class="block-heading">
+        <span class="section-kicker">What I Did</span>
+        <h3>Actions Taken</h3>
+      </div>
+
+      <div class="action-grid">
+
+        <div class="action-card">
+          <div class="action-number">01</div>
+          <h4>Researched recent AI developments</h4>
+          <p>Reviewed current AI products, company updates, and real-world implementations across industries.</p>
+        </div>
+
+        <div class="action-card">
+          <div class="action-number">02</div>
+          <h4>Selected industry use cases</h4>
+          <p>Focused each edition on relevant industries and identified high-value AI applications.</p>
+        </div>
+
+        <div class="action-card">
+          <div class="action-number">03</div>
+          <h4>Analyzed business impact</h4>
+          <p>Connected technical product updates with workflow improvements, efficiency, and decision-making value.</p>
+        </div>
+
+        <div class="action-card">
+          <div class="action-number">04</div>
+          <h4>Structured the content clearly</h4>
+          <p>Designed the newsletter in a professional, readable, and visually organized format.</p>
+        </div>
+
+        <div class="action-card">
+          <div class="action-number">05</div>
+          <h4>Built a live web experience</h4>
+          <p>Created a web-based publication instead of presenting the work as a static report or document.</p>
+        </div>
+
+        <div class="action-card">
+          <div class="action-number">06</div>
+          <h4>Published it as a recurring artifact</h4>
+          <p>Deployed the newsletter through GitHub Pages and positioned it as an ongoing monthly series.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- VALUE -->
+    <div class="content-block">
+      <div class="block-heading">
+        <span class="section-kicker">Why It Matters</span>
+        <h3>What This Demonstrates</h3>
+      </div>
+
+      <div class="value-grid">
+        <div class="value-panel">
+          <h4>AI Analysis</h4>
+          <p>Ability to move beyond headlines and evaluate how AI is being applied in real business settings.</p>
+        </div>
+
+        <div class="value-panel">
+          <h4>Communication</h4>
+          <p>Ability to translate technical AI developments into clear and structured insights for a broader audience.</p>
+        </div>
+
+        <div class="value-panel">
+          <h4>Product Thinking</h4>
+          <p>Ability to treat content as a repeatable digital product rather than a one-time assignment.</p>
+        </div>
+
+        <div class="value-panel">
+          <h4>Scalability Vision</h4>
+          <p>Ability to design with long-term consistency, workflow growth, and future automation in mind.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- REFLECTION -->
+    <div class="content-block reflection-card">
+      <div class="block-heading">
+        <span class="section-kicker">Reflection</span>
+        <h3>Learning &amp; Growth</h3>
+      </div>
+
+      <div class="reflection-section-grid">
+        <div class="reflection-panel">
+          <h4>What I Learned</h4>
+          <ul>
+            <li>AI value is best understood through real-world applications rather than only through technical capability.</li>
+            <li>Business impact is the strongest lens for analyzing how AI is being adopted across industries.</li>
+            <li>Consistency and format matter when building something intended to continue as a monthly publication.</li>
+            <li>Clear presentation is as important as the quality of the underlying analysis.</li>
+          </ul>
+        </div>
+
+        <div class="reflection-panel">
+          <h4>Key Skills Developed</h4>
+          <ul>
+            <li>Industry-focused AI research and trend tracking</li>
+            <li>Translating technical developments into business-focused insights</li>
+            <li>Professional content structuring and digital presentation</li>
+            <li>Thinking in terms of repeatable workflows and scalable publication systems</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="reflection-section-grid bottom-reflection-grid">
+        <div class="reflection-panel">
+          <h4>Reflection</h4>
+          <ul>
+            <li>I shifted from simply reading AI updates to actively interpreting their practical business relevance.</li>
+            <li>This project helped me think more critically about how AI changes processes, decisions, and operational efficiency.</li>
+            <li>It strengthened my ability to communicate insights in a format that is both professional and engaging.</li>
+            <li>I now see this newsletter not as a one-time project, but as a scalable publication system that can grow over time.</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="reflection-quote">
+        “AI is not just about innovation — it is about how effectively that innovation is applied to solve real business problems.”
+      </p>
+    </div>
+
+    <!-- ROADMAP -->
+    <div class="content-block roadmap-block">
+      <div class="block-heading">
+        <span class="section-kicker">Next Phase</span>
+        <h3>Where This Is Going</h3>
+      </div>
+
+      <div class="roadmap-row">
+        <div class="roadmap-pill">Automated research pipeline</div>
+        <div class="roadmap-pill">Monthly issue generation</div>
+        <div class="roadmap-pill">Archive management</div>
+        <div class="roadmap-pill">Git-based publishing workflow</div>
+        <div class="roadmap-pill">UI refresh by edition</div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="artifact-footer">
+      <a class="primary-btn large-btn" href="https://sagar-alande.github.io/newsletter-site/" target="_blank" rel="noopener noreferrer">
+        Open Live Newsletter
+      </a>
+    </div>
+
+  </div>
+</div>
+</main>
+
+<footer class="site-footer">
+  © 2026 Sagar S. Alande
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>From Website to Insight | Sagar S. Alande</title>
+  <meta name="description" content="A beginner's roadmap for digital research: finding, collecting, analyzing, and communicating data.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    #insight .row{display:grid;grid-template-columns:85px 90px 2fr 1fr 1fr;gap:14px;background:white;padding:14px;border-radius:18px;margin-bottom:14px;box-shadow:0 4px 12px rgba(0,0,0,.08);}
+    #insight .num{color:white;border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:900;}
+    #insight .num b{font-size:40px;}
+    #insight .num span{font-size:12px;}
+    #insight .icon,#insight .main,#insight .side{background:#f5f8fd;border-radius:14px;padding:15px;}
+    #insight .icon{display:flex;align-items:center;justify-content:center;font-size:38px;}
+    #insight .main h3{margin:0 0 8px;font-size:19px;text-transform:uppercase;}
+    #insight .main p,#insight .side p{margin:0;font-size:13px;line-height:1.45;}
+    #insight .side h4{margin:0 0 8px;font-size:11px;letter-spacing:1px;}
+    #insight .banner-title{font-size:56px;font-weight:900;line-height:.95;}
+    @media(max-width:800px){#insight .row{grid-template-columns:75px 1fr}#insight .icon{display:none}#insight .main,#insight .side{grid-column:2}}
+    @media(max-width:600px){#insight .banner-title{font-size:38px}#insight .banner{padding:28px 22px !important}}
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="topbar">
+    <a class="brand" href="index.html">Sagar S Alande</a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="insight.html" class="active">From Website to Insight</a>
+      <a href="artifacts.html">Artifacts</a>
+      <a href="about.html">About Me</a>
+    </nav>
+  </div>
+  <div class="hero hero-page">
+    <div class="hero-text">
+      <h1>From Website to Insight</h1>
+    </div>
+  </div>
+</header>
+
+<main style="background:#edf2f7;">
+<div id="insight" style="max-width:1150px;margin:auto;background:#edf2f7;font-family:Arial,Helvetica,sans-serif;padding:24px;color:#1a202c;">
+
+  <div class="banner" style="background:#061b3d;color:white;border-radius:22px;padding:40px;margin-bottom:22px;">
+    <div class="banner-title">
+      FROM
+      <span style="color:#55c7f2;">WEBSITES</span> TO
+      <span style="color:#a7d957;">INSIGHTS</span>
+    </div>
+    <div style="display:inline-block;margin-top:18px;background:#ffd44d;color:#111;padding:10px 20px;border-radius:8px;font-size:22px;font-weight:900;">
+      A Beginner's Roadmap for Digital Research
+    </div>
+    <div style="margin-top:14px;font-size:16px;color:#dce6f5;">
+      A practical guide to finding, collecting, analyzing, and communicating data.
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="num" style="background:#0957d8;"><b>01</b><span>STEP</span></div>
+    <div class="icon">🎯</div>
+    <div class="main"><h3 style="color:#0957d8;">Define Your Research Question</h3><p>Be clear about what you want to find out. Define the topic, scope, timeframe, and expected outcome.</p></div>
+    <div class="side"><h4 style="color:#0957d8;">EXAMPLES</h4><p>What is changing?<br>Why does it matter?<br>What do I need?</p></div>
+    <div class="side"><h4 style="color:#0957d8;">TOOLS</h4><p>Notion<br>Google Docs</p></div>
+  </div>
+
+  <div class="row">
+    <div class="num" style="background:#0097a7;"><b>02</b><span>STEP</span></div>
+    <div class="icon">🌐</div>
+    <div class="main"><h3 style="color:#0097a7;">Identify Reliable Sources</h3><p>Find trustworthy websites, databases, reports, and public datasets before collecting information.</p></div>
+    <div class="side"><h4 style="color:#0097a7;">EXAMPLES</h4><p>World Bank<br>Data.gov<br>Census<br>WHO</p></div>
+    <div class="side"><h4 style="color:#0097a7;">SOURCES</h4><p>Official sites<br>Reports</p></div>
+  </div>
+
+  <div class="row">
+    <div class="num" style="background:#208b3a;"><b>03</b><span>STEP</span></div>
+    <div class="icon">🗂️</div>
+    <div class="main"><h3 style="color:#208b3a;">Explore Website Structure</h3><p>Understand how the website is organized before extracting data from it.</p></div>
+    <div class="side"><h4 style="color:#208b3a;">LOOK FOR</h4><p>Menus<br>Reports<br>Downloads<br>API Docs</p></div>
+    <div class="side"><h4 style="color:#208b3a;">TOOLS</h4><p>Sitemap<br>Search bar</p></div>
+  </div>
+
+  <div class="row">
+    <div class="num" style="background:#f77f00;"><b>04</b><span>STEP</span></div>
+    <div class="icon">⌨️</div>
+    <div class="main"><h3 style="color:#f77f00;">Inspect Source &amp; Network</h3><p>Use browser tools to see how the page loads data behind the scenes.</p></div>
+    <div class="side"><h4 style="color:#f77f00;">STEPS</h4><p>Open F12<br>Network tab<br>Reload page</p></div>
+    <div class="side"><h4 style="color:#f77f00;">TOOLS</h4><p>DevTools<br>JSON Viewer</p></div>
+  </div>
+
+  <div class="row">
+    <div class="num" style="background:#4385d1;"><b>05</b><span>STEP</span></div>
+    <div class="icon">⬇️</div>
+    <div class="main"><h3 style="color:#4385d1;">Access API or Download</h3><p>Collect data from official APIs, CSV files, Excel files, or direct downloads.</p></div>
+    <div class="side"><h4 style="color:#4385d1;">FORMATS</h4><p>CSV<br>Excel<br>JSON<br>XML</p></div>
+    <div class="side"><h4 style="color:#4385d1;">TOOLS</h4><p>Postman<br>Python</p></div>
+  </div>
+
+  <div class="row">
+    <div class="num" style="background:#d62828;"><b>06</b><span>STEP</span></div>
+    <div class="icon">🕷️</div>
+    <div class="main"><h3 style="color:#d62828;">Scrape When Needed</h3><p>Extract data from web pages only when no official download or API exists.</p></div>
+    <div class="side"><h4 style="color:#d62828;">CHECK</h4><p>robots.txt<br>Terms of Service<br>Permissions</p></div>
+    <div class="side"><h4 style="color:#d62828;">TOOLS</h4><p>BeautifulSoup<br>Selenium</p></div>
+  </div>
+
+  <div class="row">
+    <div class="num" style="background:#2e7d32;"><b>07</b><span>STEP</span></div>
+    <div class="icon">🧹</div>
+    <div class="main"><h3 style="color:#2e7d32;">Clean &amp; Organize Data</h3><p>Prepare messy data by fixing formats, removing duplicates, and handling missing values.</p></div>
+    <div class="side"><h4 style="color:#2e7d32;">CHECKS</h4><p>Rows<br>Columns<br>Dates<br>Missing data</p></div>
+    <div class="side"><h4 style="color:#2e7d32;">TOOLS</h4><p>Excel<br>pandas</p></div>
+  </div>
+
+  <div class="row">
+    <div class="num" style="background:#6a1b9a;"><b>08</b><span>STEP</span></div>
+    <div class="icon">🔎</div>
+    <div class="main"><h3 style="color:#6a1b9a;">Analyze Patterns &amp; Trends</h3><p>Look for changes, comparisons, relationships, outliers, and meaningful patterns.</p></div>
+    <div class="side"><h4 style="color:#6a1b9a;">ASK</h4><p>Highest?<br>Lowest?<br>Average?<br>Trend?</p></div>
+    <div class="side"><h4 style="color:#6a1b9a;">TOOLS</h4><p>SQL<br>Excel</p></div>
+  </div>
+
+  <div class="row">
+    <div class="num" style="background:#00838f;"><b>09</b><span>STEP</span></div>
+    <div class="icon">📊</div>
+    <div class="main"><h3 style="color:#00838f;">Visualize &amp; Tell the Story</h3><p>Turn analysis into clear charts, visuals, and evidence-based explanations.</p></div>
+    <div class="side"><h4 style="color:#00838f;">VISUALS</h4><p>Bar chart<br>Line chart<br>Map<br>Scatterplot</p></div>
+    <div class="side"><h4 style="color:#00838f;">TOOLS</h4><p>Tableau<br>Power BI</p></div>
+  </div>
+
+  <div class="row">
+    <div class="num" style="background:#b8860b;"><b>10</b><span>STEP</span></div>
+    <div class="icon">⚙️</div>
+    <div class="main"><h3 style="color:#b8860b;">Document the Workflow</h3><p>Record sources, decisions, steps, and methods so the research can be repeated.</p></div>
+    <div class="side"><h4 style="color:#b8860b;">OUTPUT</h4><p>README<br>Notes<br>Notebook<br>Summary</p></div>
+    <div class="side"><h4 style="color:#b8860b;">TOOLS</h4><p>GitHub<br>Docs</p></div>
+  </div>
+
+  <div style="background:#061b3d;color:white;padding:24px;border-radius:20px;text-align:center;margin-top:22px;">
+    <h2 style="margin:0 0 14px;color:#ffd44d;font-size:22px;">GOOD RESEARCH = GREAT QUESTIONS + CLEAN DATA + CLEAR INSIGHTS</h2>
+    <div style="font-weight:900;font-size:14px;">QUESTION → SOURCE → INSPECT → EXTRACT → CLEAN → ANALYZE → VISUALIZE → INSIGHT</div>
+  </div>
+
+</div>
+</main>
+
+<footer class="site-footer">
+  © 2026 Sagar S. Alande
+</footer>
+
+</body>
+</html>

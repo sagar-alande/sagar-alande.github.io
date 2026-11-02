@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TripForge | Sagar S. Alande</title>
+  <meta name="description" content="TripForge: a GPT-powered chatbot that plans structured, personalized trips within the United States.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="deep-dive.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="topbar">
+    <a class="brand" href="index.html">Sagar S Alande</a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="insight.html">From Website to Insight</a>
+      <a href="artifacts.html" class="active">Artifacts</a>
+      <a href="about.html">About Me</a>
+    </nav>
+  </div>
+  <div class="hero hero-page">
+    <div class="hero-text">
+      <h1>TripForge</h1>
+    </div>
+  </div>
+</header>
+
+<main class="deep-dive">
+
+  <a class="back-link" href="artifacts.html">← Back to Artifacts</a>
+
+  <div class="artifact-header">
+    <h2>TripForge</h2>
+    <p>
+      An AI-powered travel planning chatbot designed to create structured, personalized
+      itineraries for trips within the United States.
+    </p>
+  </div>
+
+  <div class="artifact-btn-row center-btn">
+    <a class="know-more-btn primary-btn" href="https://chatgpt.com/g/g-69ac8a2b37f8819192c9693f2dcd6e5c-tripforge" target="_blank" rel="noopener noreferrer">
+      Explore TripForge
+    </a>
+  </div>
+
+  <div class="artifact-grid">
+
+    <div class="artifact-card wide-card">
+      <h3>What is it?</h3>
+      <p>
+        TripForge is an AI-powered travel-planning chatbot built to help users generate
+        structured and personalized itineraries for travel within the United States.
+        It supports road trips, air travel, and RV/camper journeys by providing
+        destination suggestions, day-by-day planning, travel logistics, and stay options.
+      </p>
+    </div>
+
+    <div class="artifact-card wide-card">
+      <h3>Objective</h3>
+      <p>
+        The goal of TripForge was to create a reliable travel companion that simplifies
+        trip planning without overwhelming the user. By narrowing the scope to U.S. travel
+        and using structured outputs, the chatbot was designed to produce realistic and
+        actionable itineraries in a clear format.
+      </p>
+    </div>
+
+    <div class="artifact-card wide-card">
+      <h3>Process</h3>
+      <p>
+        The project was designed as a guided conversational system where user intent,
+        prompt instructions, and structured outputs work together to generate useful
+        travel plans.
+      </p>
+    </div>
+
+    <div class="artifact-card">
+      <h3>1. Architecture</h3>
+      <p>
+        The solution follows a RAG-style pattern combined with a conversational AI model:
+        user input flows through prompt instructions and a structured knowledge approach
+        before generating a travel plan.
+      </p>
+    </div>
+
+    <div class="artifact-card">
+      <h3>2. Design Decisions</h3>
+      <p>
+        The chatbot was limited to U.S. travel to reduce complexity and improve response
+        relevance. Outputs were structured to include summaries, day-wise itineraries,
+        travel estimates, and suggestions for activities and accommodations.
+      </p>
+    </div>
+
+    <div class="artifact-card">
+      <h3>3. GPT Configuration</h3>
+      <p>
+        The system was built using a custom GPT setup with role instructions, behavior
+        guidelines, travel-oriented conversation starters, and repeated testing to refine
+        response quality and clarity.
+      </p>
+    </div>
+
+    <div class="artifact-card">
+      <h3>4. Prompt Engineering</h3>
+      <p>
+        Prompt instructions were used to make responses more consistent and useful.
+        The chatbot was guided to ask clarifying questions, generate structured itineraries,
+        and avoid giving unreliable real-time information.
+      </p>
+    </div>
+
+    <div class="artifact-card">
+      <h3>5. Rules and Constraints</h3>
+      <p>
+        To keep the system realistic, TripForge was designed not to provide real-time flight
+        prices, booking services, guaranteed visa guidance, or invented hotel reviews.
+        It also encourages users to verify critical travel details before booking.
+      </p>
+    </div>
+
+    <div class="artifact-card">
+      <h3>6. Conversation Flow</h3>
+      <p>
+        The chatbot first captures the travel goal, then asks follow-up questions such as
+        budget, duration, and travel style. Based on those inputs, it generates a structured
+        itinerary and updates the plan as the user refines preferences.
+      </p>
+    </div>
+
+    <div class="artifact-card wide-card">
+      <h3>Example Interaction</h3>
+      <p><strong>User:</strong> Plan a 5-day road trip from Chicago to Nashville.</p>
+      <p>
+        <strong>TripForge:</strong> Generates route suggestions, daily stops, attractions,
+        and hotel options in a structured format.
+      </p>
+      <p><strong>User:</strong> Plan a 4-day air trip to Seattle with a moderate budget.</p>
+      <p>
+        <strong>TripForge:</strong> Provides flight travel notes, hotel suggestions,
+        and daily activities based on the given constraints.
+      </p>
+    </div>
+
+    <div class="artifact-card wide-card">
+      <h3>Tools Used</h3>
+      <ul>
+        <li>ChatGPT / GPT Builder</li>
+        <li>Prompt Engineering</li>
+        <li>RAG-style Knowledge Base</li>
+        <li>Design Tools for branding and logo creation</li>
+      </ul>
+    </div>
+
+    <div class="artifact-card wide-card">
+      <h3>Value</h3>
+      <p>
+        TripForge demonstrates how conversational AI, structured prompting, and guided
+        interactions can work together to create a travel assistant that feels practical,
+        personalized, and easy to use.
+      </p>
+      <p>
+        It reduces planning friction, keeps travel logic consistent, and creates a strong
+        foundation for future features such as live APIs, interactive maps, and deeper
+        personalization.
+      </p>
+    </div>
+
+    <div class="artifact-card wide-card reflection-card">
+      <h3>Reflection — What I Learned</h3>
+      <p class="reflection-intro">
+        Building TripForge taught me that a useful AI product is not just about generating
+        answers. It is about designing a system that understands the user’s goal, works
+        within clear boundaries, and produces responses that feel structured, realistic,
+        and trustworthy.
+      </p>
+
+      <div class="reflection-grid">
+        <div class="reflection-box">
+          <h4>Key Learnings</h4>
+          <ul>
+            <li>Clear constraints improve reliability and keep outputs more focused.</li>
+            <li>Structured prompting has a major impact on consistency and usefulness.</li>
+            <li>Clarifying questions lead to better personalization and better itineraries.</li>
+            <li>Trust matters more than sounding overly confident in travel planning.</li>
+            <li>Good conversational flow is as important as the final generated answer.</li>
+          </ul>
+        </div>
+
+        <div class="reflection-box">
+          <h4>Key Skills Developed</h4>
+          <ul>
+            <li><strong>Prompt engineering:</strong> designing instructions for structure and consistency.</li>
+            <li><strong>Conversation design:</strong> shaping the flow to gather the right user inputs.</li>
+            <li><strong>Constraint design:</strong> defining limits to reduce hallucinations and false claims.</li>
+            <li><strong>Product thinking:</strong> focusing on usability, trust, and user experience.</li>
+            <li><strong>AI reliability mindset:</strong> balancing creativity with accuracy and practical value.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="reflection-box full-width-box">
+        <h4>Reflection</h4>
+        <ul>
+          <li>This project showed me that even a simple chatbot becomes stronger when it is designed like a system, not treated like a single prompt.</li>
+          <li>I learned that useful outputs depend on how well the chatbot gathers context before generating results.</li>
+          <li>I also realized that setting boundaries improves user trust more than trying to answer everything.</li>
+          <li>Overall, TripForge helped me think more deeply about structure, usability, and trust in conversational AI products.</li>
+        </ul>
+      </div>
+
+      <blockquote class="reflection-quote">
+        “Building TripForge taught me that a strong AI product is not just about generating
+        responses. It is about guiding the user well, respecting constraints, and producing
+        answers that are useful enough to trust.”
+      </blockquote>
+    </div>
+
+    <div class="artifact-card wide-card">
+      <h3>Future Improvements</h3>
+      <p>
+        Future enhancements can include real-time travel APIs for flights, hotels, and weather,
+        interactive maps, stronger personalization, and mobile deployment to make the experience
+        more dynamic and practical.
+      </p>
+    </div>
+
+    <div class="artifact-btn-row center-btn">
+      <a class="know-more-btn primary-btn" href="https://chatgpt.com/g/g-69ac8a2b37f8819192c9693f2dcd6e5c-tripforge" target="_blank" rel="noopener noreferrer">
+        Explore TripForge
+      </a>
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  © 2026 Sagar S. Alande
+</footer>
+
+</body>
+</html>
