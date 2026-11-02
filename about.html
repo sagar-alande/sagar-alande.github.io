@@ -5,497 +5,244 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Me | Sagar S. Alande</title>
   <meta name="description" content="Background, work experience, skills, education, and certifications of Sagar S. Alande.">
+  <meta name="theme-color" content="#05070d">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <style>
-    #portfolio-sections {
-      font-family: Arial, Helvetica, sans-serif;
-      max-width: 1100px;
-      margin: auto;
-      padding: 40px 20px;
-      line-height: 1.6;
-      color: #333;
-      background: #ffffff;
-    }
-
-    .section-title {
-      font-size: 32px;
-      margin-bottom: 10px;
-      border-bottom: 3px solid #e5e5e5;
-      padding-bottom: 10px;
-    }
-
-    .section-intro {
-      color: #666;
-      margin-bottom: 30px;
-    }
-
-    /* About */
-    .about-card{
-      position:relative;
-      background:linear-gradient(135deg,#f8fafc,#eef4ff);
-      border-radius:20px;
-      padding:28px;
-      box-shadow:0 6px 18px rgba(0,0,0,0.06);
-      margin-bottom:40px;
-      overflow:hidden;
-    }
-    .about-content p{
-      margin:0 0 12px;
-      color:#374151;
-    }
-    .linkedin-btn{
-      display:inline-block;
-      margin-top:10px;
-      padding:10px 18px;
-      background:#0A66C2;
-      color:white;
-      border-radius:999px;
-      text-decoration:none;
-      font-weight:600;
-      transition:0.2s;
-    }
-    .linkedin-btn:hover{
-      background:#084c94;
-      transform:translateY(-2px);
-    }
-    .about-icon{
-      position:absolute;
-      right:18px;
-      bottom:10px;
-      font-size:60px;
-      opacity:0.12;
-    }
-
-    /* Experience */
-    .experience-grid {
-      display: grid;
-      gap: 22px;
-      margin-bottom: 40px;
-    }
-
-    .experience-card {
-      position: relative;
-      background: linear-gradient(135deg, #f8fafc, #eef4ff);
-      border-radius: 20px;
-      padding: 24px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-      overflow: hidden;
-    }
-
-    .experience-card h3 {
-      margin: 0 0 6px 0;
-      color: #111827;
-      font-size: 22px;
-    }
-
-    .experience-company {
-      font-size: 15px;
-      color: #4b5563;
-      font-weight: 600;
-      margin-bottom: 8px;
-    }
-
-    .experience-meta {
-      display: inline-block;
-      font-size: 13px;
-      background: #dbeafe;
-      color: #1d4ed8;
-      padding: 6px 12px;
-      border-radius: 999px;
-      margin-bottom: 14px;
-      font-weight: 700;
-    }
-
-    .experience-list {
-      margin: 0;
-      padding-left: 20px;
-      color: #374151;
-    }
-
-    .experience-list li {
-      margin-bottom: 8px;
-    }
-
-    .experience-icon {
-      position: absolute;
-      right: 18px;
-      bottom: 10px;
-      font-size: 48px;
-      opacity: 0.10;
-    }
-
-    /* Skills */
-    .skills-category {
-      background: linear-gradient(135deg, #f4f7ff, #eefaf6);
-      border-radius: 18px;
-      padding: 22px;
-      margin-bottom: 20px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.05);
-    }
-
-    .skills-category h3 {
-      margin: 0 0 16px;
-      color: #111827;
-      font-size: 20px;
-    }
-
-    .skill-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-    }
-
-    .skill-chip {
-      position: relative;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 12px 16px 12px 14px;
-      border-radius: 999px;
-      font-size: 14px;
-      font-weight: 600;
-      color: #1f2937;
-      background: #ffffff;
-      border: 1px solid #dbe4ff;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .skill-chip:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 16px rgba(0,0,0,0.10);
-    }
-
-    .skill-icon {
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 11px;
-      font-weight: bold;
-      color: white;
-      flex-shrink: 0;
-    }
-
-    .python { background: #3776ab; }
-    .sql { background: #2563eb; }
-    .plsql { background: #ea580c; }
-    .rlang { background: #7c3aed; }
-    .oracle { background: #dc2626; }
-    .postgres { background: #0f766e; }
-    .mysql { background: #0284c7; }
-    .tableau { background: #1d4ed8; }
-    .powerbi { background: #ca8a04; }
-    .splunk { background: #16a34a; }
-    .excel { background: #15803d; }
-    .ssis { background: #7c2d12; }
-    .informatica { background: #be123c; }
-    .jira { background: #1d4ed8; }
-    .git { background: #ef4444; }
-    .selenium { background: #65a30d; }
-    .postman { background: #f97316; }
-    .data { background: #0891b2; }
-
-    .skill-chip::after {
-      content: "";
-      position: absolute;
-      top: -5px;
-      right: -5px;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: #22c55e;
-      box-shadow: 0 0 0 3px white;
-    }
-
-    /* Education */
-    .edu-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
-      gap: 20px;
-    }
-
-    .edu-card {
-      position: relative;
-      background: linear-gradient(135deg, #f8fafc, #eef2ff);
-      border-radius: 18px;
-      padding: 24px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-      overflow: hidden;
-    }
-
-    .edu-card h4 {
-      margin: 0 0 8px 0;
-      font-size: 20px;
-      color: #111827;
-      padding-right: 90px;
-    }
-
-    .edu-card p {
-      margin: 0;
-      color: #4b5563;
-      font-size: 15px;
-    }
-
-    .edu-badge {
-      position: absolute;
-      top: 16px;
-      right: 16px;
-      background: #f59e0b;
-      color: white;
-      font-size: 12px;
-      font-weight: 700;
-      padding: 6px 10px;
-      border-radius: 999px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.12);
-    }
-
-    .edu-icon {
-      position: absolute;
-      bottom: 14px;
-      right: 18px;
-      font-size: 42px;
-      opacity: 0.12;
-    }
-
-    .cert-list {
-      list-style: none;
-      padding-left: 0;
-      margin: 0;
-    }
-
-    .cert-list li {
-      background: #ffffff;
-      border: 1px solid #e5e7eb;
-      border-radius: 12px;
-      padding: 12px 14px;
-      margin-bottom: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.04);
-    }
-
-    @media (max-width: 768px) {
-      .section-title {
-        font-size: 26px;
-      }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/theme.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+  <script>document.documentElement.classList.add('js');setTimeout(function(){document.body&&document.body.classList.add('is-ready')},1800);</script>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="scroll-progress" aria-hidden="true"></div>
+<div class="bg-aurora" aria-hidden="true"><span></span><span></span><span></span></div>
+<div class="bg-grid" aria-hidden="true"></div>
 
-<header class="site-header">
-  <div class="topbar">
-    <a class="brand" href="index.html">Sagar S Alande</a>
-    <nav class="nav">
-      <a href="index.html">Home</a>
-      <a href="insight.html">From Website to Insight</a>
-      <a href="artifacts.html">Artifacts</a>
-      <a href="about.html" class="active">About Me</a>
-    </nav>
-  </div>
-  <div class="hero hero-page">
-    <div class="hero-text">
-      <h1>About Me</h1>
-    </div>
-  </div>
+<header class="site-nav" data-nav>
+  <a class="brand" href="index.html" aria-label="Sagar S Alande, home"><span class="brand-mark">SA</span><span class="brand-name">Sagar S Alande</span></a>
+  <nav class="nav-links" id="nav-links" aria-label="Primary">
+    <a href="index.html">Home</a>
+    <a href="insight.html">From Website to Insight</a>
+    <a href="artifacts.html">Artifacts</a>
+    <a href="about.html" aria-current="page">About Me</a>
+  </nav>
+  <a class="nav-cta" href="https://www.linkedin.com/in/sagar9792/" target="_blank" rel="noopener noreferrer" data-magnetic>Let's connect ↗</a>
+  <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span></button>
 </header>
 
-<main id="portfolio-sections">
-
-  <!-- ABOUT ME -->
-  <h2 class="section-title">About Me</h2>
-
-  <div class="about-card">
-    <div class="about-content">
-      <p>
-        I am a data-driven professional with experience in data analytics, database
-        engineering, and financial technology systems. My work focuses on transforming
-        complex datasets into meaningful insights that support strategic decision-making
-        and operational efficiency.
-      </p>
-      <p>
-        With a background in computer science and ongoing studies in
-        <strong>Artificial Intelligence and Data Analytics</strong>, I specialize in
-        data modeling, analytics pipelines, machine learning applications,
-        and enterprise database optimization.
-      </p>
-      <p>
-        I enjoy building scalable systems, solving complex technical problems,
-        and using data to drive innovation in real-world business environments.
-      </p>
-      <a href="https://www.linkedin.com/in/sagar9792/" target="_blank" rel="noopener noreferrer" class="linkedin-btn">
-        Connect on LinkedIn
-      </a>
+<main id="main">
+  <!-- ============ ABOUT ============ -->
+  <section class="page-hero">
+    <div class="container about-hero">
+      <div class="portrait" data-reveal="zoom">
+        <div class="portrait-frame"><img src="assets/profile.jpg" alt="Sagar S. Alande" width="420" height="525"></div>
+      </div>
+      <div class="about-intro">
+        <p class="eyebrow" data-reveal>About Me</p>
+        <h1 data-split>Data-driven, <span class="grad-text">systems-minded.</span></h1>
+        <div data-reveal style="--d:.35s; margin-top:28px">
+          <p>I am a data-driven professional with experience in data analytics, database engineering, and financial technology systems. My work focuses on transforming complex datasets into meaningful insights that support strategic decision-making and operational efficiency.</p>
+          <p>With a background in computer science and ongoing studies in <strong>Artificial Intelligence and Data Analytics</strong>, I specialize in data modeling, analytics pipelines, machine learning applications, and enterprise database optimization.</p>
+          <p>I enjoy building scalable systems, solving complex technical problems, and using data to drive innovation in real-world business environments.</p>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="https://www.linkedin.com/in/sagar9792/" target="_blank" rel="noopener noreferrer" data-magnetic>Connect on LinkedIn <span class="arrow">↗</span></a>
+            <a class="btn btn-ghost" href="#experience" data-magnetic>Work experience <span class="arrow">↓</span></a>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="about-icon">👨‍💻</div>
-  </div>
+  </section>
 
-  <!-- EXPERIENCE -->
-  <h2 class="section-title">Work Experience</h2>
-  <p class="section-intro">
-    Experience in financial systems, data analytics, automation, reporting, and database optimization across enterprise environments.
-  </p>
+  <!-- ============ EXPERIENCE ============ -->
+  <section class="section" id="experience" style="padding-top:40px">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow" data-reveal>Career</p>
+        <h2 data-split>Work Experience</h2>
+        <p data-reveal>Experience in financial systems, data analytics, automation, reporting, and database optimization across enterprise environments.</p>
+      </div>
 
-  <div class="experience-grid">
+      <div class="xp-timeline">
+        <article class="ui-card spotlight xp-item" data-reveal>
+          <div class="xp-top">
+            <div><h3>Risk Data Management Analyst</h3><div class="xp-company">State Street, Contractor — Boston, United States</div></div>
+            <span class="xp-date">Sep 2024 – Sep 2025</span>
+          </div>
+          <ul class="xp-list">
+            <li>Designed and optimized Oracle PL/SQL procedures, queries, and packages for pledge calculations, collateral allocation, and margin monitoring.</li>
+            <li>Implemented workflows to generate pledge update messages for central custody systems.</li>
+            <li>Built new modules for agency loan allocation, pledge requirement calculations, and delta adjustments from scratch.</li>
+            <li>Created database migration, backup, and purging strategies using Oracle partitioning and partition exchange.</li>
+            <li>Monitored query performance and tuned bottlenecks to improve system utilization and efficiency.</li>
+            <li>Automated release processes through GitHub/RTC and authored technical documentation for developers, QA, and auditors.</li>
+          </ul>
+          <span class="xp-emoji" aria-hidden="true">💼</span>
+        </article>
 
-    <div class="experience-card">
-      <h3>Risk Data Management Analyst</h3>
-      <div class="experience-company">State Street, Contractor — Boston, United States</div>
-      <div class="experience-meta">Sep 2024 – Sep 2025</div>
-      <ul class="experience-list">
-        <li>Designed and optimized Oracle PL/SQL procedures, queries, and packages for pledge calculations, collateral allocation, and margin monitoring.</li>
-        <li>Implemented workflows to generate pledge update messages for central custody systems.</li>
-        <li>Built new modules for agency loan allocation, pledge requirement calculations, and delta adjustments from scratch.</li>
-        <li>Created database migration, backup, and purging strategies using Oracle partitioning and partition exchange.</li>
-        <li>Monitored query performance and tuned bottlenecks to improve system utilization and efficiency.</li>
-        <li>Automated release processes through GitHub/RTC and authored technical documentation for developers, QA, and auditors.</li>
-      </ul>
-      <div class="experience-icon">💼</div>
+        <article class="ui-card spotlight xp-item" data-reveal>
+          <div class="xp-top">
+            <div><h3>Trainee Analyst</h3><div class="xp-company">Vandoo LLC — Newark, United States</div></div>
+            <span class="xp-date">Oct 2023 – Sep 2024</span>
+          </div>
+          <ul class="xp-list">
+            <li>Designed interactive Tableau dashboards to present KPIs, trading trends, and portfolio analysis.</li>
+            <li>Optimized SSIS packages to improve performance, scalability, and processing time.</li>
+            <li>Automated data ingestion from diverse sources using scheduled jobs and workflow automation.</li>
+            <li>Collaborated on schema optimization, indexing strategies, and partitioning for scalable processing.</li>
+            <li>Used Python scripts for data cleaning, preprocessing, and exploratory data analysis on historic datasets.</li>
+          </ul>
+          <span class="xp-emoji" aria-hidden="true">📊</span>
+        </article>
+
+        <article class="ui-card spotlight xp-item" data-reveal>
+          <div class="xp-top">
+            <div><h3>Data Analyst and Automation Engineer</h3><div class="xp-company">Volunteer — New Jersey, United States</div></div>
+            <span class="xp-date">Apr 2023 – Oct 2023</span>
+          </div>
+          <ul class="xp-list">
+            <li>Collected data from databases, APIs, and third-party tools using Python, BeautifulSoup, and Selenium.</li>
+            <li>Built SQL-based data pipelines that reduced processing time and improved data availability.</li>
+            <li>Created web scraping and preprocessing scripts to improve data quality and reduce errors.</li>
+            <li>Designed a Slackbot and automated JIRA update retrieval with email alerts using Google Apps Script.</li>
+            <li>Worked with stakeholders to refine Tableau dashboards and improve adoption.</li>
+          </ul>
+          <span class="xp-emoji" aria-hidden="true">⚙️</span>
+        </article>
+
+        <article class="ui-card spotlight xp-item" data-reveal>
+          <div class="xp-top">
+            <div><h3>Senior Data Analyst (SSE)</h3><div class="xp-company">Accenture Solutions Pvt. Ltd. — Pune, India</div></div>
+            <span class="xp-date">Oct 2015 – Dec 2020</span>
+          </div>
+          <ul class="xp-list">
+            <li>Designed and built microservices and REST API orchestration to support OLAP infrastructure for asset and order management.</li>
+            <li>Led CRM data integration using Oracle PL/SQL to ensure comprehensive and current customer data.</li>
+            <li>Optimized Informatica SQL queries, reducing extraction time by 30% across diverse sources.</li>
+            <li>Used Python within Informatica for advanced transformations, improving precision by 20%.</li>
+            <li>Developed churn prediction models using Splunk ML Toolkit and created system monitoring dashboards.</li>
+            <li>Managed a geographically diverse team of 6 developers and ensured timely delivery of high-quality solutions.</li>
+          </ul>
+          <span class="xp-emoji" aria-hidden="true">🚀</span>
+        </article>
+      </div>
     </div>
+  </section>
 
-    <div class="experience-card">
-      <h3>Trainee Analyst</h3>
-      <div class="experience-company">Vandoo LLC — Newark, United States</div>
-      <div class="experience-meta">Oct 2023 – Sep 2024</div>
-      <ul class="experience-list">
-        <li>Designed interactive Tableau dashboards to present KPIs, trading trends, and portfolio analysis.</li>
-        <li>Optimized SSIS packages to improve performance, scalability, and processing time.</li>
-        <li>Automated data ingestion from diverse sources using scheduled jobs and workflow automation.</li>
-        <li>Collaborated on schema optimization, indexing strategies, and partitioning for scalable processing.</li>
-        <li>Used Python scripts for data cleaning, preprocessing, and exploratory data analysis on historic datasets.</li>
-      </ul>
-      <div class="experience-icon">📊</div>
+  <!-- ============ SKILLS ============ -->
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow" data-reveal>Toolkit</p>
+        <h2 data-split>Skills &amp; Expertise</h2>
+        <p data-reveal>Technical skills across analytics, databases, reporting, automation, and data engineering.</p>
+      </div>
+      <div class="skills-grid">
+        <div class="ui-card spotlight" data-reveal>
+          <h3>Programming Languages</h3>
+          <div class="skill-tags">
+            <span class="skill-chip"><span class="skill-icon python">Py</span>Python</span>
+            <span class="skill-chip"><span class="skill-icon sql">SQL</span>SQL</span>
+            <span class="skill-chip"><span class="skill-icon plsql">PL</span>PL/SQL</span>
+            <span class="skill-chip"><span class="skill-icon rlang">R</span>R</span>
+          </div>
+        </div>
+        <div class="ui-card spotlight" data-reveal>
+          <h3>Database Technologies</h3>
+          <div class="skill-tags">
+            <span class="skill-chip"><span class="skill-icon oracle">Or</span>Oracle</span>
+            <span class="skill-chip"><span class="skill-icon postgres">Pg</span>PostgreSQL</span>
+            <span class="skill-chip"><span class="skill-icon mysql">My</span>MySQL</span>
+            <span class="skill-chip"><span class="skill-icon sql">SS</span>SQL Server</span>
+          </div>
+        </div>
+        <div class="ui-card spotlight" data-reveal>
+          <h3>Visualization &amp; Analytics</h3>
+          <div class="skill-tags">
+            <span class="skill-chip"><span class="skill-icon tableau">Tb</span>Tableau</span>
+            <span class="skill-chip"><span class="skill-icon powerbi">PB</span>Power BI</span>
+            <span class="skill-chip"><span class="skill-icon splunk">Sp</span>Splunk</span>
+            <span class="skill-chip"><span class="skill-icon excel">Ex</span>Excel</span>
+            <span class="skill-chip"><span class="skill-icon data">DM</span>Data Modeling</span>
+            <span class="skill-chip"><span class="skill-icon data">DC</span>Data Cleaning</span>
+            <span class="skill-chip"><span class="skill-icon data">DW</span>Data Wrangling</span>
+            <span class="skill-chip"><span class="skill-icon data">CL</span>Clustering</span>
+            <span class="skill-chip"><span class="skill-icon data">MN</span>Data Mining</span>
+          </div>
+        </div>
+        <div class="ui-card spotlight" data-reveal>
+          <h3>Tools &amp; Platforms</h3>
+          <div class="skill-tags">
+            <span class="skill-chip"><span class="skill-icon ssis">SI</span>SSIS</span>
+            <span class="skill-chip"><span class="skill-icon informatica">In</span>Informatica</span>
+            <span class="skill-chip"><span class="skill-icon selenium">Se</span>Selenium</span>
+            <span class="skill-chip"><span class="skill-icon jira">Ji</span>JIRA</span>
+            <span class="skill-chip"><span class="skill-icon git">Gt</span>Git</span>
+            <span class="skill-chip"><span class="skill-icon postman">Pm</span>Postman</span>
+          </div>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <div class="experience-card">
-      <h3>Data Analyst and Automation Engineer</h3>
-      <div class="experience-company">Volunteer — New Jersey, United States</div>
-      <div class="experience-meta">Apr 2023 – Oct 2023</div>
-      <ul class="experience-list">
-        <li>Collected data from databases, APIs, and third-party tools using Python, BeautifulSoup, and Selenium.</li>
-        <li>Built SQL-based data pipelines that reduced processing time and improved data availability.</li>
-        <li>Created web scraping and preprocessing scripts to improve data quality and reduce errors.</li>
-        <li>Designed a Slackbot and automated JIRA update retrieval with email alerts using Google Apps Script.</li>
-        <li>Worked with stakeholders to refine Tableau dashboards and improve adoption.</li>
-      </ul>
-      <div class="experience-icon">⚙️</div>
+  <!-- ============ EDUCATION ============ -->
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow" data-reveal>Learning</p>
+        <h2 data-split>Education and Certifications</h2>
+        <p data-reveal>Academic background and certifications aligned with analytics, AI, and cloud technologies.</p>
+      </div>
+      <div class="edu-grid">
+        <article class="ui-card spotlight edu-card" data-reveal data-tilt>
+          <span class="edu-badge">IN PROGRESS</span>
+          <h3>M.S. — Artificial Intelligence &amp; Data Analytics</h3>
+          <p>Indiana Wesleyan University</p>
+          <span class="edu-emoji" aria-hidden="true">🎓</span>
+        </article>
+        <article class="ui-card spotlight edu-card" data-reveal data-tilt>
+          <h3>Master of Science</h3>
+          <p>New Jersey Institute of Technology</p>
+          <span class="edu-emoji" aria-hidden="true">📘</span>
+        </article>
+        <article class="ui-card spotlight edu-card" data-reveal data-tilt>
+          <h3>Bachelor of Engineering</h3>
+          <p>Electronics Engineering — University of Mumbai</p>
+          <span class="edu-emoji" aria-hidden="true">🏛️</span>
+        </article>
+        <article class="ui-card spotlight edu-card" data-reveal data-tilt>
+          <h3>Certifications</h3>
+          <ul class="cert-list">
+            <li>Oracle Cloud Infrastructure Foundations Associate</li>
+            <li>Oracle Autonomous Database Cloud Certification</li>
+          </ul>
+          <span class="edu-emoji" aria-hidden="true">☁️</span>
+        </article>
+      </div>
     </div>
-
-    <div class="experience-card">
-      <h3>Senior Data Analyst (SSE)</h3>
-      <div class="experience-company">Accenture Solutions Pvt. Ltd. — Pune, India</div>
-      <div class="experience-meta">Oct 2015 – Dec 2020</div>
-      <ul class="experience-list">
-        <li>Designed and built microservices and REST API orchestration to support OLAP infrastructure for asset and order management.</li>
-        <li>Led CRM data integration using Oracle PL/SQL to ensure comprehensive and current customer data.</li>
-        <li>Optimized Informatica SQL queries, reducing extraction time by 30% across diverse sources.</li>
-        <li>Used Python within Informatica for advanced transformations, improving precision by 20%.</li>
-        <li>Developed churn prediction models using Splunk ML Toolkit and created system monitoring dashboards.</li>
-        <li>Managed a geographically diverse team of 6 developers and ensured timely delivery of high-quality solutions.</li>
-      </ul>
-      <div class="experience-icon">🚀</div>
-    </div>
-
-  </div>
-
-  <!-- SKILLS -->
-  <h2 class="section-title">Skills &amp; Expertise</h2>
-  <p class="section-intro">
-    Technical skills across analytics, databases, reporting, automation, and data engineering.
-  </p>
-
-  <div class="skills-category">
-    <h3>Programming Languages</h3>
-    <div class="skill-tags">
-      <div class="skill-chip"><span class="skill-icon python">Py</span>Python</div>
-      <div class="skill-chip"><span class="skill-icon sql">SQL</span>SQL</div>
-      <div class="skill-chip"><span class="skill-icon plsql">PL</span>PL/SQL</div>
-      <div class="skill-chip"><span class="skill-icon rlang">R</span>R</div>
-    </div>
-  </div>
-
-  <div class="skills-category">
-    <h3>Database Technologies</h3>
-    <div class="skill-tags">
-      <div class="skill-chip"><span class="skill-icon oracle">Or</span>Oracle</div>
-      <div class="skill-chip"><span class="skill-icon postgres">Pg</span>PostgreSQL</div>
-      <div class="skill-chip"><span class="skill-icon mysql">My</span>MySQL</div>
-      <div class="skill-chip"><span class="skill-icon sql">SS</span>SQL Server</div>
-    </div>
-  </div>
-
-  <div class="skills-category">
-    <h3>Visualization &amp; Analytics</h3>
-    <div class="skill-tags">
-      <div class="skill-chip"><span class="skill-icon tableau">Tb</span>Tableau</div>
-      <div class="skill-chip"><span class="skill-icon powerbi">PB</span>Power BI</div>
-      <div class="skill-chip"><span class="skill-icon splunk">Sp</span>Splunk</div>
-      <div class="skill-chip"><span class="skill-icon excel">Ex</span>Excel</div>
-      <div class="skill-chip"><span class="skill-icon data">DM</span>Data Modeling</div>
-      <div class="skill-chip"><span class="skill-icon data">DC</span>Data Cleaning</div>
-      <div class="skill-chip"><span class="skill-icon data">DW</span>Data Wrangling</div>
-      <div class="skill-chip"><span class="skill-icon data">CL</span>Clustering</div>
-      <div class="skill-chip"><span class="skill-icon data">MN</span>Data Mining</div>
-    </div>
-  </div>
-
-  <div class="skills-category">
-    <h3>Tools &amp; Platforms</h3>
-    <div class="skill-tags">
-      <div class="skill-chip"><span class="skill-icon ssis">SI</span>SSIS</div>
-      <div class="skill-chip"><span class="skill-icon informatica">In</span>Informatica</div>
-      <div class="skill-chip"><span class="skill-icon selenium">Se</span>Selenium</div>
-      <div class="skill-chip"><span class="skill-icon jira">Ji</span>JIRA</div>
-      <div class="skill-chip"><span class="skill-icon git">Gt</span>Git</div>
-      <div class="skill-chip"><span class="skill-icon postman">Pm</span>Postman</div>
-    </div>
-  </div>
-
-  <!-- EDUCATION -->
-  <h2 class="section-title">Education and Certifications</h2>
-  <p class="section-intro">
-    Academic background and certifications aligned with analytics, AI, and cloud technologies.
-  </p>
-
-  <div class="edu-grid">
-    <div class="edu-card">
-      <span class="edu-badge">In Progress</span>
-      <h4>M.S. — Artificial Intelligence &amp; Data Analytics</h4>
-      <p>Indiana Wesleyan University</p>
-      <div class="edu-icon">🎓</div>
-    </div>
-
-    <div class="edu-card">
-      <h4>Master of Science</h4>
-      <p>New Jersey Institute of Technology</p>
-      <div class="edu-icon">📘</div>
-    </div>
-
-    <div class="edu-card">
-      <h4>Bachelor of Engineering</h4>
-      <p>Electronics Engineering — University of Mumbai</p>
-      <div class="edu-icon">🏛️</div>
-    </div>
-
-    <div class="edu-card">
-      <h4>Certifications</h4>
-      <ul class="cert-list">
-        <li>Oracle Cloud Infrastructure Foundations Associate</li>
-        <li>Oracle Autonomous Database Cloud Certification</li>
-      </ul>
-      <div class="edu-icon">☁️</div>
-    </div>
-  </div>
-
+  </section>
 </main>
 
 <footer class="site-footer">
-  © 2026 Sagar S. Alande
+  <div class="container">
+    <div class="footer-cta">
+      <p class="eyebrow" data-reveal>Get in touch</p>
+      <h2 data-split>Turning complex data into <span class="grad-text">decisions.</span></h2>
+      <a class="btn btn-primary" href="https://www.linkedin.com/in/sagar9792/" target="_blank" rel="noopener noreferrer" data-magnetic data-reveal>Connect on LinkedIn <span class="arrow">↗</span></a>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Sagar S. Alande</span>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="index.html">Home</a><a href="insight.html">From Website to Insight</a><a href="artifacts.html">Artifacts</a><a href="about.html">About Me</a>
+      </nav>
+      <button class="to-top" type="button" data-top>Back to top ↑</button>
+    </div>
+  </div>
 </footer>
 
+<div class="cursor-dot" aria-hidden="true"></div>
+<div class="cursor-ring" aria-hidden="true"></div>
+<div class="page-curtain" aria-hidden="true"></div>
+<script src="assets/js/motion.js"></script>
 </body>
 </html>

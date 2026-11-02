@@ -1,0 +1,281 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#0F1E33"><title>LLM Training Infographic | Sagar S. Alande</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..900&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0F1E33;--ink:#0F172A;--body:#334155;--muted:#64748B;--line:#DCE3EC;--bg:#F4F6F9;
+--teal:#0F766E;--tealT:#E6F4F2;--blue:#1D4ED8;--blueT:#EAF0FE;--purple:#7E22CE;--purpleT:#F4ECFC;--orange:#C2410C;--orangeT:#FFF0E6;
+--data:#0F766E;--comp:#1D4ED8;--energy:#B45309;--time:#BE123C;--dataT:#E6F4F2;--compT:#EAF0FE;--energyT:#FEF3E2;--timeT:#FDECEF}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:#0F1E33}body{background:#0F1E33;font-family:Inter,Arial,sans-serif;color:var(--ink)}.igx-page{width:2560px;background:#fff;margin:0 auto;transform-origin:top left}.ig-bar{position:sticky;top:0;z-index:10;display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;padding:12px 16px;background:rgba(15,30,51,.94);backdrop-filter:blur(8px);border-bottom:1px solid #2C4366;font-size:14px}.ig-bar a{color:#fff;text-decoration:none;padding:8px 14px;border-radius:999px;border:1px solid #2C4366;background:#1A2C47;font-weight:600}.ig-bar a:hover{background:#24395A}.ig-bar span{color:#C9D6E8}.igx-fit{overflow:hidden}
+.disp{font-family:"Inter Display",Inter,Arial,sans-serif}
+header{background:var(--navy);color:#fff;padding:54px 80px 50px;display:grid;grid-template-columns:1fr 560px;gap:60px;align-items:center}
+.kick{font-size:22px;letter-spacing:.18em;font-weight:700;color:#8DB8FF}
+h1{font-size:84px;line-height:1.02;font-weight:800;margin:16px 0 18px;letter-spacing:-.01em}
+.sub{font-size:30px;line-height:1.4;color:#C9D6E8;max-width:1500px}
+.scale{background:#1A2C47;border:1px solid #2C4366;border-radius:22px;padding:30px 34px}
+.scale .lbl{font-size:18px;letter-spacing:.14em;font-weight:700;color:#F4A261}
+.scale .big{font-size:64px;font-weight:800;margin:6px 0 2px}
+.scale p{font-size:22px;line-height:1.45;color:#C9D6E8}
+section{padding:46px 80px 0}
+.sh{display:flex;align-items:baseline;gap:22px;margin-bottom:22px}
+.sh h2{font-size:34px;letter-spacing:.08em;font-weight:800;color:var(--navy)}
+.sh span{font-size:23px;color:var(--muted)}
+/* pipeline */
+.phases{display:grid;grid-template-columns:3fr 1fr 2fr 2fr;gap:18px;margin-bottom:14px}
+.ph{border-radius:12px;padding:10px 18px;font-size:19px;font-weight:800;letter-spacing:.12em;color:#fff;text-align:center}
+.steps{display:grid;grid-template-columns:repeat(8,1fr);gap:18px;position:relative}
+.step{background:#fff;border:2px solid var(--line);border-radius:20px;padding:22px 20px 18px;position:relative;display:flex;flex-direction:column}
+.step:not(:last-child)::after{content:"";position:absolute;right:-17px;top:72px;width:0;height:0;border-left:14px solid #94A3B8;border-top:11px solid transparent;border-bottom:11px solid transparent;z-index:2}
+.stop{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.num{width:44px;height:44px;border-radius:50%;color:#fff;font-weight:800;font-size:22px;display:flex;align-items:center;justify-content:center;flex:none}
+.ic{width:52px;height:52px;margin-left:auto}
+.step h3{font-size:28px;line-height:1.15;font-weight:800;margin-bottom:8px}
+.step p{font-size:22px;line-height:1.4;color:var(--body)}
+.ex{margin-top:auto;padding-top:12px}
+.ex div{border-radius:10px;padding:10px 12px;font-size:19px;line-height:1.38;color:var(--ink)}
+.ex b{font-size:13px;letter-spacing:.12em;display:block;margin-bottom:3px}
+.chips{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap}
+.chip{font-size:15px;font-weight:700;padding:4px 9px;border-radius:999px;color:#fff}
+.c-d{background:var(--data)}.c-c{background:var(--comp)}.c-e{background:var(--energy)}.c-t{background:var(--time)}
+.note{margin-top:16px;font-size:22px;color:var(--muted)}
+.note b{color:var(--ink)}
+/* resources */
+.res{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.rc{border-radius:22px;padding:26px 28px;border:2px solid}
+.rtop{display:flex;align-items:center;gap:16px}
+.rtop svg{width:58px;height:58px;flex:none}
+.rtop h3{font-size:30px;font-weight:800}
+.rtop small{display:block;font-size:17px;letter-spacing:.1em;font-weight:700;opacity:.8}
+.rstat{font-size:58px;font-weight:800;margin:14px 0 0;line-height:1}
+.rstat-l{font-size:21px;color:var(--body);margin:6px 0 14px}
+.bars{display:flex;flex-direction:column;gap:9px;margin:6px 0 16px}
+.bar{display:grid;grid-template-columns:190px 1fr 100px;align-items:center;gap:10px;font-size:19px}
+.bar .tr{height:18px;background:#fff;border-radius:6px;overflow:hidden;border:1px solid rgba(0,0,0,.06)}
+.bar .fl{height:100%;border-radius:6px}
+.bar .v{font-weight:800;text-align:right}
+.why{border-top:1px solid rgba(15,23,42,.12);padding-top:12px;font-size:21px;line-height:1.45;color:var(--body)}
+.why b{color:var(--ink)}
+/* models */
+.models{display:grid;grid-template-columns:repeat(7,1fr);gap:16px}
+.mc{border:2px solid var(--line);border-radius:18px;overflow:hidden;background:#fff;display:flex;flex-direction:column}
+.mh{padding:16px 18px;color:#fff}
+.mh h3{font-size:27px;font-weight:800;line-height:1.1}
+.mh span{font-size:17px;opacity:.85}
+.tag{display:inline-block;margin-top:8px;font-size:13px;font-weight:800;letter-spacing:.1em;padding:3px 9px;border-radius:999px;background:rgba(255,255,255,.2)}
+.mb{padding:12px 18px 16px;display:flex;flex-direction:column;gap:8px}
+.row{font-size:20px;line-height:1.35;display:grid;grid-template-columns:26px 1fr;gap:8px;align-items:start}
+.row i{width:22px;height:22px;border-radius:6px;margin-top:2px;font-style:normal;color:#fff;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center}
+.est{font-style:italic;color:var(--muted)}
+.mfoot{margin-top:auto;padding:10px 18px 14px;font-size:18px;line-height:1.38;color:var(--body);background:var(--bg)}
+/* bottom */
+.bottom{display:grid;grid-template-columns:1.55fr 1fr;gap:26px}
+.ins{background:var(--navy);border-radius:22px;padding:28px 32px;color:#fff}
+.ins h3{font-size:24px;letter-spacing:.12em;color:#8DB8FF;margin-bottom:16px}
+.ig{display:grid;grid-template-columns:1fr 1fr;gap:18px 30px}
+.ii{display:grid;grid-template-columns:46px 1fr;gap:14px}
+.ii .n{width:42px;height:42px;border-radius:50%;background:#F4A261;color:var(--navy);font-weight:800;font-size:20px;display:flex;align-items:center;justify-content:center}
+.ii p{font-size:22px;line-height:1.45;color:#C9D6E8}
+.ii b{color:#fff}
+.legend{border:2px solid var(--line);border-radius:22px;padding:26px 30px;background:var(--bg)}
+.legend h3{font-size:24px;letter-spacing:.12em;color:var(--navy);margin-bottom:14px}
+.legend p{font-size:22px;line-height:1.48;color:var(--body);margin-bottom:12px}
+.lg{display:flex;gap:16px;flex-wrap:wrap;margin-top:6px}
+.lg span{display:inline-flex;align-items:center;gap:8px;font-size:18px;font-weight:600}
+footer{margin-top:40px;background:var(--bg);border-top:1px solid var(--line);padding:22px 80px 26px;font-size:16px;line-height:1.5;color:var(--muted)}
+footer b{color:var(--ink)}
+</style></head><body>
+<nav class="ig-bar" aria-label="Infographic">
+ <a href="llm-training.html">&larr; Back to the deep dive</a>
+ <span>Pinch or zoom to read details</span>
+ <a href="artifacts.html">All artifacts</a>
+</nav>
+<div class="igx-fit"><div class="igx-page">
+<header>
+ <div>
+  <div class="kick">AIML-501 · WEEK 3 · VISUAL GUIDE · SAGAR ALANDE</div>
+  <h1 class="disp">HOW A LARGE LANGUAGE MODEL IS TRAINED</h1>
+  <div class="sub">From raw text to a chatbot people can use, and the data, computing power, energy, and time each step consumes.</div>
+ </div>
+ <div class="scale">
+  <div class="lbl">SCALE CHECK</div>
+  <div class="big disp">16,384 GPUs</div>
+  <p>Meta trained Llama 3.1 405B on 16,384 H100 GPUs working together on 15.6 trillion tokens of text.</p>
+ </div>
+</header>
+
+<section>
+ <div class="sh"><h2>THE TRAINING PIPELINE</h2><span>Eight steps from data collection to deployment. Colored tags show which resources each step uses most.</span></div>
+ <div class="phases">
+  <div class="ph" style="background:var(--teal)">PREPARE THE DATA</div>
+  <div class="ph" style="background:var(--blue)">PRETRAIN</div>
+  <div class="ph" style="background:var(--purple)">ALIGN</div>
+  <div class="ph" style="background:var(--orange)">TEST AND RELEASE</div>
+ </div>
+ <div class="steps">
+  <div class="step"><div class="stop"><div class="num" style="background:var(--teal)">1</div>
+   <svg class="ic" viewBox="0 0 64 64" fill="none" stroke="#0F766E" stroke-width="4"><ellipse cx="32" cy="14" rx="20" ry="7"/><path d="M12 14v36c0 4 9 7 20 7s20-3 20-7V14M12 32c0 4 9 7 20 7s20-3 20-7"/></svg></div>
+   <h3>Collect data</h3><p>Gather text and code from the web, books, partners, and people.</p>
+   <div class="ex"><div style="background:var(--tealT)"><b style="color:var(--teal)">EXAMPLE</b>GPT-3 used web pages, books, and Wikipedia.</div></div>
+   <div class="chips"><span class="chip c-d">DATA</span></div></div>
+  <div class="step"><div class="stop"><div class="num" style="background:var(--teal)">2</div>
+   <svg class="ic" viewBox="0 0 64 64" fill="none" stroke="#0F766E" stroke-width="4" stroke-linejoin="round"><path d="M8 10h48L38 34v18l-12 6V34z"/></svg></div>
+   <h3>Clean and filter</h3><p>Remove duplicates, spam, hate speech, and personal data.</p>
+   <div class="ex"><div style="background:var(--tealT)"><b style="color:var(--teal)">EXAMPLE</b>GPT-3's web text shrank from 45 TB to 570 GB.</div></div>
+   <div class="chips"><span class="chip c-d">DATA</span><span class="chip c-c">COMPUTE</span></div></div>
+  <div class="step"><div class="stop"><div class="num" style="background:var(--teal)">3</div>
+   <svg class="ic" viewBox="0 0 64 64" fill="none" stroke="#0F766E" stroke-width="4"><rect x="6" y="20" width="14" height="24" rx="4"/><rect x="25" y="20" width="14" height="24" rx="4"/><rect x="44" y="20" width="14" height="24" rx="4"/></svg></div>
+   <h3>Tokenize</h3><p>Split text into tokens, small word pieces stored as numbers.</p>
+   <div class="ex"><div style="background:var(--tealT)"><b style="color:var(--teal)">EXAMPLE</b>Llama 3.1 read 15.6 trillion tokens.</div></div>
+   <div class="chips"><span class="chip c-d">DATA</span></div></div>
+  <div class="step" style="border-color:var(--blue);background:#FBFCFF"><div class="stop"><div class="num" style="background:var(--blue)">4</div>
+   <svg class="ic" viewBox="0 0 64 64" fill="none" stroke="#1D4ED8" stroke-width="4"><rect x="14" y="14" width="36" height="36" rx="5"/><rect x="24" y="24" width="16" height="16" rx="2" fill="#1D4ED8"/><path d="M22 6v8M32 6v8M42 6v8M22 50v8M32 50v8M42 50v8M6 22h8M6 32h8M6 42h8M50 22h8M50 32h8M50 42h8"/></svg></div>
+   <h3>Pretrain</h3><p>The model predicts the next token and fixes its weights, for weeks on thousands of GPUs.</p>
+   <div class="ex"><div style="background:var(--blueT)"><b style="color:var(--blue)">EXAMPLE</b>About 96% of DeepSeek-V3's GPU hours.</div></div>
+   <div class="chips"><span class="chip c-d">DATA</span><span class="chip c-c">COMPUTE</span><span class="chip c-e">ENERGY</span><span class="chip c-t">TIME</span></div></div>
+  <div class="step"><div class="stop"><div class="num" style="background:var(--purple)">5</div>
+   <svg class="ic" viewBox="0 0 64 64" fill="none" stroke="#7E22CE" stroke-width="4" stroke-linejoin="round"><path d="M10 12h44v30H30l-12 10V42h-8z"/><path d="M20 24h24M20 32h16"/></svg></div>
+   <h3>Fine-tune on examples</h3><p>Train on instructions paired with good answers.</p>
+   <div class="ex"><div style="background:var(--purpleT)"><b style="color:var(--purple)">EXAMPLE</b>Llama 2 used over 1M human-written examples.</div></div>
+   <div class="chips"><span class="chip c-d">DATA</span><span class="chip c-c">COMPUTE</span></div></div>
+  <div class="step"><div class="stop"><div class="num" style="background:var(--purple)">6</div>
+   <svg class="ic" viewBox="0 0 64 64" fill="none" stroke="#7E22CE" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M32 6l20 8v16c0 14-9 22-20 28C21 52 12 44 12 30V14z"/><path d="M23 31l7 7 12-14"/></svg></div>
+   <h3>Align with feedback</h3><p>People or AI rank answers so the model prefers helpful, safe ones.</p>
+   <div class="ex"><div style="background:var(--purpleT)"><b style="color:var(--purple)">EXAMPLE</b>Claude follows written principles, called Constitutional AI.</div></div>
+   <div class="chips"><span class="chip c-d">DATA</span><span class="chip c-c">COMPUTE</span><span class="chip c-t">TIME</span></div></div>
+  <div class="step"><div class="stop"><div class="num" style="background:var(--orange)">7</div>
+   <svg class="ic" viewBox="0 0 64 64" fill="none" stroke="#C2410C" stroke-width="4" stroke-linecap="round"><circle cx="27" cy="27" r="17"/><path d="M40 40l16 16M19 27l6 6 10-11"/></svg></div>
+   <h3>Evaluate and red-team</h3><p>Test on benchmarks and try to break it before release.</p>
+   <div class="ex"><div style="background:var(--orangeT)"><b style="color:var(--orange)">EXAMPLE</b>MMLU tests knowledge in 57 subjects.</div></div>
+   <div class="chips"><span class="chip c-c">COMPUTE</span><span class="chip c-t">TIME</span></div></div>
+  <div class="step"><div class="stop"><div class="num" style="background:var(--orange)">8</div>
+   <svg class="ic" viewBox="0 0 64 64" fill="none" stroke="#C2410C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M32 6c10 6 14 18 12 30H20C18 24 22 12 32 6z"/><circle cx="32" cy="22" r="5"/><path d="M20 36l-8 10h10M44 36l8 10H42M26 46l6 12 6-12"/></svg></div>
+   <h3>Deploy and serve</h3><p>Release it in apps and APIs, where every answer runs on GPUs again.</p>
+   <div class="ex"><div style="background:var(--orangeT)"><b style="color:var(--orange)">EXAMPLE</b>Claude runs on claude.ai, the API, Bedrock, and Vertex AI.</div></div>
+   <div class="chips"><span class="chip c-c">COMPUTE</span><span class="chip c-e">ENERGY</span></div></div>
+ </div>
+ <div class="note"><b>The core idea.</b> The model learns to produce a "reasonable continuation" of text, one token at a time. Early ChatGPT's 175-billion-weight network learned from a few hundred billion words, and human feedback made it sound more human (Wolfram, 2023).</div>
+</section>
+
+<section>
+ <div class="sh"><h2>THE FOUR RESOURCES</h2><span>What each one is, how fast it has grown, and why it matters for performance and cost.</span></div>
+ <div class="res">
+  <div class="rc" style="border-color:var(--data);background:var(--dataT)">
+   <div class="rtop"><svg viewBox="0 0 64 64" fill="none" stroke="#0F766E" stroke-width="4"><ellipse cx="32" cy="14" rx="20" ry="7"/><path d="M12 14v36c0 4 9 7 20 7s20-3 20-7V14M12 32c0 4 9 7 20 7s20-3 20-7"/></svg><div><small style="color:var(--data)">RESOURCE 1</small><h3>Datasets</h3></div></div>
+   <div class="rstat disp" style="color:var(--data)">52×</div><div class="rstat-l">more training tokens in four years, from GPT-3 to Llama 3.1</div>
+   <div class="bars">
+    <div class="bar"><span>GPT-3 · 2020</span><div class="tr"><div class="fl" style="width:2%;background:var(--data)"></div></div><span class="v">0.3T</span></div>
+    <div class="bar"><span>Llama 2 · 2023</span><div class="tr"><div class="fl" style="width:12.8%;background:var(--data)"></div></div><span class="v">2T</span></div>
+    <div class="bar"><span>DeepSeek-V3 · 2024</span><div class="tr"><div class="fl" style="width:94.9%;background:var(--data)"></div></div><span class="v">14.8T</span></div>
+    <div class="bar"><span>Llama 3.1 · 2024</span><div class="tr"><div class="fl" style="width:100%;background:var(--data)"></div></div><span class="v">15.6T</span></div>
+   </div>
+   <div class="why"><b>Why it matters.</b> Quantity, quality, diversity, and filtering, together with training methods, shape what a model learns. Costs come from licensing and human labeling.</div>
+  </div>
+  <div class="rc" style="border-color:var(--comp);background:var(--compT)">
+   <div class="rtop"><svg viewBox="0 0 64 64" fill="none" stroke="#1D4ED8" stroke-width="4"><rect x="14" y="14" width="36" height="36" rx="5"/><rect x="24" y="24" width="16" height="16" rx="2" fill="#1D4ED8"/><path d="M22 6v8M32 6v8M42 6v8M22 50v8M32 50v8M42 50v8M6 22h8M6 32h8M6 42h8M50 22h8M50 32h8M50 42h8"/></svg><div><small style="color:var(--comp)">RESOURCE 2</small><h3>Computing power</h3></div></div>
+   <div class="rstat disp" style="color:var(--comp)">30.84M</div><div class="rstat-l">GPU hours to train Llama 3.1 405B</div>
+   <div class="bars">
+    <div class="bar"><span>BLOOM</span><div class="tr"><div class="fl" style="width:3.5%;background:var(--comp)"></div></div><span class="v">1.08M</span></div>
+    <div class="bar"><span>DeepSeek-V3</span><div class="tr"><div class="fl" style="width:9%;background:var(--comp)"></div></div><span class="v">2.79M</span></div>
+    <div class="bar"><span>Llama 2 (all sizes)</span><div class="tr"><div class="fl" style="width:10.7%;background:var(--comp)"></div></div><span class="v">3.31M</span></div>
+    <div class="bar"><span>Llama 3.1 405B</span><div class="tr"><div class="fl" style="width:100%;background:var(--comp)"></div></div><span class="v">30.84M</span></div>
+   </div>
+   <div class="why"><b>Why it matters.</b> Compute limits model size and data read, and it is the largest cost. At $2 per GPU hour, DeepSeek-V3's final run cost $5.6M.</div>
+  </div>
+  <div class="rc" style="border-color:var(--energy);background:var(--energyT)">
+   <div class="rtop"><svg viewBox="0 0 64 64" fill="#B45309"><path d="M36 4L12 36h16l-4 24 26-34H34z"/></svg><div><small style="color:var(--energy)">RESOURCE 3</small><h3>Energy</h3></div></div>
+   <div class="rstat disp" style="color:var(--energy)">1,287 MWh</div><div class="rstat-l">of electricity to train GPT-3, with 552 t CO₂e emitted</div>
+   <div class="bars">
+    <div class="bar"><span>BLOOM</span><div class="tr"><div class="fl" style="width:0.3%;min-width:4px;background:var(--energy)"></div></div><span class="v">25 t</span></div>
+    <div class="bar"><span>Llama 2 (all)</span><div class="tr"><div class="fl" style="width:6%;background:var(--energy)"></div></div><span class="v">539 t</span></div>
+    <div class="bar"><span>GPT-3</span><div class="tr"><div class="fl" style="width:6.2%;background:var(--energy)"></div></div><span class="v">552 t</span></div>
+    <div class="bar"><span>Llama 3.1 405B</span><div class="tr"><div class="fl" style="width:100%;background:var(--energy)"></div></div><span class="v">8,930 t</span></div>
+   </div>
+   <div class="why"><b>Why it matters.</b> Every GPU hour draws power, adding cost and emissions. Bars show CO₂e. Design, data center, and chip choices can change emissions 100 to 1,000 times.</div>
+  </div>
+  <div class="rc" style="border-color:var(--time);background:var(--timeT)">
+   <div class="rtop"><svg viewBox="0 0 64 64" fill="none" stroke="#BE123C" stroke-width="4" stroke-linecap="round"><circle cx="32" cy="34" r="24"/><path d="M32 20v14l10 6M24 4h16"/></svg><div><small style="color:var(--time)">RESOURCE 4</small><h3>Time</h3></div></div>
+   <div class="rstat disp" style="color:var(--time)">118 days</div><div class="rstat-l">for BLOOM's final training run on 384 GPUs</div>
+   <div class="bars">
+    <div class="bar"><span>DeepSeek-V3</span><div class="tr"><div class="fl" style="width:48%;background:var(--time)"></div></div><span class="v">~1.9 mo</span></div>
+    <div class="bar"><span>BLOOM</span><div class="tr"><div class="fl" style="width:100%;background:var(--time)"></div></div><span class="v">3.9 mo</span></div>
+   </div>
+   <div class="why"><b>Why it matters.</b> Time equals GPU hours divided by GPUs. More GPUs finish sooner but cost more at once, and long runs delay release.</div>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="sh"><h2>MODEL SNAPSHOTS</h2><span>Published training resources for seven well-known models. Gray italic text marks third-party estimates.</span></div>
+ <div class="models">
+  <div class="mc"><div class="mh" style="background:#334155"><h3>GPT-3</h3><span>OpenAI · 2020</span><br><span class="tag">CLOSED</span></div><div class="mb">
+   <div class="row"><i class="c-d">D</i><span>175B parameters, 300B tokens</span></div>
+   <div class="row"><i class="c-c">C</i><span>NVIDIA V100 GPUs</span></div>
+   <div class="row"><i class="c-e">E</i><span>1,287 MWh, 552 t CO₂e</span></div>
+   <div class="row"><i class="c-t">$</i><span>Cost not disclosed</span></div></div>
+   <div class="mfoot">Base of the first ChatGPT.</div></div>
+  <div class="mc"><div class="mh" style="background:var(--teal)"><h3>BLOOM</h3><span>BigScience · 2022</span><br><span class="tag">OPEN</span></div><div class="mb">
+   <div class="row"><i class="c-d">D</i><span>176B parameters, 46 languages</span></div>
+   <div class="row"><i class="c-c">C</i><span>384 A100 GPUs, 1.08M GPU hours</span></div>
+   <div class="row"><i class="c-e">E</i><span>433 MWh, 25 t CO₂e</span></div>
+   <div class="row"><i class="c-t">T</i><span>118 days</span></div></div>
+   <div class="mfoot">Public supercomputer, low-carbon grid.</div></div>
+  <div class="mc"><div class="mh" style="background:#1E40AF"><h3>Llama 2</h3><span>Meta · 2023</span><br><span class="tag">OPEN WEIGHTS</span></div><div class="mb">
+   <div class="row"><i class="c-d">D</i><span>7B to 70B parameters, 2T tokens</span></div>
+   <div class="row"><i class="c-c">C</i><span>3.3M A100 GPU hours, all sizes</span></div>
+   <div class="row"><i class="c-e">E</i><span>539 t CO₂e</span></div>
+   <div class="row"><i class="c-t">$</i><span>Cost not disclosed</span></div></div>
+   <div class="mfoot">Emissions fully offset by Meta.</div></div>
+  <div class="mc"><div class="mh" style="background:#475569"><h3>GPT-4</h3><span>OpenAI · 2023</span><br><span class="tag">CLOSED</span></div><div class="mb">
+   <div class="row"><i class="c-d">D</i><span>Size and data not disclosed</span></div>
+   <div class="row"><i class="c-c">C</i><span class="est">Est. 2.1 × 10²⁵ FLOP on 10,000 to 25,000 A100s</span></div>
+   <div class="row"><i class="c-e">E</i><span>Not disclosed</span></div>
+   <div class="row"><i class="c-t">$</i><span class="est">About $78M in compute</span></div></div>
+   <div class="mfoot">Altman said over $100M total.</div></div>
+  <div class="mc"><div class="mh" style="background:#9A3412"><h3>Claude 3.5 Sonnet</h3><span>Anthropic · 2024</span><br><span class="tag">CLOSED</span></div><div class="mb">
+   <div class="row"><i class="c-d">D</i><span>Data up to April 2024</span></div>
+   <div class="row"><i class="c-c">C</i><span>Hardware not disclosed</span></div>
+   <div class="row"><i class="c-e">E</i><span>Not disclosed</span></div>
+   <div class="row"><i class="c-t">$</i><span>"A few $10M's" to train</span></div></div>
+   <div class="mfoot">Cost stated by Anthropic's CEO.</div></div>
+  <div class="mc"><div class="mh" style="background:var(--blue)"><h3>Llama 3.1 405B</h3><span>Meta · 2024</span><br><span class="tag">OPEN WEIGHTS</span></div><div class="mb">
+   <div class="row"><i class="c-d">D</i><span>405B parameters, 15.6T tokens</span></div>
+   <div class="row"><i class="c-c">C</i><span>16,384 H100 GPUs, 30.84M GPU hours</span></div>
+   <div class="row"><i class="c-e">E</i><span>8,930 t CO₂e before renewable matching</span></div>
+   <div class="row"><i class="c-t">$</i><span>Cost not disclosed</span></div></div>
+   <div class="mfoot">About 50× Llama 2's compute.</div></div>
+  <div class="mc"><div class="mh" style="background:#4D7C0F"><h3>DeepSeek-V3</h3><span>DeepSeek · 2024</span><br><span class="tag">OPEN WEIGHTS</span></div><div class="mb">
+   <div class="row"><i class="c-d">D</i><span>671B parameters, 14.8T tokens</span></div>
+   <div class="row"><i class="c-c">C</i><span>2,048 H800 GPUs, 2.79M GPU hours</span></div>
+   <div class="row"><i class="c-e">E</i><span>Not disclosed</span></div>
+   <div class="row"><i class="c-t">$</i><span>$5.6M for the final run</span></div></div>
+   <div class="mfoot">Final run only. 37B active per token.</div></div>
+ </div>
+</section>
+
+<section>
+ <div class="bottom">
+  <div class="ins"><h3>KEY INSIGHTS</h3><div class="ig">
+   <div class="ii"><div class="n">1</div><p><b>Pretraining is where the money goes.</b> About 96% of DeepSeek-V3's GPU hours went to pretraining, while alignment shapes behavior at small cost.</p></div>
+   <div class="ii"><div class="n">2</div><p><b>Every resource grew fast.</b> Data grew 52× from GPT-3 to Llama 3.1, and GPUs grew 43× from BLOOM to Llama 3.1.</p></div>
+   <div class="ii"><div class="n">3</div><p><b>Smarter design lowers cost.</b> DeepSeek-V3 reported 11× fewer GPU hours than Llama 3.1 405B on similar data, helped by sparse experts and FP8. Its count covers only the final run on different chips.</p></div>
+   <div class="ii"><div class="n">4</div><p><b>Where you train changes the footprint.</b> BLOOM and GPT-3 are similar in size, but BLOOM emitted 25 t against 552 t, thanks to newer chips and a cleaner grid.</p></div>
+  </div></div>
+  <div class="legend"><h3>HOW TO READ THE NUMBERS</h3>
+   <p>Open models publish GPU hours and emissions. Closed models such as GPT-4 and Claude publish little, so their figures come from executives or outside estimates.</p>
+   <p>GPU hours compare only roughly because chips differ in speed, and costs usually cover only the final run.</p>
+   <div class="lg"><span><i class="chip c-d">DATA</i></span><span><i class="chip c-c">COMPUTE</i></span><span><i class="chip c-e">ENERGY</i></span><span><i class="chip c-t">TIME</i></span></div>
+  </div>
+ </div>
+</section>
+
+<footer><b>Sources.</b> Brown et al. (2020), GPT-3 · Patterson et al. (2021), carbon emissions of large models · Luccioni et al. (2023), BLOOM carbon footprint · BigScience Workshop (2022), BLOOM · Touvron et al. (2023), Llama 2 · Llama Team (2024), The Llama 3 herd of models and Llama 3.1 model card · DeepSeek-AI (2024), DeepSeek-V3 technical report · OpenAI (2023), GPT-4 technical report · Stanford HAI (2024), AI Index Report · Epoch AI (2025), training cluster sizes · Amodei (2025), On DeepSeek and export controls · Anthropic (2024), Claude 3 model card · OpenAI (n.d.), How ChatGPT and our foundation models are developed · Layton (2023) · Hendrycks et al. (2021), MMLU · Wolfram (2023), What is ChatGPT doing and why does it work? · IBM Technology (2023), How large language models work [Video] · Eye on Tech (2023), What is ChatGPT? (in about a minute) [Video].</footer>
+</div></div>
+<script>
+(function(){
+ var ig=document.querySelector('.igx-page'),fit=document.querySelector('.igx-fit');
+ function size(){var s=Math.min(1,document.documentElement.clientWidth/2560);
+  ig.style.transform='scale('+s+')';fit.style.height=(ig.offsetHeight*s)+'px';
+  ig.style.marginLeft=s<1?'0':'auto';}
+ window.addEventListener('resize',size);window.addEventListener('load',size);size();
+})();
+</script>
+</body></html>

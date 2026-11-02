@@ -5,461 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Self-Assessment Journey | Sagar S. Alande</title>
   <meta name="description" content="How my technical thinking, leadership mindset, and professional direction evolved through the AIML course.">
+  <meta name="theme-color" content="#05070d">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <style>
-  .page-wrap { max-width: 1100px; margin: 0 auto; padding: 20px 16px 40px; }
-  .back-link { display: inline-block; margin: 10px 10px 0; color: #1d4ed8; text-decoration: none; font-weight: 600; font-family: Arial, sans-serif; }
-  .back-link:hover { text-decoration: underline; }
-
-  #aiml-growth-portfolio,
-  #aiml-growth-portfolio * {
-    box-sizing: border-box;
-  }
-
-  #aiml-growth-portfolio {
-    font-family: Arial, sans-serif;
-    width: 100%;
-    max-width: 100%;
-    margin: 0;
-    padding: 20px 10px 40px;
-    color: #1e293b;
-    overflow-x: hidden;
-  }
-
-  .hero-section,
-  .content-card,
-  .summary-grid,
-  .summary-box,
-  .visual-grid,
-  .visual-row,
-  .visual-bars,
-  .bar-group,
-  .comparison-grid,
-  .comparison-column,
-  .reflection-grid,
-  .reflection-box,
-  .framework-grid,
-  .framework-box {
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-  }
-
-  .hero-section {
-    background: linear-gradient(135deg, #0f172a, #1e3a8a 60%, #2563eb);
-    color: white;
-    border-radius: 24px;
-    padding: 34px 20px;
-    text-align: center;
-    box-shadow: 0 14px 32px rgba(15, 23, 42, 0.20);
-    margin-bottom: 22px;
-    overflow: hidden;
-  }
-
-  .hero-badge {
-    display: inline-block;
-    padding: 8px 14px;
-    border-radius: 999px;
-    background: rgba(255,255,255,0.14);
-    border: 1px solid rgba(255,255,255,0.18);
-    font-size: 0.85rem;
-    margin-bottom: 12px;
-  }
-
-  .hero-section h1 {
-    margin: 0 0 10px;
-    font-size: 2rem;
-    line-height: 1.2;
-  }
-
-  .hero-subtitle {
-    max-width: 760px;
-    margin: 0 auto 22px;
-    line-height: 1.7;
-    font-size: 1rem;
-    color: #dbeafe;
-  }
-
-  .hero-stats {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 14px;
-    width: 100%;
-  }
-
-  .stat-card {
-    background: rgba(255,255,255,0.10);
-    border: 1px solid rgba(255,255,255,0.14);
-    border-radius: 16px;
-    padding: 16px 12px;
-    backdrop-filter: blur(8px);
-    min-width: 0;
-  }
-
-  .stat-number {
-    display: block;
-    font-size: 1.6rem;
-    font-weight: 700;
-    margin-bottom: 5px;
-  }
-
-  .stat-label {
-    display: block;
-    font-size: 0.9rem;
-    color: #e2e8f0;
-    line-height: 1.4;
-  }
-
-  .content-card {
-    background: linear-gradient(180deg, #ffffff, #f8fbff);
-    border-radius: 20px;
-    padding: 22px 18px;
-    border: 1px solid #e2e8f0;
-    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
-    margin-bottom: 18px;
-    overflow: hidden;
-  }
-
-  .content-card h2 {
-    margin-top: 0;
-    margin-bottom: 12px;
-    font-size: 1.35rem;
-    color: #0f172a;
-    line-height: 1.3;
-  }
-
-  .content-card p {
-    line-height: 1.8;
-    margin: 0;
-    color: #334155;
-  }
-
-  .summary-grid,
-  .reflection-grid,
-  .framework-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 16px;
-  }
-
-  .summary-box,
-  .framework-box,
-  .reflection-box {
-    background: #ffffff;
-    border-radius: 16px;
-    padding: 18px;
-    border: 1px solid #dbeafe;
-    overflow: hidden;
-  }
-
-  .summary-box h3,
-  .framework-box h3,
-  .reflection-box h3 {
-    margin-top: 0;
-    margin-bottom: 10px;
-    color: #1d4ed8;
-    font-size: 1.05rem;
-    line-height: 1.3;
-  }
-
-  .highlight-box {
-    background: linear-gradient(180deg, #eff6ff, #ffffff);
-    border: 1px solid #bfdbfe;
-  }
-
-  .section-header p {
-    margin-top: 0;
-    margin-bottom: 16px;
-    color: #475569;
-  }
-
-  .visual-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  .visual-row {
-    display: grid;
-    grid-template-columns: 220px minmax(0, 1fr);
-    gap: 16px;
-    align-items: center;
-  }
-
-  .visual-label {
-    font-weight: 600;
-    color: #0f172a;
-    line-height: 1.4;
-    word-break: break-word;
-  }
-
-  .visual-bars {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .bar-group {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .bar-tag {
-    width: 52px;
-    flex: 0 0 52px;
-    font-size: 0.86rem;
-    font-weight: 600;
-  }
-
-  .before-tag {
-    color: #dc2626;
-  }
-
-  .after-tag {
-    color: #16a34a;
-  }
-
-  .bar-track {
-    flex: 1;
-    min-width: 0;
-    height: 14px;
-    background: #e5e7eb;
-    border-radius: 999px;
-    overflow: hidden;
-    position: relative;
-  }
-
-  .bar-fill {
-    height: 100%;
-    border-radius: 999px;
-  }
-
-  .before-fill {
-    background: linear-gradient(90deg, #fca5a5, #ef4444);
-  }
-
-  .after-fill {
-    background: linear-gradient(90deg, #86efac, #22c55e);
-  }
-
-  .comparison-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 16px;
-  }
-
-  .comparison-column {
-    background: #ffffff;
-    border-radius: 18px;
-    padding: 20px 18px;
-    border: 1px solid #e2e8f0;
-    overflow: hidden;
-  }
-
-  .before-column {
-    border-top: 5px solid #ef4444;
-  }
-
-  .after-column {
-    border-top: 5px solid #22c55e;
-  }
-
-  .comparison-title-row {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 12px;
-  }
-
-  .comparison-title-row h3 {
-    margin: 0;
-    font-size: 1.05rem;
-  }
-
-  .status-dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    flex: 0 0 12px;
-  }
-
-  .before-dot {
-    background: #ef4444;
-  }
-
-  .after-dot {
-    background: #22c55e;
-  }
-
-  .comparison-column ul,
-  .framework-box ul,
-  .reflection-box ul {
-    margin: 0;
-    padding-left: 20px;
-    line-height: 1.8;
-    color: #334155;
-  }
-
-  .reflection-card {
-    background: linear-gradient(180deg, #f8fbff, #eef5ff);
-    border-left: 6px solid #3b82f6;
-  }
-
-  .reflection-intro {
-    margin-bottom: 18px !important;
-  }
-
-  .full-width-box {
-    margin-top: 16px;
-  }
-
-  .reflection-quote {
-    margin: 22px 0 0;
-    padding: 16px 18px;
-    background: #ffffff;
-    border-left: 5px solid #2563eb;
-    border-radius: 14px;
-    font-size: 1rem;
-    font-weight: 600;
-    line-height: 1.7;
-    color: #1e3a8a;
-  }
-
-  .timeline {
-    position: relative;
-    margin-top: 10px;
-    padding-left: 18px;
-    border-left: 3px solid #bfdbfe;
-  }
-
-  .timeline-item {
-    position: relative;
-    padding-left: 22px;
-    margin-bottom: 24px;
-  }
-
-  .timeline-item:last-child {
-    margin-bottom: 0;
-  }
-
-  .timeline-marker {
-    position: absolute;
-    left: -10px;
-    top: 6px;
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    background: #2563eb;
-    box-shadow: 0 0 0 4px #dbeafe;
-  }
-
-  .timeline-content h3 {
-    margin: 0 0 8px;
-    font-size: 1.02rem;
-    color: #1d4ed8;
-  }
-
-  .timeline-content p {
-    margin: 0;
-  }
-
-  .intro-card {
-    border-left: 6px solid #2563eb;
-  }
-
-  .summary-card {
-    border-left: 6px solid #0ea5e9;
-  }
-
-  .visual-card {
-    border-left: 6px solid #14b8a6;
-    background: linear-gradient(180deg, #f8fffe, #f5fbff);
-  }
-
-  .evolution-card {
-    border-left: 6px solid #6366f1;
-    background: linear-gradient(180deg, #f8fbff, #eef4ff);
-  }
-
-  .timeline-card {
-    border-left: 6px solid #8b5cf6;
-  }
-
-  .framework-card {
-    border-left: 6px solid #f59e0b;
-  }
-
-  .closing-card {
-    border-left: 6px solid #22c55e;
-    background: linear-gradient(180deg, #f8fffb, #ffffff);
-  }
-
-  @media (max-width: 1000px) {
-    .hero-stats,
-    .summary-grid,
-    .reflection-grid,
-    .framework-grid,
-    .comparison-grid {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  @media (max-width: 780px) {
-    #aiml-growth-portfolio {
-      padding: 16px 8px 30px;
-    }
-
-    .hero-section {
-      padding: 28px 16px;
-      border-radius: 20px;
-    }
-
-    .hero-section h1 {
-      font-size: 1.65rem;
-    }
-
-    .content-card {
-      padding: 18px 14px;
-      border-radius: 18px;
-    }
-
-    .visual-row {
-      grid-template-columns: 1fr;
-      gap: 8px;
-    }
-
-    .visual-label {
-      margin-bottom: 2px;
-    }
-  }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/theme.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <script>document.documentElement.classList.add('js');setTimeout(function(){document.body&&document.body.classList.add('is-ready')},1800);</script>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="scroll-progress" aria-hidden="true"></div>
+<div class="bg-aurora" aria-hidden="true"><span></span><span></span><span></span></div>
+<div class="bg-grid" aria-hidden="true"></div>
 
-<header class="site-header">
-  <div class="topbar">
-    <a class="brand" href="index.html">Sagar S Alande</a>
-    <nav class="nav">
-      <a href="index.html">Home</a>
-      <a href="insight.html">From Website to Insight</a>
-      <a href="artifacts.html" class="active">Artifacts</a>
-      <a href="about.html">About Me</a>
-    </nav>
-  </div>
-  <div class="hero hero-page">
-    <div class="hero-text">
-      <h1>Self-Assessment Journey</h1>
-    </div>
-  </div>
+<header class="site-nav" data-nav>
+  <a class="brand" href="index.html" aria-label="Sagar S Alande, home"><span class="brand-mark">SA</span><span class="brand-name">Sagar S Alande</span></a>
+  <nav class="nav-links" id="nav-links" aria-label="Primary">
+    <a href="index.html">Home</a>
+    <a href="insight.html">From Website to Insight</a>
+    <a href="artifacts.html" aria-current="page">Artifacts</a>
+    <a href="about.html">About Me</a>
+  </nav>
+  <a class="nav-cta" href="https://www.linkedin.com/in/sagar9792/" target="_blank" rel="noopener noreferrer" data-magnetic>Let's connect ↗</a>
+  <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span></button>
 </header>
 
-<main class="page-wrap">
-<a class="back-link" href="artifacts.html">← Back to Artifacts</a>
-
+<main id="main" class="dd-main">
+  <section class="page-hero">
+    <div class="container">
+      <a class="back-link" href="artifacts.html" data-reveal>← All artifacts</a>
+      <p class="eyebrow" data-reveal>Artifact deep dive</p>
+      <h1 data-split>Self-Assessment Journey</h1>
+    </div>
+  </section>
+<div class="dd-body">
 <div id="aiml-growth-portfolio">
 
   <section class="hero-section">
@@ -768,11 +348,30 @@
   </section>
 
 </div>
+
+</div>
 </main>
 
 <footer class="site-footer">
-  © 2026 Sagar S. Alande
+  <div class="container">
+    <div class="footer-cta">
+      <p class="eyebrow" data-reveal>Get in touch</p>
+      <h2 data-split>Turning complex data into <span class="grad-text">decisions.</span></h2>
+      <a class="btn btn-primary" href="https://www.linkedin.com/in/sagar9792/" target="_blank" rel="noopener noreferrer" data-magnetic data-reveal>Connect on LinkedIn <span class="arrow">↗</span></a>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Sagar S. Alande</span>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="index.html">Home</a><a href="insight.html">From Website to Insight</a><a href="artifacts.html">Artifacts</a><a href="about.html">About Me</a>
+      </nav>
+      <button class="to-top" type="button" data-top>Back to top ↑</button>
+    </div>
+  </div>
 </footer>
 
+<div class="cursor-dot" aria-hidden="true"></div>
+<div class="cursor-ring" aria-hidden="true"></div>
+<div class="page-curtain" aria-hidden="true"></div>
+<script src="assets/js/motion.js"></script>
 </body>
 </html>

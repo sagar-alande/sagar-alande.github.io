@@ -5,152 +5,222 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>From Website to Insight | Sagar S. Alande</title>
   <meta name="description" content="A beginner's roadmap for digital research: finding, collecting, analyzing, and communicating data.">
+  <meta name="theme-color" content="#05070d">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <style>
-    #insight .row{display:grid;grid-template-columns:85px 90px 2fr 1fr 1fr;gap:14px;background:white;padding:14px;border-radius:18px;margin-bottom:14px;box-shadow:0 4px 12px rgba(0,0,0,.08);}
-    #insight .num{color:white;border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:900;}
-    #insight .num b{font-size:40px;}
-    #insight .num span{font-size:12px;}
-    #insight .icon,#insight .main,#insight .side{background:#f5f8fd;border-radius:14px;padding:15px;}
-    #insight .icon{display:flex;align-items:center;justify-content:center;font-size:38px;}
-    #insight .main h3{margin:0 0 8px;font-size:19px;text-transform:uppercase;}
-    #insight .main p,#insight .side p{margin:0;font-size:13px;line-height:1.45;}
-    #insight .side h4{margin:0 0 8px;font-size:11px;letter-spacing:1px;}
-    #insight .banner-title{font-size:56px;font-weight:900;line-height:.95;}
-    @media(max-width:800px){#insight .row{grid-template-columns:75px 1fr}#insight .icon{display:none}#insight .main,#insight .side{grid-column:2}}
-    @media(max-width:600px){#insight .banner-title{font-size:38px}#insight .banner{padding:28px 22px !important}}
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/theme.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+  <script>document.documentElement.classList.add('js');setTimeout(function(){document.body&&document.body.classList.add('is-ready')},1800);</script>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="scroll-progress" aria-hidden="true"></div>
+<div class="bg-aurora" aria-hidden="true"><span></span><span></span><span></span></div>
+<div class="bg-grid" aria-hidden="true"></div>
 
-<header class="site-header">
-  <div class="topbar">
-    <a class="brand" href="index.html">Sagar S Alande</a>
-    <nav class="nav">
-      <a href="index.html">Home</a>
-      <a href="insight.html" class="active">From Website to Insight</a>
-      <a href="artifacts.html">Artifacts</a>
-      <a href="about.html">About Me</a>
-    </nav>
-  </div>
-  <div class="hero hero-page">
-    <div class="hero-text">
-      <h1>From Website to Insight</h1>
-    </div>
-  </div>
+<header class="site-nav" data-nav>
+  <a class="brand" href="index.html" aria-label="Sagar S Alande, home"><span class="brand-mark">SA</span><span class="brand-name">Sagar S Alande</span></a>
+  <nav class="nav-links" id="nav-links" aria-label="Primary">
+    <a href="index.html">Home</a>
+    <a href="insight.html" aria-current="page">From Website to Insight</a>
+    <a href="artifacts.html">Artifacts</a>
+    <a href="about.html">About Me</a>
+  </nav>
+  <a class="nav-cta" href="https://www.linkedin.com/in/sagar9792/" target="_blank" rel="noopener noreferrer" data-magnetic>Let's connect ↗</a>
+  <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span></button>
 </header>
 
-<main style="background:#edf2f7;">
-<div id="insight" style="max-width:1150px;margin:auto;background:#edf2f7;font-family:Arial,Helvetica,sans-serif;padding:24px;color:#1a202c;">
-
-  <div class="banner" style="background:#061b3d;color:white;border-radius:22px;padding:40px;margin-bottom:22px;">
-    <div class="banner-title">
-      FROM
-      <span style="color:#55c7f2;">WEBSITES</span> TO
-      <span style="color:#a7d957;">INSIGHTS</span>
+<main id="main">
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow" data-reveal>From Website to Insight</p>
+      <h1 class="insight-title" data-split>FROM <span class="grad-text">WEBSITES</span> TO <span class="grad-text">INSIGHTS</span></h1>
+      <div data-reveal style="--d:.4s"><span class="insight-sub">A Beginner's Roadmap for Digital Research</span></div>
+      <p class="lede" data-reveal style="--d:.5s">A practical guide to finding, collecting, analyzing, and communicating data.</p>
     </div>
-    <div style="display:inline-block;margin-top:18px;background:#ffd44d;color:#111;padding:10px 20px;border-radius:8px;font-size:22px;font-weight:900;">
-      A Beginner's Roadmap for Digital Research
+  </section>
+
+  <section class="section" style="padding-top:20px">
+    <div class="container">
+      <div class="roadmap" data-roadmap>
+        <div class="rm-line" aria-hidden="true"><div class="rm-line-fill"></div></div>
+
+        <div class="rm-step" style="--c:#3b82f6">
+          <div class="rm-node">01</div>
+          <article class="ui-card spotlight rm-card" data-reveal="left">
+            <div class="rm-head"><span class="rm-icon">🎯</span><div><div class="rm-kicker">Step 01</div><h3>Define Your Research Question</h3></div></div>
+            <p>Be clear about what you want to find out. Define the topic, scope, timeframe, and expected outcome.</p>
+            <div class="rm-meta">
+              <div><h4>EXAMPLES</h4><ul><li>What is changing?</li><li>Why does it matter?</li><li>What do I need?</li></ul></div>
+              <div><h4>TOOLS</h4><ul><li>Notion</li><li>Google Docs</li></ul></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="rm-step" style="--c:#06b6d4">
+          <div class="rm-node">02</div>
+          <article class="ui-card spotlight rm-card" data-reveal="right">
+            <div class="rm-head"><span class="rm-icon">🌐</span><div><div class="rm-kicker">Step 02</div><h3>Identify Reliable Sources</h3></div></div>
+            <p>Find trustworthy websites, databases, reports, and public datasets before collecting information.</p>
+            <div class="rm-meta">
+              <div><h4>EXAMPLES</h4><ul><li>World Bank</li><li>Data.gov</li><li>Census</li><li>WHO</li></ul></div>
+              <div><h4>SOURCES</h4><ul><li>Official sites</li><li>Reports</li></ul></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="rm-step" style="--c:#22c55e">
+          <div class="rm-node">03</div>
+          <article class="ui-card spotlight rm-card" data-reveal="left">
+            <div class="rm-head"><span class="rm-icon">🗂️</span><div><div class="rm-kicker">Step 03</div><h3>Explore Website Structure</h3></div></div>
+            <p>Understand how the website is organized before extracting data from it.</p>
+            <div class="rm-meta">
+              <div><h4>LOOK FOR</h4><ul><li>Menus</li><li>Reports</li><li>Downloads</li><li>API Docs</li></ul></div>
+              <div><h4>TOOLS</h4><ul><li>Sitemap</li><li>Search bar</li></ul></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="rm-step" style="--c:#f97316">
+          <div class="rm-node">04</div>
+          <article class="ui-card spotlight rm-card" data-reveal="right">
+            <div class="rm-head"><span class="rm-icon">⌨️</span><div><div class="rm-kicker">Step 04</div><h3>Inspect Source &amp; Network</h3></div></div>
+            <p>Use browser tools to see how the page loads data behind the scenes.</p>
+            <div class="rm-meta">
+              <div><h4>STEPS</h4><ul><li>Open F12</li><li>Network tab</li><li>Reload page</li></ul></div>
+              <div><h4>TOOLS</h4><ul><li>DevTools</li><li>JSON Viewer</li></ul></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="rm-step" style="--c:#60a5fa">
+          <div class="rm-node">05</div>
+          <article class="ui-card spotlight rm-card" data-reveal="left">
+            <div class="rm-head"><span class="rm-icon">⬇️</span><div><div class="rm-kicker">Step 05</div><h3>Access API or Download</h3></div></div>
+            <p>Collect data from official APIs, CSV files, Excel files, or direct downloads.</p>
+            <div class="rm-meta">
+              <div><h4>FORMATS</h4><ul><li>CSV</li><li>Excel</li><li>JSON</li><li>XML</li></ul></div>
+              <div><h4>TOOLS</h4><ul><li>Postman</li><li>Python</li></ul></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="rm-step" style="--c:#ef4444">
+          <div class="rm-node">06</div>
+          <article class="ui-card spotlight rm-card" data-reveal="right">
+            <div class="rm-head"><span class="rm-icon">🕷️</span><div><div class="rm-kicker">Step 06</div><h3>Scrape When Needed</h3></div></div>
+            <p>Extract data from web pages only when no official download or API exists.</p>
+            <div class="rm-meta">
+              <div><h4>CHECK</h4><ul><li>robots.txt</li><li>Terms of Service</li><li>Permissions</li></ul></div>
+              <div><h4>TOOLS</h4><ul><li>BeautifulSoup</li><li>Selenium</li></ul></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="rm-step" style="--c:#10b981">
+          <div class="rm-node">07</div>
+          <article class="ui-card spotlight rm-card" data-reveal="left">
+            <div class="rm-head"><span class="rm-icon">🧹</span><div><div class="rm-kicker">Step 07</div><h3>Clean &amp; Organize Data</h3></div></div>
+            <p>Prepare messy data by fixing formats, removing duplicates, and handling missing values.</p>
+            <div class="rm-meta">
+              <div><h4>CHECKS</h4><ul><li>Rows</li><li>Columns</li><li>Dates</li><li>Missing data</li></ul></div>
+              <div><h4>TOOLS</h4><ul><li>Excel</li><li>pandas</li></ul></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="rm-step" style="--c:#a855f7">
+          <div class="rm-node">08</div>
+          <article class="ui-card spotlight rm-card" data-reveal="right">
+            <div class="rm-head"><span class="rm-icon">🔎</span><div><div class="rm-kicker">Step 08</div><h3>Analyze Patterns &amp; Trends</h3></div></div>
+            <p>Look for changes, comparisons, relationships, outliers, and meaningful patterns.</p>
+            <div class="rm-meta">
+              <div><h4>ASK</h4><ul><li>Highest?</li><li>Lowest?</li><li>Average?</li><li>Trend?</li></ul></div>
+              <div><h4>TOOLS</h4><ul><li>SQL</li><li>Excel</li></ul></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="rm-step" style="--c:#14b8a6">
+          <div class="rm-node">09</div>
+          <article class="ui-card spotlight rm-card" data-reveal="left">
+            <div class="rm-head"><span class="rm-icon">📊</span><div><div class="rm-kicker">Step 09</div><h3>Visualize &amp; Tell the Story</h3></div></div>
+            <p>Turn analysis into clear charts, visuals, and evidence-based explanations.</p>
+            <div class="rm-meta">
+              <div><h4>VISUALS</h4><ul><li>Bar chart</li><li>Line chart</li><li>Map</li><li>Scatterplot</li></ul></div>
+              <div><h4>TOOLS</h4><ul><li>Tableau</li><li>Power BI</li></ul></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="rm-step" style="--c:#eab308">
+          <div class="rm-node">10</div>
+          <article class="ui-card spotlight rm-card" data-reveal="right">
+            <div class="rm-head"><span class="rm-icon">⚙️</span><div><div class="rm-kicker">Step 10</div><h3>Document the Workflow</h3></div></div>
+            <p>Record sources, decisions, steps, and methods so the research can be repeated.</p>
+            <div class="rm-meta">
+              <div><h4>OUTPUT</h4><ul><li>README</li><li>Notes</li><li>Notebook</li><li>Summary</li></ul></div>
+              <div><h4>TOOLS</h4><ul><li>GitHub</li><li>Docs</li></ul></div>
+            </div>
+          </article>
+        </div>
+      </div>
     </div>
-    <div style="margin-top:14px;font-size:16px;color:#dce6f5;">
-      A practical guide to finding, collecting, analyzing, and communicating data.
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="ui-card spotlight formula" data-reveal="zoom">
+        <h2>GOOD RESEARCH = GREAT QUESTIONS + CLEAN DATA + CLEAR INSIGHTS</h2>
+        <div class="pipeline">
+          <span style="--i:0">QUESTION</span><i>→</i><span style="--i:1">SOURCE</span><i>→</i><span style="--i:2">INSPECT</span><i>→</i><span style="--i:3">EXTRACT</span><i>→</i><span style="--i:4">CLEAN</span><i>→</i><span style="--i:5">ANALYZE</span><i>→</i><span style="--i:6">VISUALIZE</span><i>→</i><span style="--i:7">INSIGHT</span>
+        </div>
+      </div>
     </div>
-  </div>
-
-  <div class="row">
-    <div class="num" style="background:#0957d8;"><b>01</b><span>STEP</span></div>
-    <div class="icon">🎯</div>
-    <div class="main"><h3 style="color:#0957d8;">Define Your Research Question</h3><p>Be clear about what you want to find out. Define the topic, scope, timeframe, and expected outcome.</p></div>
-    <div class="side"><h4 style="color:#0957d8;">EXAMPLES</h4><p>What is changing?<br>Why does it matter?<br>What do I need?</p></div>
-    <div class="side"><h4 style="color:#0957d8;">TOOLS</h4><p>Notion<br>Google Docs</p></div>
-  </div>
-
-  <div class="row">
-    <div class="num" style="background:#0097a7;"><b>02</b><span>STEP</span></div>
-    <div class="icon">🌐</div>
-    <div class="main"><h3 style="color:#0097a7;">Identify Reliable Sources</h3><p>Find trustworthy websites, databases, reports, and public datasets before collecting information.</p></div>
-    <div class="side"><h4 style="color:#0097a7;">EXAMPLES</h4><p>World Bank<br>Data.gov<br>Census<br>WHO</p></div>
-    <div class="side"><h4 style="color:#0097a7;">SOURCES</h4><p>Official sites<br>Reports</p></div>
-  </div>
-
-  <div class="row">
-    <div class="num" style="background:#208b3a;"><b>03</b><span>STEP</span></div>
-    <div class="icon">🗂️</div>
-    <div class="main"><h3 style="color:#208b3a;">Explore Website Structure</h3><p>Understand how the website is organized before extracting data from it.</p></div>
-    <div class="side"><h4 style="color:#208b3a;">LOOK FOR</h4><p>Menus<br>Reports<br>Downloads<br>API Docs</p></div>
-    <div class="side"><h4 style="color:#208b3a;">TOOLS</h4><p>Sitemap<br>Search bar</p></div>
-  </div>
-
-  <div class="row">
-    <div class="num" style="background:#f77f00;"><b>04</b><span>STEP</span></div>
-    <div class="icon">⌨️</div>
-    <div class="main"><h3 style="color:#f77f00;">Inspect Source &amp; Network</h3><p>Use browser tools to see how the page loads data behind the scenes.</p></div>
-    <div class="side"><h4 style="color:#f77f00;">STEPS</h4><p>Open F12<br>Network tab<br>Reload page</p></div>
-    <div class="side"><h4 style="color:#f77f00;">TOOLS</h4><p>DevTools<br>JSON Viewer</p></div>
-  </div>
-
-  <div class="row">
-    <div class="num" style="background:#4385d1;"><b>05</b><span>STEP</span></div>
-    <div class="icon">⬇️</div>
-    <div class="main"><h3 style="color:#4385d1;">Access API or Download</h3><p>Collect data from official APIs, CSV files, Excel files, or direct downloads.</p></div>
-    <div class="side"><h4 style="color:#4385d1;">FORMATS</h4><p>CSV<br>Excel<br>JSON<br>XML</p></div>
-    <div class="side"><h4 style="color:#4385d1;">TOOLS</h4><p>Postman<br>Python</p></div>
-  </div>
-
-  <div class="row">
-    <div class="num" style="background:#d62828;"><b>06</b><span>STEP</span></div>
-    <div class="icon">🕷️</div>
-    <div class="main"><h3 style="color:#d62828;">Scrape When Needed</h3><p>Extract data from web pages only when no official download or API exists.</p></div>
-    <div class="side"><h4 style="color:#d62828;">CHECK</h4><p>robots.txt<br>Terms of Service<br>Permissions</p></div>
-    <div class="side"><h4 style="color:#d62828;">TOOLS</h4><p>BeautifulSoup<br>Selenium</p></div>
-  </div>
-
-  <div class="row">
-    <div class="num" style="background:#2e7d32;"><b>07</b><span>STEP</span></div>
-    <div class="icon">🧹</div>
-    <div class="main"><h3 style="color:#2e7d32;">Clean &amp; Organize Data</h3><p>Prepare messy data by fixing formats, removing duplicates, and handling missing values.</p></div>
-    <div class="side"><h4 style="color:#2e7d32;">CHECKS</h4><p>Rows<br>Columns<br>Dates<br>Missing data</p></div>
-    <div class="side"><h4 style="color:#2e7d32;">TOOLS</h4><p>Excel<br>pandas</p></div>
-  </div>
-
-  <div class="row">
-    <div class="num" style="background:#6a1b9a;"><b>08</b><span>STEP</span></div>
-    <div class="icon">🔎</div>
-    <div class="main"><h3 style="color:#6a1b9a;">Analyze Patterns &amp; Trends</h3><p>Look for changes, comparisons, relationships, outliers, and meaningful patterns.</p></div>
-    <div class="side"><h4 style="color:#6a1b9a;">ASK</h4><p>Highest?<br>Lowest?<br>Average?<br>Trend?</p></div>
-    <div class="side"><h4 style="color:#6a1b9a;">TOOLS</h4><p>SQL<br>Excel</p></div>
-  </div>
-
-  <div class="row">
-    <div class="num" style="background:#00838f;"><b>09</b><span>STEP</span></div>
-    <div class="icon">📊</div>
-    <div class="main"><h3 style="color:#00838f;">Visualize &amp; Tell the Story</h3><p>Turn analysis into clear charts, visuals, and evidence-based explanations.</p></div>
-    <div class="side"><h4 style="color:#00838f;">VISUALS</h4><p>Bar chart<br>Line chart<br>Map<br>Scatterplot</p></div>
-    <div class="side"><h4 style="color:#00838f;">TOOLS</h4><p>Tableau<br>Power BI</p></div>
-  </div>
-
-  <div class="row">
-    <div class="num" style="background:#b8860b;"><b>10</b><span>STEP</span></div>
-    <div class="icon">⚙️</div>
-    <div class="main"><h3 style="color:#b8860b;">Document the Workflow</h3><p>Record sources, decisions, steps, and methods so the research can be repeated.</p></div>
-    <div class="side"><h4 style="color:#b8860b;">OUTPUT</h4><p>README<br>Notes<br>Notebook<br>Summary</p></div>
-    <div class="side"><h4 style="color:#b8860b;">TOOLS</h4><p>GitHub<br>Docs</p></div>
-  </div>
-
-  <div style="background:#061b3d;color:white;padding:24px;border-radius:20px;text-align:center;margin-top:22px;">
-    <h2 style="margin:0 0 14px;color:#ffd44d;font-size:22px;">GOOD RESEARCH = GREAT QUESTIONS + CLEAN DATA + CLEAR INSIGHTS</h2>
-    <div style="font-weight:900;font-size:14px;">QUESTION → SOURCE → INSPECT → EXTRACT → CLEAN → ANALYZE → VISUALIZE → INSIGHT</div>
-  </div>
-
-</div>
+  </section>
 </main>
 
 <footer class="site-footer">
-  © 2026 Sagar S. Alande
+  <div class="container">
+    <div class="footer-cta">
+      <p class="eyebrow" data-reveal>Get in touch</p>
+      <h2 data-split>Turning complex data into <span class="grad-text">decisions.</span></h2>
+      <a class="btn btn-primary" href="https://www.linkedin.com/in/sagar9792/" target="_blank" rel="noopener noreferrer" data-magnetic data-reveal>Connect on LinkedIn <span class="arrow">↗</span></a>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Sagar S. Alande</span>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="index.html">Home</a><a href="insight.html">From Website to Insight</a><a href="artifacts.html">Artifacts</a><a href="about.html">About Me</a>
+      </nav>
+      <button class="to-top" type="button" data-top>Back to top ↑</button>
+    </div>
+  </div>
 </footer>
 
+<div class="cursor-dot" aria-hidden="true"></div>
+<div class="cursor-ring" aria-hidden="true"></div>
+<div class="page-curtain" aria-hidden="true"></div>
+<script src="assets/js/motion.js"></script>
+<script>
+/* Fill the roadmap line as the reader scrolls and light up each step node it passes. */
+(function () {
+  var map = document.querySelector('[data-roadmap]');
+  var fill = map.querySelector('.rm-line-fill');
+  var steps = map.querySelectorAll('.rm-step');
+  function update() {
+    var r = map.getBoundingClientRect(), mid = window.innerHeight * 0.6;
+    var p = Math.max(0, Math.min(1, (mid - r.top) / r.height));
+    fill.style.setProperty('--fill', p.toFixed(4));
+    steps.forEach(function (s) {
+      var n = s.querySelector('.rm-node').getBoundingClientRect();
+      s.classList.toggle('is-in', n.top + n.height / 2 < mid);
+    });
+  }
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+})();
+</script>
 </body>
 </html>
