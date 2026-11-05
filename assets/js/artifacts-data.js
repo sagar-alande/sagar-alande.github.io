@@ -3,6 +3,73 @@
    a section can be plain text, a list of paragraphs, or a list of [label, text] pairs. */
 window.ARTIFACTS = [
   {
+    title: `RoleWise`,
+    fullTitle: `RoleWise: An AI Career Agent That Only Uses Facts You Verified`,
+    label: `FULL-STACK APP`, emoji: `🎯🧾`,
+    accent: `#4f46e5`, dark: `#1e1b4b`,
+    blurb: `A full-stack AI career agent that matches you to real jobs, explains every score, and fact-checks every resume line it writes.`,
+    intro: `RoleWise reads a resume, matches the person to real job postings, explains every score, and shows exactly where they fall short. It was built for AIML-515: AI Integration Capstone at Indiana Wesleyan University. The rule behind every feature is that it uses only facts the person has verified, never facts it invented.`,
+    objective: `Build a working system around one flow: verified profile, job requirements, explainable match, evidence, gap analysis, and the user's decision. It had to stay honest about what it knows and never speak for the user.`,
+    process: [
+      `I built a FastAPI and SQLAlchemy backend with a background worker, a Next.js frontend, and Postgres with pgvector, all running locally through Docker Compose. Every fact parsed from a resume starts as unverified and is not used until the person confirms it.`,
+      `Match scores come from fixed rules in code. The language model only labels how important a requirement is and writes the explanation after the score exists, so it never sets the number. Generated resumes and cover letters must cite a verified fact for every line, and a fact checker removes anything it cannot trace.`,
+      `I then ran a QA pass and a security audit, fixed what they found, and deployed the system to AWS with real Google Sign-In.`
+    ],
+    tools: [`Python`, `FastAPI`, `SQLAlchemy`, `Next.js`, `TypeScript`, `Postgres + pgvector`, `AWS ECS`, `Amazon Bedrock`, `Cognito`, `S3 + SQS`, `AWS CDK`, `Docker`],
+    value: [
+      [`Unique Value`, `This project shows that I can build a complete AI product, from data model and matching engine to frontend, authentication, and cloud deployment. It also shows a clear design position: AI output should be checked by code, not trusted because it sounds right.`],
+      [`Relevance`, `In financial data work, a number has to be explainable. RoleWise applies that habit to AI by keeping the score deterministic, showing its full breakdown, and tying each generated claim to a source.`]
+    ],
+    audience: [
+      [`Adaptations Made`, `The interface shows one percentage with a plain alignment label and avoids verdicts such as "not recommended." Gaps appear beside strengths, and hard blockers such as no sponsorship are flagged instead of hidden in the score.`],
+      [`Relevance`, `A job seeker can see why a match scored as it did and decide for themselves. There is no apply button, so nothing is ever sent on their behalf.`]
+    ],
+    reflection: [
+      [`Significance`, `This is the most complete system I have built, and it brought together the data, AI, security, and cloud skills from my program.`],
+      [`Lessons Learned`, `Testing with a real resume found what fixtures had missed. One upload produced 17 skills but no roles or education. Reproducing it against the real PDF exposed several separate bugs that had been hiding one another. After the fixes, the same resume produced all 4 roles and 3 education entries.`]
+    ],
+    feedback: [
+      [`Self-Review`, `A QA checklist of 72 items run across every feature found 5 real bugs, and a 13-area security audit found 5 issues.`],
+      [`Revisions`, `I fixed all 5 QA bugs, including raw technical errors shown to users. From the audit, I fixed the top 3: making the auth bypass fail closed, limiting resume uploads, and guarding against prompt injection in resumes. The two remaining findings were low severity and stayed open.`]
+    ],
+    links: [
+      [`🔍 Dive Deep →`, `rolewise.html`],
+      [`💻 View the Code on GitHub →`, `https://github.com/sagar-alande/RoleWise`]
+    ]
+  },
+  {
+    title: `CodeTrace`,
+    fullTitle: `CodeTrace: Residential Building-Code Research From Official Sources`,
+    label: `FULL-STACK APP`, emoji: `🏗️🔎`,
+    accent: `#1d4ed8`, dark: `#0f1e33`,
+    blurb: `A full-stack research tool that answers residential building-code questions using only official municipal websites, with a source for every answer.`,
+    intro: `CodeTrace is a residential building-code research tool. A person picks one of five U.S. cities and a topic, asks a question, and gets a concise answer with supporting official sources. It is a research aid only and says so clearly. It does not certify compliance or replace inspectors, engineers, architects, or municipal authorities.`,
+    objective: `Build a research tool that can be trusted because of its limits. It accepts results only from each city's approved government domains, and it says when it does not have enough information instead of guessing.`,
+    process: [
+      `I built the client with React, TypeScript, Vite, and Tailwind, and the backend on Supabase with Postgres row-level security and an Edge Function. The Edge Function runs the Tavily search, so the API key stays on the server.`,
+      `Every result has to pass checks before it is shown. It must use HTTPS on an approved domain, duplicates are removed, and specific measurements must appear in a retained source. Section numbers are shown only when the source states them, never inferred.`,
+      `I wrote automated security tests and a testing report, added Google Sign-In and guest access, and packaged the app in Docker with deployment to AWS through GitHub Actions.`
+    ],
+    tools: [`React`, `TypeScript`, `Vite`, `Tailwind CSS`, `Supabase`, `Postgres RLS`, `Edge Functions`, `Tavily`, `Docker`, `AWS ECS`, `GitHub Actions`],
+    value: [
+      [`Unique Value`, `This project shows that I can build a retrieval tool that treats source quality as the product. A lookalike domain such as nyc.gov.attacker.com is rejected, and a result that cannot be supported becomes an honest "insufficient information" response.`],
+      [`Relevance`, `Regulated work needs answers that can be traced to an authority. The same pattern applies to financial and compliance data: limit the sources, verify the claim, and show the evidence.`]
+    ],
+    audience: [
+      [`Adaptations Made`, `The tool is written for homeowners and contractors who are not code experts. Topics are plain choices such as decks, basements, permits, and zoning, and a blueprint drawing highlights the part of a house each topic covers.`],
+      [`Relevance`, `A clear disclaimer, official-source badges, and a source viewer help a reader check an answer rather than rely on it blindly.`]
+    ],
+    reflection: [
+      [`Significance`, `CodeTrace taught me that much of the work in an AI search product happens around the search itself, in the checks that decide what can be shown.`],
+      [`Lessons Learned`, `An answer can sound right and still be unsupported, so numbers need their own check. A failed search also needs careful wording. The app never lets an error suggest that no building-code requirement exists.`]
+    ],
+    links: [
+      [`🔍 Dive Deep →`, `codetrace.html`],
+      [`▶️ Watch the Demo →`, `https://youtu.be/9Te8NNeMaos`],
+      [`💻 View the Code on GitHub →`, `https://github.com/sagar-alande/codetrace`]
+    ]
+  },
+  {
       title: `How LLMs Are Trained`,
       fullTitle: `How a Large Language Model Is Trained: The Steps, the Resources, and What They Cost`,
       label: `MODEL DEVELOPMENT`, emoji: `📚⚡`,

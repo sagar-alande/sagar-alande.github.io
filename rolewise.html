@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RoleWise | Sagar S. Alande</title>
+  <meta name="description" content="A full-stack AI career agent that explains every match and fact-checks every line it writes.">
+  <meta name="theme-color" content="#05070d">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/theme.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <script>document.documentElement.classList.add('js');setTimeout(function(){document.body&&document.body.classList.add('is-ready')},1800);</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="scroll-progress" aria-hidden="true"></div>
+<div class="bg-aurora" aria-hidden="true"><span></span><span></span><span></span></div>
+<div class="bg-grid" aria-hidden="true"></div>
+
+<header class="site-nav" data-nav>
+  <a class="brand" href="index.html" aria-label="Sagar S Alande, home"><span class="brand-mark">SA</span><span class="brand-name">Sagar S Alande</span></a>
+  <nav class="nav-links" id="nav-links" aria-label="Primary">
+    <a href="index.html">Home</a>
+    <a href="insight.html">From Website to Insight</a>
+    <a href="artifacts.html" aria-current="page">Artifacts</a>
+    <a href="about.html">About Me</a>
+  </nav>
+  <a class="nav-cta" href="https://www.linkedin.com/in/sagar9792/" target="_blank" rel="noopener noreferrer" data-magnetic>Let's connect ↗</a>
+  <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span></button>
+</header>
+
+<main id="main" class="dd-main">
+  <section class="page-hero">
+    <div class="container">
+      <a class="back-link" href="artifacts.html" data-reveal>← All artifacts</a>
+      <p class="eyebrow" data-reveal>Full-stack app</p>
+      <h1 data-split>RoleWise</h1>
+    </div>
+  </section>
+<div class="dd-body">
+<div id="project-page">
+  <div class="mm-header">
+    <div class="mm-badge">Capstone · AIML-515</div>
+    <h2>An AI career agent that never speaks for you</h2>
+    <p>RoleWise matches a person to real job postings, explains every score, and shows where they fall short, using only facts they have verified.</p>
+    <div class="mm-btn-row"><a class="mm-btn mm-btn-primary" href="https://github.com/sagar-alande/RoleWise" target="_blank" rel="noopener noreferrer">View the Code on GitHub</a></div>
+  </div>
+  <div class="mm-stats"><div class="mm-stat"><span class="mm-stat-num">6,400+</span><span class="mm-stat-label">Real job postings ingested</span></div><div class="mm-stat"><span class="mm-stat-num">100%</span><span class="mm-stat-label">Scores set by code, not AI</span></div><div class="mm-stat"><span class="mm-stat-num">156</span><span class="mm-stat-label">Automated tests</span></div><div class="mm-stat"><span class="mm-stat-num">3</span><span class="mm-stat-label">Public job-board feeds</span></div></div>
+  <div class="mm-stack">
+    <aside class="mm-card pj-status"><span class="pj-dot" aria-hidden="true"></span><p><strong>Live demo offline to manage hosting costs.</strong> The code is public, and a demo is available on request.</p></aside>
+
+    <section class="mm-card"><h3>The Interface</h3>
+      <p class="mm-muted">Screenshots from a local run of the app.</p>
+      <div class="pj-shots">
+        <figure class="pj-shot"><img src="assets/projects/rolewise-recommendations.jpg" alt="RoleWise recommended jobs ranked by fit, with matched and missing skills" loading="lazy" width="800" height="500"><figcaption>Jobs ranked by fit, with matched and missing skills on every card.</figcaption></figure>
+        <figure class="pj-shot"><img src="assets/projects/rolewise-match.jpg" alt="RoleWise match detail with strengths and gaps" loading="lazy" width="800" height="500"><figcaption>Each match lists its strengths and gaps in plain language.</figcaption></figure>
+        <figure class="pj-shot"><img src="assets/projects/rolewise-score.jpg" alt="RoleWise score breakdown and requirement evidence" loading="lazy" width="800" height="500"><figcaption>The full score breakdown, with evidence for each requirement.</figcaption></figure>
+      </div>
+    </section>
+    <section class="mm-card"><h3>How It Works</h3>
+      <ol class="pj-flow"><li><b>Upload</b><span>A resume goes to S3 through a presigned URL.</span></li><li><b>Extract</b><span>A worker turns it into career facts, all marked unverified.</span></li><li><b>Verify</b><span>The person edits and confirms each fact.</span></li><li><b>Ingest</b><span>Jobs arrive from public Greenhouse, Lever, and Ashby feeds, or by paste.</span></li><li><b>Score</b><span>Fixed rules in code compute the match, with no language model involved.</span></li><li><b>Explain</b><span>Gap analysis runs, then the model writes the explanation.</span></li><li><b>Draft</b><span>Tailored documents are generated and fact-checked on request.</span></li></ol>
+    </section>
+    <section class="mm-card"><h3>Key Decisions</h3><div class="pj-grid">
+      <div class="pj-item"><h4>Code sets the score</h4><p>The model labels requirements and explains results, but the match number always comes from deterministic rules.</p></div>
+      <div class="pj-item"><h4>Facts must be verified</h4><p>Nothing parsed from a resume is used for matching or writing until the person confirms it.</p></div>
+      <div class="pj-item"><h4>Every line cites a fact</h4><p>A fact checker traces each number and named skill to a verified fact and removes lines that fail.</p></div>
+      <div class="pj-item"><h4>No acting on your behalf</h4><p>Documents are for the person to read and download. The app never submits an application.</p></div>
+    </div></section>
+    <section class="mm-card"><h3>Stack</h3><div class="pj-grid">
+      <div class="pj-item"><h4>Frontend</h4><p>Next.js 15 and TypeScript.</p></div>
+      <div class="pj-item"><h4>Backend</h4><p>FastAPI, SQLAlchemy, Alembic, and a background worker.</p></div>
+      <div class="pj-item"><h4>Data</h4><p>Postgres with pgvector, S3 for files, and SQS for tasks.</p></div>
+      <div class="pj-item"><h4>AI</h4><p>Amazon Bedrock, with a deterministic stub for local development.</p></div>
+      <div class="pj-item"><h4>Auth</h4><p>Cognito with Google Sign-In, using Authorization Code and PKCE.</p></div>
+      <div class="pj-item"><h4>Infrastructure</h4><p>AWS ECS, RDS, and CDK, with Docker Compose locally.</p></div>
+    </div></section>
+    <section class="mm-card"><h3>Quality and Security</h3>
+      <ul class="pj-list">
+        <li>135 backend tests plus 21 database tests against an isolated test database at the last recorded full run.</li>
+        <li>A 72-item QA checklist run across every feature, with all 5 bugs it found fixed.</li>
+        <li>A 13-area security audit. The top 3 findings were fixed, and 2 low-severity findings remained open.</li>
+        <li>Authentication fails closed, so an unconfigured environment cannot fall back to the local sign-in bypass.</li>
+        <li>Resume text is treated as untrusted input, with upload limits of 10 MB and 20 pages.</li>
+      </ul>
+    </section>
+    <section class="mm-card mm-reflection-card"><h3>What I Learned</h3>
+      <p>Testing with a real resume found what fixtures had missed. One upload produced 17 skills but no roles or education. Reproducing it against the actual PDF exposed several separate bugs, including section order and PDF bullet characters, and fixing those revealed a date-sorting bug that had been invisible until roles existed. The same resume then produced all 4 roles and 3 education entries.</p>
+      <p class="mm-quote">AI output should be checked by code, not trusted because it sounds right.</p>
+    </section>
+  </div>
+</div>
+
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-cta">
+      <p class="eyebrow" data-reveal>Get in touch</p>
+      <h2 data-split>Turning complex data into <span class="grad-text">decisions.</span></h2>
+      <a class="btn btn-primary" href="https://www.linkedin.com/in/sagar9792/" target="_blank" rel="noopener noreferrer" data-magnetic data-reveal>Connect on LinkedIn <span class="arrow">↗</span></a>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Sagar S. Alande</span>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="index.html">Home</a><a href="insight.html">From Website to Insight</a><a href="artifacts.html">Artifacts</a><a href="about.html">About Me</a>
+      </nav>
+      <button class="to-top" type="button" data-top>Back to top ↑</button>
+    </div>
+  </div>
+</footer>
+
+<div class="cursor-dot" aria-hidden="true"></div>
+<div class="cursor-ring" aria-hidden="true"></div>
+<div class="page-curtain" aria-hidden="true"></div>
+<script src="assets/js/motion.js"></script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CodeTrace | Sagar S. Alande</title>
+  <meta name="description" content="A full-stack research tool for residential building codes that uses only official municipal sources.">
+  <meta name="theme-color" content="#05070d">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/theme.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <script>document.documentElement.classList.add('js');setTimeout(function(){document.body&&document.body.classList.add('is-ready')},1800);</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="scroll-progress" aria-hidden="true"></div>
+<div class="bg-aurora" aria-hidden="true"><span></span><span></span><span></span></div>
+<div class="bg-grid" aria-hidden="true"></div>
+
+<header class="site-nav" data-nav>
+  <a class="brand" href="index.html" aria-label="Sagar S Alande, home"><span class="brand-mark">SA</span><span class="brand-name">Sagar S Alande</span></a>
+  <nav class="nav-links" id="nav-links" aria-label="Primary">
+    <a href="index.html">Home</a>
+    <a href="insight.html">From Website to Insight</a>
+    <a href="artifacts.html" aria-current="page">Artifacts</a>
+    <a href="about.html">About Me</a>
+  </nav>
+  <a class="nav-cta" href="https://www.linkedin.com/in/sagar9792/" target="_blank" rel="noopener noreferrer" data-magnetic>Let's connect ↗</a>
+  <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span></button>
+</header>
+
+<main id="main" class="dd-main">
+  <section class="page-hero">
+    <div class="container">
+      <a class="back-link" href="artifacts.html" data-reveal>← All artifacts</a>
+      <p class="eyebrow" data-reveal>Full-stack app</p>
+      <h1 data-split>CodeTrace</h1>
+    </div>
+  </section>
+<div class="dd-body">
+<div id="project-page">
+  <div class="mm-header">
+    <div class="mm-badge">Full-stack app · Research tool</div>
+    <h2>Building-code answers from official sources</h2>
+    <p>CodeTrace answers residential building-code questions using only approved government websites, with a source for every answer.</p>
+    <div class="mm-btn-row"><a class="mm-btn mm-btn-primary" href="#demo">Watch the Demo</a><a class="mm-btn mm-btn-secondary" href="https://github.com/sagar-alande/codetrace" target="_blank" rel="noopener noreferrer">View the Code on GitHub</a></div>
+  </div>
+  <div class="mm-stats"><div class="mm-stat"><span class="mm-stat-num">5</span><span class="mm-stat-label">U.S. cities</span></div><div class="mm-stat"><span class="mm-stat-num">4</span><span class="mm-stat-label">Research topics</span></div><div class="mm-stat"><span class="mm-stat-num">29</span><span class="mm-stat-label">Automated tests</span></div><div class="mm-stat"><span class="mm-stat-num">0</span><span class="mm-stat-label">API keys in the browser</span></div></div>
+  <div class="mm-stack">
+    <aside class="mm-card pj-status"><span class="pj-dot" aria-hidden="true"></span><p><strong>Live demo offline to manage hosting costs.</strong> Watch the recorded demo below, or read the code on GitHub.</p></aside>
+
+    <section class="mm-card" id="demo"><h3>Demo</h3>
+      <div class="pj-video"><iframe src="https://www.youtube-nocookie.com/embed/9Te8NNeMaos" title="CodeTrace demo video" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+      <p class="pj-video-link"><a href="https://youtu.be/9Te8NNeMaos" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a></p>
+    </section>
+    <section class="mm-card"><h3>The Interface</h3>
+      <p class="mm-muted">Screenshots from a local run of the app. The live search backend is offline, so these show the interface without search results.</p>
+      <div class="pj-shots">
+        <figure class="pj-shot"><img src="assets/projects/codetrace-console.jpg" alt="CodeTrace research console with jurisdiction, category, and question fields" loading="lazy" width="800" height="500"><figcaption>The research console, with a clear research-only notice.</figcaption></figure>
+        <figure class="pj-shot"><img src="assets/projects/codetrace-blueprint.jpg" alt="CodeTrace blueprint drawing of a house section" loading="lazy" width="800" height="500"><figcaption>A blueprint drawing shows the part of the house each topic covers.</figcaption></figure>
+        <figure class="pj-shot"><img src="assets/projects/codetrace-login.jpg" alt="CodeTrace welcome screen with Google sign-in and guest access" loading="lazy" width="800" height="500"><figcaption>Sign in with Google, or continue as a guest.</figcaption></figure>
+      </div>
+    </section>
+    <section class="mm-card"><h3>How It Works</h3>
+      <ol class="pj-flow"><li><b>Choose</b><span>Pick one of five cities and a topic, then ask a question.</span></li><li><b>Validate</b><span>The question and choices are checked on the client and the server.</span></li><li><b>Search</b><span>An Edge Function runs Tavily with the key kept on the server.</span></li><li><b>Filter</b><span>Only HTTPS results on approved city domains are kept.</span></li><li><b>Verify</b><span>Measurements must appear in a retained source.</span></li><li><b>Answer</b><span>A summary appears with sources, or an honest insufficient-information response.</span></li></ol>
+    </section>
+    <section class="mm-card"><h3>Key Decisions</h3><div class="pj-grid">
+      <div class="pj-item"><h4>Official sources only</h4><p>Each city has an allowlist of government domains, and lookalikes such as nyc.gov.attacker.com are rejected.</p></div>
+      <div class="pj-item"><h4>Numbers need evidence</h4><p>A measurement such as 10 feet must appear in a retained source, or the answer falls back.</p></div>
+      <div class="pj-item"><h4>Never infer a section</h4><p>Section numbers appear only when a source states them.</p></div>
+      <div class="pj-item"><h4>Honest failure</h4><p>A timeout or failed search never suggests that no requirement exists.</p></div>
+    </div></section>
+    <section class="mm-card"><h3>Stack</h3><div class="pj-grid">
+      <div class="pj-item"><h4>Frontend</h4><p>React, TypeScript, Vite, and Tailwind CSS.</p></div>
+      <div class="pj-item"><h4>Backend</h4><p>Supabase Edge Functions and Postgres.</p></div>
+      <div class="pj-item"><h4>Search</h4><p>Tavily, called only from the server.</p></div>
+      <div class="pj-item"><h4>Auth</h4><p>Google Sign-In with PKCE, plus anonymous guest sessions.</p></div>
+      <div class="pj-item"><h4>Delivery</h4><p>Docker, AWS ECS, and GitHub Actions without stored AWS keys.</p></div>
+      <div class="pj-item"><h4>Coverage</h4><p>Austin, New York City, Los Angeles, Chicago, and Miami.</p></div>
+    </div></section>
+    <section class="mm-card"><h3>Quality and Security</h3>
+      <ul class="pj-list">
+        <li>29 automated security and regression tests passing at the report date.</li>
+        <li>Row-level security limits history and feedback to their owner.</li>
+        <li>The Edge Function requires a verified token and accepts only POST JSON requests.</li>
+        <li>Questions are limited to 3 to 1,000 characters, and markup and script input is rejected.</li>
+        <li>Raw service errors are never shown to users.</li>
+      </ul>
+    </section>
+    <section class="mm-card mm-reflection-card"><h3>What I Learned</h3>
+      <p>Much of the work in an AI search product happens around the search itself, in the checks that decide what can be shown. An answer can sound right and still be unsupported, so numbers need their own check, and even error messages have to be worded carefully.</p>
+      <p class="mm-quote">A research tool earns trust by showing its limits.</p>
+    </section>
+  </div>
+</div>
+
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-cta">
+      <p class="eyebrow" data-reveal>Get in touch</p>
+      <h2 data-split>Turning complex data into <span class="grad-text">decisions.</span></h2>
+      <a class="btn btn-primary" href="https://www.linkedin.com/in/sagar9792/" target="_blank" rel="noopener noreferrer" data-magnetic data-reveal>Connect on LinkedIn <span class="arrow">↗</span></a>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Sagar S. Alande</span>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="index.html">Home</a><a href="insight.html">From Website to Insight</a><a href="artifacts.html">Artifacts</a><a href="about.html">About Me</a>
+      </nav>
+      <button class="to-top" type="button" data-top>Back to top ↑</button>
+    </div>
+  </div>
+</footer>
+
+<div class="cursor-dot" aria-hidden="true"></div>
+<div class="cursor-ring" aria-hidden="true"></div>
+<div class="page-curtain" aria-hidden="true"></div>
+<script src="assets/js/motion.js"></script>
+</body>
+</html>
