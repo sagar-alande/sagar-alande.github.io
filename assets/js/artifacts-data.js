@@ -3,6 +3,38 @@
    a section can be plain text, a list of paragraphs, or a list of [label, text] pairs. */
 window.ARTIFACTS = [
   {
+    title: `Patient Readmission Support`,
+    fullTitle: `Patient Readmission Support: A Daily Follow-Up List That Informs, Never Replaces, Clinical Judgment`,
+    label: `HEALTHCARE AI`, emoji: `🏥📋`,
+    accent: `#0f766e`, dark: `#0f2e2b`,
+    blurb: `A Team 9 project: how a hospital could decide whom to call after discharge, from data inventory to a governed, in-house architecture and a live prototype.`,
+    intro: `This team project designs a daily ranked follow-up list for a fictional health organization whose care-transition team cannot call every discharged patient. It was developed by Team 9 (Sagar Alande, Laykumar Lad, Kishankumar Patel and Dhairya Bhatt) during the Workshop 3 residency for AIML-501 Model Development. The core question was what makes a prediction trustworthy enough to inform, but never replace, clinical judgment.`,
+    objective: `Recommend a system the organization could realistically operate, secure, monitor and support: the minimum data it needs, how it would be tested, how its results should be read, and what infrastructure, approvals and stop rules it requires. "Do not deploy yet" was an acceptable answer.`,
+    process: [
+      `This was a team project worked through four timed rounds, and each round released new facts that changed the plan. All four of us made, challenged and revised every decision, and we kept them in one shared decision record with the reasoning, open questions and whether each decision changed.`,
+      `In Round 1 we chose a ranked list using the LACE index plus two optional patient answers instead of a new model. In Round 2 we sketched a data sieve together, cut about 150 candidate fields to 7 inputs, and paused all data movement until a minimum-necessary extract was approved. In Round 3 we declined a supplied model with 80% recall and 25% precision. In Round 4 we chose an in-house deployment because the preferred external service had no business associate agreement.`,
+      `To test the method, the design runs as a multi-agent prototype on synthetic data with messy feeds, human approval gates, 95% confidence ranges and plain-language reasons for every patient on the call list.`
+    ],
+    tools: [`Python`, `pandas`, `scikit-learn`, `Streamlit`, `LACE index`, `Bootstrap confidence intervals`, `HIPAA minimum necessary`, `Architecture diagrams`, `Decision records`],
+    value: [
+      [`Unique Value`, `This project shows that I can design an AI system as an organization would have to run it: who owns each step, who may see what, which approvals come first, and when the system must stop. It also shows that I can read model results honestly, since a strong-sounding 80% recall turned out to flag about half of all patients.`],
+      [`Relevance`, `In financial services, as in healthcare, sensitive data needs a lawful basis, a minimum footprint and an audit trail before it is used. The habit this project built is to treat technical feasibility and permission as two different questions.`]
+    ],
+    audience: [
+      [`Adaptations Made`, `The decision record and brief were written for clinical and governance readers, not engineers. Every metric is translated into calls per 1,000 discharges, and every control names an owner.`],
+      [`Relevance`, `A hospital leader can see what the list may and must not do and who signs off each step, without reading any code.`]
+    ],
+    reflection: [
+      [`Significance`, `I selected this artifact because it is the strongest example of teamwork in my portfolio. Our plan changed four times, and each change came from the team testing it against new facts.`],
+      [`Lessons Learned`, `The hardest questions were never about the model. They were about ownership, permission and the patients a list misses. A system that cannot say who owns each step is not ready, however accurate it is.`]
+    ],
+    links: [
+      [`🔍 Dive Deep →`, `readmission.html`],
+      [`🚀 Open the Live App →`, `https://team9-readmit.streamlit.app`],
+      [`💻 View the Code on GitHub →`, `https://github.com/sagar-alande/team9-readmit`]
+    ]
+  },
+  {
       title: `How LLMs Are Trained`,
       fullTitle: `How a Large Language Model Is Trained: The Steps, the Resources, and What They Cost`,
       label: `MODEL DEVELOPMENT`, emoji: `📚⚡`,
@@ -176,38 +208,6 @@ window.ARTIFACTS = [
       [`🔍 Dive Deep →`, `codetrace.html`],
       [`▶️ Watch the Demo →`, `https://youtu.be/9Te8NNeMaos`],
       [`💻 View the Code on GitHub →`, `https://github.com/sagar-alande/codetrace`]
-    ]
-  },
-  {
-    title: `Patient Readmission Support`,
-    fullTitle: `Patient Readmission Support: A Daily Follow-Up List That Informs, Never Replaces, Clinical Judgment`,
-    label: `HEALTHCARE AI`, emoji: `🏥📋`,
-    accent: `#0f766e`, dark: `#0f2e2b`,
-    blurb: `A Team 9 project: how a hospital could decide whom to call after discharge, from data inventory to a governed, in-house architecture and a live prototype.`,
-    intro: `This team project designs a daily ranked follow-up list for a fictional health organization whose care-transition team cannot call every discharged patient. It was developed by Team 9 (Sagar Alande, Laykumar Lad, Kishankumar Patel and Dhairya Bhatt) during the Workshop 3 residency for AIML-501 Model Development. The core question was what makes a prediction trustworthy enough to inform, but never replace, clinical judgment.`,
-    objective: `Recommend a system the organization could realistically operate, secure, monitor and support: the minimum data it needs, how it would be tested, how its results should be read, and what infrastructure, approvals and stop rules it requires. "Do not deploy yet" was an acceptable answer.`,
-    process: [
-      `This was a team project worked through four timed rounds, and each round released new facts that changed the plan. All four of us made, challenged and revised every decision, and we kept them in one shared decision record with the reasoning, open questions and whether each decision changed.`,
-      `In Round 1 we chose a ranked list using the LACE index plus two optional patient answers instead of a new model. In Round 2 we sketched a data sieve together, cut about 150 candidate fields to 7 inputs, and paused all data movement until a minimum-necessary extract was approved. In Round 3 we declined a supplied model with 80% recall and 25% precision. In Round 4 we chose an in-house deployment because the preferred external service had no business associate agreement.`,
-      `To test the method, the design runs as a multi-agent prototype on synthetic data with messy feeds, human approval gates, 95% confidence ranges and plain-language reasons for every patient on the call list.`
-    ],
-    tools: [`Python`, `pandas`, `scikit-learn`, `Streamlit`, `LACE index`, `Bootstrap confidence intervals`, `HIPAA minimum necessary`, `Architecture diagrams`, `Decision records`],
-    value: [
-      [`Unique Value`, `This project shows that I can design an AI system as an organization would have to run it: who owns each step, who may see what, which approvals come first, and when the system must stop. It also shows that I can read model results honestly, since a strong-sounding 80% recall turned out to flag about half of all patients.`],
-      [`Relevance`, `In financial services, as in healthcare, sensitive data needs a lawful basis, a minimum footprint and an audit trail before it is used. The habit this project built is to treat technical feasibility and permission as two different questions.`]
-    ],
-    audience: [
-      [`Adaptations Made`, `The decision record and brief were written for clinical and governance readers, not engineers. Every metric is translated into calls per 1,000 discharges, and every control names an owner.`],
-      [`Relevance`, `A hospital leader can see what the list may and must not do and who signs off each step, without reading any code.`]
-    ],
-    reflection: [
-      [`Significance`, `I selected this artifact because it is the strongest example of teamwork in my portfolio. Our plan changed four times, and each change came from the team testing it against new facts.`],
-      [`Lessons Learned`, `The hardest questions were never about the model. They were about ownership, permission and the patients a list misses. A system that cannot say who owns each step is not ready, however accurate it is.`]
-    ],
-    links: [
-      [`🔍 Dive Deep →`, `readmission.html`],
-      [`🚀 Open the Live App →`, `https://team9-readmit.streamlit.app`],
-      [`💻 View the Code on GitHub →`, `https://github.com/sagar-alande/team9-readmit`]
     ]
   },
   {
