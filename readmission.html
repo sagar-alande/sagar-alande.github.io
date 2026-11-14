@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patient Readmission Support | Sagar S. Alande</title>
+  <meta name="description" content="A Team 9 project: a daily ranked follow-up list that informs, but never replaces, clinical judgment. Architecture, governance, and a working prototype on synthetic data.">
+  <meta name="theme-color" content="#05070d">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/theme.css?v=20261104">
+  <link rel="stylesheet" href="assets/css/components.css?v=20261114">
+  <script>document.documentElement.classList.add('js');setTimeout(function(){document.body&&document.body.classList.add('is-ready')},1800);</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="scroll-progress" aria-hidden="true"></div>
+<div class="bg-aurora" aria-hidden="true"><span></span><span></span><span></span></div>
+<div class="bg-grid" aria-hidden="true"></div>
+
+<header class="site-nav" data-nav>
+  <a class="brand" href="index.html" aria-label="Sagar S Alande, home"><span class="brand-mark">SA</span><span class="brand-name">Sagar S Alande</span></a>
+  <nav class="nav-links" id="nav-links" aria-label="Primary">
+    <a href="index.html">Home</a>
+    <a href="insight.html">From Website to Insight</a>
+    <a href="artifacts.html" aria-current="page">Artifacts</a>
+    <a href="about.html">About Me</a>
+  </nav>
+  <a class="nav-cta" href="https://www.linkedin.com/in/sagar9792/" target="_blank" rel="noopener noreferrer" data-magnetic>Let's connect ↗</a>
+  <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span></button>
+</header>
+
+<main id="main" class="dd-main">
+  <section class="page-hero">
+    <div class="container">
+      <a class="back-link" href="artifacts.html" data-reveal>← All artifacts</a>
+      <p class="eyebrow" data-reveal>Team project · Healthcare AI</p>
+      <h1 data-split>Patient Readmission Support</h1>
+    </div>
+  </section>
+<div class="dd-body">
+<div id="project-page">
+  <div class="mm-header">
+    <div class="mm-badge">Team 9 · AIML-501 Model Development · Workshop 3 Residency</div>
+    <h2>A daily call list that informs, never replaces, clinical judgment</h2>
+    <p>Four of us designed how a fictional health organization could decide which discharged patients to call first: consistently, fairly and privately, with staff deciding every call. We worked through four timed rounds, and each round released new facts that forced us to rethink the plan together.</p>
+    <div class="mm-btn-row"><a class="mm-btn mm-btn-primary" href="https://team9-readmit.streamlit.app" target="_blank" rel="noopener noreferrer">Open the Live App ↗</a><a class="mm-btn mm-btn-secondary" href="https://github.com/sagar-alande/team9-readmit" target="_blank" rel="noopener noreferrer">View the Code on GitHub</a></div>
+  </div>
+  <div class="mm-stats"><div class="mm-stat"><span class="mm-stat-num">4</span><span class="mm-stat-label">Team members</span></div><div class="mm-stat"><span class="mm-stat-num">4</span><span class="mm-stat-label">Decision rounds</span></div><div class="mm-stat"><span class="mm-stat-num">150 → 7</span><span class="mm-stat-label">Candidate fields to inputs</span></div><div class="mm-stat"><span class="mm-stat-num">0</span><span class="mm-stat-label">Real patient records used</span></div></div>
+  <div class="mm-stack">
+    <aside class="mm-card pj-status tm-safe"><span class="pj-dot" aria-hidden="true"></span><p><strong>Every patient, hospital and number here is synthetic.</strong> The live app shows the method, not real-world performance. Staff decide every call.</p></aside>
+
+    <!-- ===================== TEAM ===================== -->
+    <section class="mm-card tm-team-card" id="team"><h3>The Team</h3>
+      <p class="mm-muted">This was a team project from the first whiteboard sketch to the final decision record. Every decision below was made, challenged and revised by all four of us.</p>
+      <div class="tm-team">
+        <div class="tm-member"><span class="tm-avatar" aria-hidden="true">SA</span><b>Sagar Alande</b><span>Team 9</span></div>
+        <div class="tm-member"><span class="tm-avatar" aria-hidden="true">LL</span><b>Laykumar Lad</b><span>Team 9</span></div>
+        <div class="tm-member"><span class="tm-avatar" aria-hidden="true">KP</span><b>Kishankumar Patel</b><span>Team 9</span></div>
+        <div class="tm-member"><span class="tm-avatar" aria-hidden="true">DB</span><b>Dhairya Bhatt</b><span>Team 9</span></div>
+      </div>
+      <h4 class="tm-sub">How we worked together</h4>
+      <div class="pj-grid">
+        <div class="pj-item"><h4>One shared decision record</h4><p>Every round's decision, the reasoning behind it, what we still did not know and whether it changed went into one team document. No decision lived only in one person's head.</p></div>
+        <div class="pj-item"><h4>Sketch together, then write</h4><p>We drew the data sieve and the architecture on paper during the residency before writing a word, so all four of us argued over the same picture.</p></div>
+        <div class="pj-item"><h4>Change our minds in the open</h4><p>When new facts arrived, the log records what changed: 13 inputs narrowed to 7, and the pause point moved from outcome data to the data extract.</p></div>
+        <div class="pj-item"><h4>Check before committing</h4><p>Before interpreting the model results in Round 3, we confirmed three points with the professor, including that "care settings" meant our two hospitals.</p></div>
+        <div class="pj-item"><h4>Keep hard questions open</h4><p>Should the list target the patients most at risk, or the ones a call would help most? We never pretended to settle it; it stayed on our open-questions list every round.</p></div>
+        <div class="pj-item"><h4>Agree on what stays human</h4><p>Early on we agreed that the list never removes anyone from standard care and never decides a call. That shared rule shaped every later round.</p></div>
+      </div>
+    </section>
+
+    <section class="mm-card"><h3>Four Rounds, Four Team Decisions</h3>
+      <p class="mm-muted">Each round released new information. The plan below is what the team agreed after each one.</p>
+      <ol class="tm-rounds">
+        <li><span class="tm-round-num">Round 1</span><b>Problem and approach</b><p>Staff choose whom to call by rules of thumb that vary by unit. We chose a daily ranked list using the LACE index plus two optional patient answers, with no new model, and kept a trained model for phase 2 only if it beats LACE.</p><span class="tm-tag">Agreed</span></li>
+        <li><span class="tm-round-num">Round 2</span><b>Data and testing</b><p>New facts: two hospitals code differently, discharge summaries arrive late, and the proposed extract exposed too much. We cut the inputs to 7, ranked within each hospital, and paused all data movement until a minimum-necessary extract is approved.</p><span class="tm-tag tm-tag-warn">Paused at extract approval</span></li>
+        <li><span class="tm-round-num">Round 3</span><b>Performance</b><p>A supplied model scored 80% recall and 25% precision. Per 1,000 discharges that means flagging about half of all patients, with 3 of every 4 calls unnecessary, and no results per hospital. We declined to deploy it.</p><span class="tm-tag tm-tag-warn">Do not deploy the model</span></li>
+        <li><span class="tm-round-num">Round 4</span><b>Infrastructure</b><p>The preferred external service had no business associate agreement (BAA) and unproven controls. Version 1 needs no vendor, so we run it in-house in shadow mode and keep the external service blocked.</p><span class="tm-tag tm-tag-ok">Conditional deployment</span></li>
+      </ol>
+    </section>
+
+    <section class="mm-card"><h3>Our Team's Data Sieve</h3>
+      <p class="mm-muted">Sketched together during the residency. About 150 candidate fields from six sources pass six questions; whatever falls out stays out of the score.</p>
+      <div class="pj-shots"><figure class="pj-shot tm-narrow"><img src="assets/projects/readmission-sieve.jpg" alt="Hand-drawn funnel: 150 fields from six sources pass six sieves (relevant, known in time, no extra work, reliable, safe and fair, simple and clear) down to 13 candidate inputs" loading="lazy" width="1100" height="1163"><figcaption>The team's sieve. Round 2 later narrowed version 1 to 7 of these 13 inputs; counts are illustrative for a fictional hospital.</figcaption></figure></div>
+    </section>
+
+    <!-- ===================== 1. USE CASE ===================== -->
+    <section class="mm-card" id="use-case"><h3>Use Case, Users and Approach</h3><div class="pj-grid">
+      <div class="pj-item"><h4>The problem</h4><p>A follow-up team cannot call every discharged patient, and today's rules of thumb miss people who live alone, lack transport or have thin records.</p></div>
+      <div class="pj-item"><h4>The decision supported</h4><p>Each day, which recently discharged patients should the existing care-transition team contact first?</p></div>
+      <div class="pj-item"><h4>Users</h4><p>Care managers and transition nurses who already make follow-up calls. Physicians and bedside nurses get no new tasks.</p></div>
+      <div class="pj-item"><h4>People affected</h4><p>Discharged adults and their families, including those not prioritized. The list never removes anyone from standard care.</p></div>
+      <div class="pj-item"><h4>What it predicts</h4><p>Risk of unplanned readmission, emergency return or death within 30 days, scored 48 hours before expected discharge. Death is included because dying at home is not a success.</p></div>
+      <div class="pj-item"><h4>Technical approach</h4><p>LACE plus two optional patient answers, run as a daily in-house job and ranked within each hospital, with a one-line reason and flags per patient. Shadow mode first.</p></div>
+    </div></section>
+
+    <!-- ===================== 2. ARCHITECTURE ===================== -->
+    <section class="mm-card" id="architecture"><h3>Architecture and Data Flow</h3>
+      <ol class="pj-flow tm-flow6"><li><b>Approved source</b><span>Minimum-necessary EHR and admission data, signed off by the privacy officer.</span></li><li><b>Preparation</b><span>Validate, de-duplicate, map both hospitals' codes, mark missing as unknown.</span></li><li><b>Scoring</b><span>LACE computed within each hospital, 48 hours before discharge.</span></li><li><b>Output</b><span>A draft ranked list with a reason line and practical flags.</span></li><li><b>Human review</b><span>A nurse decides, calls and records the outcome.</span></li><li><b>Feedback and monitoring</b><span>Results by hospital and group; only governance changes the list.</span></li></ol>
+      <div class="pj-shots" style="margin-top:16px">
+        <figure class="pj-shot"><img src="assets/projects/readmission-architecture.jpg" alt="Architecture in six columns inside the hospital network: data sources, data capture, data preparation, secure data and scoring, scoring service, clinical use, over a shared foundation of access control, encryption, audit logging, data catalog, monitoring, human oversight and incident response. The external AI service sits outside the network with its path blocked." loading="lazy" width="1800" height="1184"><figcaption>Everything runs inside the hospital network, and every column names its owner. The external AI service stays blocked until it has a BAA and a security review.</figcaption></figure>
+        <figure class="pj-shot"><img src="assets/projects/readmission-dataflow.jpg" alt="Data flow from approved data to scoring, output, human action and monitoring, with an approval gate before scoring and an owner badge under each step" loading="lazy" width="1600" height="736"><figcaption>Each step has one named owner. The approval gate sits before the first computation, so even shadow testing waits.</figcaption></figure>
+      </div>
+    </section>
+
+    <!-- ===================== 3. INFRASTRUCTURE ===================== -->
+    <section class="mm-card" id="infrastructure"><h3>Infrastructure Brief</h3><div class="pj-grid">
+      <div class="pj-item"><h4>Hosting and compute</h4><p>A scheduled job in the hospital's existing data warehouse or EHR rules engine. No GPU, no training, and a daily batch is fast enough.</p></div>
+      <div class="pj-item"><h4>Model and API dependencies</h4><p>None external for version 1. LACE is a published rules-based score. A trained model is phase 2 only, hosted in-house.</p></div>
+      <div class="pj-item"><h4>Access controls</h4><p>Single sign-on with MFA and role-based views. The scoring job sees 7 inputs and a pseudonymous key; each care manager sees only their worklist.</p></div>
+      <div class="pj-item"><h4>Data retention</h4><p>Daily lists kept 90 days, then purged; call outcomes kept in the record; HIPAA-required documentation kept six years.</p></div>
+      <div class="pj-item"><h4>Updates</h4><p>LACE weights are fixed. The code mapping is reviewed quarterly and whenever either hospital changes its coding. Every change goes through governance.</p></div>
+      <div class="pj-item"><h4>Logging</h4><p>Every view, export and configuration change is logged with user and time, and reviewed monthly and on any alert.</p></div>
+      <div class="pj-item"><h4>Security review</h4><p>The chief information security officer reviews the job and the restricted store before go-live; encryption in transit and at rest.</p></div>
+      <div class="pj-item"><h4>Cost drivers</h4><p>People, not compute: the data steward who maintains the code mapping, the care managers' calling time and committee time.</p></div>
+      <div class="pj-item"><h4>Operational ownership</h4><p>Data steward and privacy officer (data), clinical informatics (scoring), care-transition manager (list), quality team and governance committee (monitoring).</p></div>
+      <div class="pj-item"><h4>Incident response</h4><p>On a suspected disclosure: pause the list, contain, investigate, and notify patients no later than 60 days after discovery.</p></div>
+    </div></section>
+
+    <!-- ===================== BRIEF AT A GLANCE ===================== -->
+    <section class="mm-card mm-highlight-card" id="brief"><h3>The Architecture Brief at a Glance</h3>
+      <p><b>Recommendation: conditional deployment.</b> Run version 1 in-house, in shadow mode first, once the privacy, security, workflow and governance approvals are signed. Do not deploy the preferred external AI service yet: it has no business associate agreement and has not proven its access, retention and security controls.</p>
+      <div class="tm-two">
+        <div><h4>Key risks and controls</h4><div class="tm-table-wrap"><table class="tm-table">
+          <thead><tr><th>Risk</th><th>Control</th></tr></thead>
+          <tbody>
+            <tr><td>Vendor receives patient data without a BAA</td><td>Path blocked until a BAA and security review (SOC 2 Type II or HITRUST)</td></tr>
+            <tr><td>Over-broad extract</td><td>Privacy officer signs off a minimum-necessary view before any computation</td></tr>
+            <tr><td>Coding differs between hospitals</td><td>ICD-10-CM mapping, quarterly review, named data steward</td></tr>
+            <tr><td>Labels miss outside returns and deaths</td><td>Data-use agreement before any phase 2 model</td></tr>
+            <tr><td>List exceeds staff capacity</td><td>List size capped; two bands; governance sets thresholds</td></tr>
+            <tr><td>Unequal recall across groups</td><td>Demographics audit-only; monthly recall by group</td></tr>
+            <tr><td>Unauthorized disclosure</td><td>Pause the list, contain, notify within 60 days</td></tr>
+          </tbody></table></div></div>
+        <div><h4>Trade-offs</h4><div class="tm-table-wrap"><table class="tm-table">
+          <thead><tr><th>Choice</th><th>Gain</th><th>Cost</th></tr></thead>
+          <tbody>
+            <tr><td>In-house LACE over external AI</td><td>No BAA needed; full control; explainable</td><td>Modest accuracy (C-statistic about 0.68)</td></tr>
+            <tr><td>Daily batch over real time</td><td>Cheap, fewer failure points</td><td>No intraday updates (not needed)</td></tr>
+            <tr><td>Rank within each hospital</td><td>Fair despite different coding</td><td>Lists not comparable across sites</td></tr>
+            <tr><td>Two score bands</td><td>Fits call capacity, keeps recall</td><td>Lower band gets a lighter touch</td></tr>
+            <tr><td>Model only in phase 2</td><td>Must beat LACE first</td><td>Slower path to higher precision</td></tr>
+          </tbody></table></div>
+          <h4 style="margin-top:16px !important">Monitoring cadence</h4>
+          <ul class="pj-list"><li><b>Daily:</b> data-feed and code-mapping validation; alert on missing or late feeds.</li><li><b>Weekly:</b> list size against capacity, contact rate, 30-day returns and ED visits.</li><li><b>Monthly:</b> recall and precision by hospital and group with 95% ranges; access-log review.</li><li><b>Ownership:</b> the quality team reports to the governance committee, which alone changes size, thresholds or inputs.</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 4. WHY THIS APPROACH ===================== -->
+    <section class="mm-card" id="alternatives"><h3>Why This Approach</h3>
+      <p class="mm-muted">We compared five paths in Round 1 and three hosting options in Round 4. The simplest one that solves the real problem won.</p>
+      <div class="pj-grid">
+        <div class="pj-item"><h4>✅ In-house LACE rules job</h4><p>Transparent, cheap and fast, with no new model risk and no vendor. Moderate accuracy (C-statistic about 0.68), which a trained model must beat before it replaces it.</p></div>
+        <div class="pj-item"><h4>EHR vendor model</h4><p>Already in the workflow, but proprietary and hard to audit. Kept as a comparator; adopted only if it passes local validation and fairness checks.</p></div>
+        <div class="pj-item"><h4>Locally trained model</h4><p>Explainable and can be calibrated per hospital, but needs clean labels and ongoing revalidation. Phase 2, only if it beats LACE at both hospitals.</p></div>
+        <div class="pj-item"><h4>⛔ External AI service</h4><p>Adds subscription, legal and security cost, depends on vendor uptime, and can change without notice. Blocked: no BAA and unproven controls.</p></div>
+      </div>
+      <p class="tm-note">Deployment and maintenance trade-off: the in-house job needs only the existing warehouse and a data steward, while a model or vendor adds revalidation, drift monitoring and vendor management for every version.</p>
+    </section>
+
+    <!-- ===================== 5. APPROVALS ===================== -->
+    <section class="mm-card" id="approvals"><h3>Approvals Before Any Protected Record Is Used</h3>
+      <p class="mm-muted">Technical feasibility is not legal permission. None of these is confirmed yet, so the next step is shadow mode, not live use.</p>
+      <ol class="pj-list">
+        <li><b>Minimum-necessary extract and role-based views</b>: privacy officer. Blocks all data movement, even shadow testing.</li>
+        <li><b>Security review of the in-house job and store</b>: chief information security officer. Blocks version 1 go-live.</li>
+        <li><b>Call workflow and script</b>: nursing and clinical informatics leaders. Blocks staff using the list.</li>
+        <li><b>Governance charter</b> for list size, thresholds and stop rules: governance committee. Blocks moving from shadow mode to live use.</li>
+        <li><b>Data-use agreement</b> for outside-hospital and state death data: privacy officer and partners. Blocks any phase 2 model.</li>
+        <li><b>BAA and security review</b> for the external service: privacy officer, legal and security. Not provided by the vendor.</li>
+        <li><b>Institutional review board</b>: only if results are published.</li>
+      </ol>
+    </section>
+
+    <!-- ===================== 6. BOUNDARIES ===================== -->
+    <section class="mm-card" id="boundaries"><h3>What the System May and Must Not Do</h3>
+      <div class="tm-bounds">
+        <div class="tm-bound tm-may"><h4>The system may</h4><ul><li>Extract the approved fields each night</li><li>Compute LACE within each hospital and rank patients</li><li>Show a draft list with a one-line reason and flags for limited history, an unverified phone and interpreter need</li><li>Produce monitoring reports by hospital and group</li></ul></div>
+        <div class="tm-bound tm-mustnot"><h4>The system must not</h4><ul><li>Send identifiable data to any outside service without a BAA and security review</li><li>Decide who is called, or skip a patient, on its own</li><li>Use race, ethnicity, sex, payer or disability as inputs</li><li>Use discharge summaries or other late data</li><li>Change its own thresholds, list size or inputs</li></ul></div>
+        <div class="tm-bound tm-stop"><h4>Pause, roll back or retire</h4><ul><li><b>Pause</b> on any unauthorized disclosure, a failed data feed or code mapping, or recall more than 10 points below average for any hospital or group in two monthly reviews</li><li><b>Roll back</b> to the previous approved configuration if a change makes results worse, or to today's manual selection if the list fails</li><li><b>Retire</b> the list if staff stop using it, if shadow mode shows no gain over manual selection, or if a validated replacement is approved</li></ul></div>
+      </div>
+    </section>
+
+    <!-- ===================== PROTOTYPE ===================== -->
+    <section class="mm-card" id="prototype"><h3>The Working Prototype</h3>
+      <p>To test the method rather than just describe it, the team's design runs as a multi-agent prototype on synthetic data. Rule-based agents push 150 fields through the six sieves, human gates decide data access and adoption, and the final verdict uses 95% ranges rather than a single number.</p>
+      <div class="pj-grid">
+        <div class="pj-item"><h4>Messy data on purpose</h4><p>The synthetic feeds arrive with duplicates, typos, unit mix-ups, feed outages and a form change, and a cleaning step reports every fix.</p></div>
+        <div class="pj-item"><h4>Honest verdict</h4><p>Point estimates looked better than LACE, but the 95% ranges crossed the bar, so the verdict was "hold, too uncertain."</p></div>
+        <div class="pj-item"><h4>Reasons, not just ranks</h4><p>Each patient on the call list gets up to three plain-language reasons and a limited-history flag.</p></div>
+        <div class="pj-item"><h4>People decide the gates</h4><p>In the live app, a named reviewer approves or declines each human gate before the agents run.</p></div>
+      </div>
+      <div class="mm-btn-row"><a class="mm-btn mm-btn-primary" href="https://team9-readmit.streamlit.app" target="_blank" rel="noopener noreferrer">Try the Live App ↗</a></div>
+    </section>
+
+    <section class="mm-card mm-reflection-card"><h3>What We Learned</h3>
+      <p>Each round made the problem less about the model and more about the organization around it. In Round 3 the question was whether a model was good enough. By Round 4 the harder questions were who owns each step, who may see what, and who can say stop. Working as a team made those questions impossible to skip: whenever one of us reached for a technical fix, someone else asked who would maintain it, who could see the data and what happens to the patient the list misses.</p>
+      <p class="mm-quote">A system that cannot say who owns each step is not ready, however accurate it is.</p>
+    </section>
+  </div>
+</div>
+
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-cta">
+      <p class="eyebrow" data-reveal>Get in touch</p>
+      <h2 data-split>Turning complex data into <span class="grad-text">decisions.</span></h2>
+      <a class="btn btn-primary" href="https://www.linkedin.com/in/sagar9792/" target="_blank" rel="noopener noreferrer" data-magnetic data-reveal>Connect on LinkedIn <span class="arrow">↗</span></a>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Sagar S. Alande</span>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="index.html">Home</a><a href="insight.html">From Website to Insight</a><a href="artifacts.html">Artifacts</a><a href="about.html">About Me</a>
+      </nav>
+      <button class="to-top" type="button" data-top>Back to top ↑</button>
+    </div>
+  </div>
+</footer>
+
+<div class="cursor-dot" aria-hidden="true"></div>
+<div class="cursor-ring" aria-hidden="true"></div>
+<div class="page-curtain" aria-hidden="true"></div>
+<script src="assets/js/motion.js?v=20261104"></script>
+</body>
+</html>
