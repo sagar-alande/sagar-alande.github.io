@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explainable AI | Sagar S. Alande</title>
+  <meta name="description" content="Opening the Black Box: why the decisions of GPT, Claude, Gemini, and LLaMA are hard to explain, how validation and metrics build trust, and what industry leaders are doing about it.">
+  <meta name="theme-color" content="#05070d">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/theme.css?v=20261104">
+  <link rel="stylesheet" href="assets/css/components.css?v=20261117">
+  <script>document.documentElement.classList.add('js');setTimeout(function(){document.body&&document.body.classList.add('is-ready')},1800);</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="scroll-progress" aria-hidden="true"></div>
+<div class="bg-aurora" aria-hidden="true"><span></span><span></span><span></span></div>
+<div class="bg-grid" aria-hidden="true"></div>
+
+<header class="site-nav" data-nav>
+  <a class="brand" href="index.html" aria-label="Sagar S Alande, home"><span class="brand-mark">SA</span><span class="brand-name">Sagar S Alande</span></a>
+  <nav class="nav-links" id="nav-links" aria-label="Primary">
+    <a href="index.html">Home</a>
+    <a href="insight.html">From Website to Insight</a>
+    <a href="artifacts.html" aria-current="page">Artifacts</a>
+    <a href="about.html">About Me</a>
+  </nav>
+  <a class="nav-cta" href="https://www.linkedin.com/in/sagar9792/" target="_blank" rel="noopener noreferrer" data-magnetic>Let's connect ↗</a>
+  <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span></button>
+</header>
+
+<main id="main" class="dd-main">
+  <section class="page-hero">
+    <div class="container">
+      <a class="back-link" href="artifacts.html" data-reveal>← All artifacts</a>
+      <p class="eyebrow" data-reveal>Visual artifact · Model development</p>
+      <h1 data-split>Explainable AI</h1>
+    </div>
+  </section>
+<div class="dd-body">
+<div id="xai-artifact">
+  <div class="mm-header">
+    <div class="mm-badge">Visual Artifact · AIML-501 · Activity 4.4</div>
+    <h2>Opening the Black Box</h2>
+    <p>How researchers try to explain the decisions of GPT, Claude, Gemini, and LLaMA, why it is so hard, and how validation and performance metrics build trust while explanations are still catching up.</p>
+    <div class="mm-btn-row">
+      <a class="mm-btn mm-btn-primary" href="xai-infographic.html">View the Infographic</a>
+      <a class="mm-btn mm-btn-secondary" href="assets/projects/xai-infographic.pdf" download>Download the PDF</a>
+    </div>
+  </div>
+
+  <div class="mm-stats">
+    <div class="mm-stat"><span class="mm-stat-num">4</span><span class="mm-stat-label">Sections, one per brief</span></div>
+    <div class="mm-stat"><span class="mm-stat-num">4</span><span class="mm-stat-label">AI leaders compared</span></div>
+    <div class="mm-stat"><span class="mm-stat-num">25%</span><span class="mm-stat-label">Of the time a model admitted a hint</span></div>
+    <div class="mm-stat"><span class="mm-stat-num">151 → 119</span><span class="mm-stat-label">Error cost in my own model</span></div>
+  </div>
+
+  <div class="mm-stack">
+    <section class="mm-card mm-hero-card">
+      <h3>Title</h3>
+      <p>Opening the Black Box · Explainable AI for GPT, Claude, Gemini, and LLaMA, and How Validation Builds Trust</p>
+    </section>
+
+    <div class="mm-two">
+      <section class="mm-card">
+        <h3>Objective</h3>
+        <p>Research why the decisions of large language models are hard to explain, summarize what leading AI organizations are doing about it, and show how validation techniques and performance metrics keep models reliable and accountable, all in one professional infographic.</p>
+      </section>
+      <section class="mm-card">
+        <h3>What is it?</h3>
+        <p>A one-page infographic in four numbered sections, one for each part of the brief, with a short explanatory text. It ties the research to a real example from my own credit risk model, so the point about metrics is shown, not just stated.</p>
+      </section>
+    </div>
+
+    <!-- INFOGRAPHIC -->
+    <section class="mm-card mm-highlight-card" id="xai-info">
+      <h3>The Infographic</h3>
+      <p>The poster opens as its own page so you can read it at full size, or download it as a PDF.</p>
+      <div class="pj-shots"><figure class="pj-shot"><a href="xai-infographic.html"><img src="assets/projects/xai-infographic.jpg" alt="Infographic titled Opening the Black Box, in four sections: what explainable AI is and why it matters, challenges in explainability, validation and performance metrics, and current solutions from Anthropic, OpenAI, Google DeepMind and Meta, ending with key takeaways" loading="lazy" width="1400" height="1860"></a><figcaption>Select the image to open the full-size infographic.</figcaption></figure></div>
+      <div class="mm-btn-row"><a class="mm-btn mm-btn-primary" href="xai-infographic.html">Open the Infographic</a><a class="mm-btn mm-btn-secondary" href="assets/projects/xai-infographic.pdf" download>Download the PDF</a></div>
+    </section>
+
+    <!-- SECTIONS -->
+    <section class="mm-card">
+      <h3>Walk Through the Four Sections</h3>
+      <p class="mm-muted">Each section answers one part of the brief. Select a section to see what it covers.</p>
+      <div class="mm-steps" role="tablist" aria-label="Infographic sections" id="xai-sections"></div>
+      <div class="mm-step-panel" role="tabpanel" id="xai-section-panel"></div>
+    </section>
+
+    <!-- LEADERS -->
+    <section class="mm-card">
+      <h3>What Industry Leaders Are Doing</h3>
+      <p class="mm-muted">The field is moving from reading a model's outputs to looking inside the model itself.</p>
+      <div class="pj-grid">
+        <div class="pj-item"><h4>Anthropic · Claude</h4><p>Sparse autoencoders found millions of human-readable features inside Claude 3 Sonnet, circuit tracing showed Claude 3.5 Haiku planning rhymes before writing them, and honesty tests measured how faithfully reasoning models report their own reasoning.</p></div>
+        <div class="pj-item"><h4>OpenAI · GPT</h4><p>Trained a sparse autoencoder with 16 million features on GPT-4, monitors full chain-of-thought traces to catch misbehavior, and reports changes in how readable its models' reasoning is in their system cards.</p></div>
+        <div class="pj-item"><h4>Google DeepMind · Gemini and Gemma</h4><p>Gemma Scope releases open autoencoders across the layers of its open Gemma models, so outside researchers can diagnose jailbreaks, refusals, and hallucinations.</p></div>
+        <div class="pj-item"><h4>Meta · LLaMA</h4><p>Open weights let anyone inspect the model directly. Community tools such as Llama Scope add sparse autoencoders, and independent researchers can reproduce findings on the same weights.</p></div>
+      </div>
+      <h4 style="margin:18px 0 10px">The broader toolkit, and the limit of each tool</h4>
+      <div class="mm-uses">
+        <div class="mm-use"><span class="mm-use-algo">SHAP and LIME</span><span>Score how much each input pushed a prediction up or down. Best for smaller models.</span></div>
+        <div class="mm-use"><span class="mm-use-algo">Attention maps</span><span>Show what the model weighed most. Attention is not the full explanation.</span></div>
+        <div class="mm-use"><span class="mm-use-algo">Probing</span><span>Tests whether a concept is stored in a layer. It finds a concept, not how it is used.</span></div>
+        <div class="mm-use"><span class="mm-use-algo">Chain-of-thought</span><span>The model writes its reasoning step by step. Often unfaithful, in 25% to 39% of tested cases.</span></div>
+      </div>
+    </section>
+
+    <!-- METRICS EXAMPLE -->
+    <section class="mm-card mm-highlight-card">
+      <h3>Why the Metric Matters: My Credit Risk Model</h3>
+      <p class="mm-muted">From my Activity 4.3 logistic regression on the German Credit test set (200 applicants), where missing a bad loan costs five times more than flagging a good customer.</p>
+      <div class="mm-progress">
+        <div class="mm-version">
+          <div class="mm-version-tag mm-tag-before">Threshold 0.5</div>
+          <h4>78.5% accuracy · error cost 151</h4>
+          <p>Looks better on accuracy, but it approves 27 applicants who later default.</p>
+        </div>
+        <div class="mm-arrow" aria-hidden="true">→</div>
+        <div class="mm-version mm-version-after">
+          <div class="mm-version-tag mm-tag-after">Threshold 0.15</div>
+          <h4>56.5% accuracy · error cost 119</h4>
+          <p>Accuracy drops, but only 8 bad loans slip through, so the total cost of errors falls by about a fifth.</p>
+        </div>
+      </div>
+      <p class="mm-progress-note">The lesson the infographic draws from this: the right metric depends on what an error costs. High accuracy can hide expensive mistakes, just as a fluent explanation can hide the real cause.</p>
+    </section>
+
+    <!-- EXPLANATORY TEXT -->
+    <section class="mm-card">
+      <h3>About the Infographic</h3>
+      <p>The infographic follows the four parts of the brief in order. It defines explainable AI at two levels, interpretability inside the model and explanations a person can act on, and shows why transparency matters for trust, accountability, safety, and finding bias. It then sets out why large models such as GPT, Claude, Gemini, and LLaMA are hard to explain: knowledge spread across billions of weights, written reasoning that admitted a hint it used only 25% to 39% of the time, bias absorbed from training data, monitoring that can erode, and regulation that moves faster than explanation methods. The last two sections show how validation and metrics earn trust today and how Anthropic, OpenAI, Google DeepMind, and Meta are opening their models from the inside.</p>
+      <p>The main message is that explanations and evidence work together. An explanation says why; validation, the right performance metrics, and stress tests show how often the model is right, for whom, and at what cost, and a model's account of its own reasoning has to be checked against what it actually does. The design follows that logic: four numbered, color-coded sections, a large headline number where a statistic carries the point, the limit of each technique printed next to it, and a real result from my own credit risk model, so a reader sees a metric change the decision rather than reading about it.</p>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="mm-card mm-process-card">
+      <h3>Process</h3>
+      <p class="mm-muted">The work followed five steps. Select a step to see what happened in it.</p>
+      <div class="mm-steps" role="tablist" aria-label="Process steps" id="mm-steps"></div>
+      <div class="mm-step-panel" role="tabpanel" id="mm-step-panel"></div>
+    </section>
+
+    <!-- CONSIDERATIONS -->
+    <section class="mm-card">
+      <h3>Key Considerations</h3>
+      <p class="mm-muted">The challenges the course anticipated, and how the infographic answers each one.</p>
+      <div class="mm-accordion" id="mm-accordion"></div>
+    </section>
+
+    <!-- DESIGN -->
+    <section class="mm-card">
+      <h3>Design Choices</h3>
+      <p class="mm-muted">Each choice has one job, which is to make a hard topic easy to follow and hard to misread.</p>
+      <div class="pj-grid">
+        <div class="pj-item"><h4>Follow the brief</h4><p>Four numbered sections in the same order as the assignment, so a reader can check each requirement at a glance.</p></div>
+        <div class="pj-item"><h4>One color per section</h4><p>Blue for the definition, red for challenges, teal for validation, and purple for solutions, with an icon on every card.</p></div>
+        <div class="pj-item"><h4>Big numbers carry the point</h4><p>The 25% faithfulness result leads the page and the 25 to 39% range anchors the challenges, so the key evidence is seen first.</p></div>
+        <div class="pj-item"><h4>Every tool shows its limit</h4><p>Each technique in the toolkit carries a short red note on what it cannot do, so no method looks like a complete answer.</p></div>
+      </div>
+    </section>
+
+    <!-- VALUE -->
+    <section class="mm-card mm-value-card">
+      <h3>Value</h3>
+      <p>This artifact shows that I can turn a fast-moving research area into a clear picture for a non-specialist reader, and connect it to evidence from my own work.</p>
+      <p>The same habits matter in financial services, where models that affect customers must be explainable, validated, and documented before anyone relies on them.</p>
+      <div class="mm-uses">
+        <div class="mm-use"><span class="mm-use-algo">Ask for evidence</span><span>Treat a model's explanation as a claim to check, not as proof</span></div>
+        <div class="mm-use"><span class="mm-use-algo">Match the metric</span><span>Choose metrics by what an error costs, not by what looks best</span></div>
+        <div class="mm-use"><span class="mm-use-algo">Know the rules</span><span>Credit decisions need specific reasons, and AI regulation keeps adding duties</span></div>
+        <div class="mm-use"><span class="mm-use-algo">Show the limits</span><span>Print what each tool cannot do right next to what it can</span></div>
+      </div>
+    </section>
+
+    <!-- REFLECTION -->
+    <section class="mm-card mm-reflection-card">
+      <h3>Reflection · What I Learned</h3>
+      <p>Before this activity, I assumed a model that explains its reasoning is a model we can trust. Now I see an explanation as one more output that has to be tested, and validation and the right metrics as the evidence that carries the weight today.</p>
+      <div class="mm-tabs" role="tablist" aria-label="Reflection" id="xai-reftabs">
+        <button type="button" class="mm-tab" role="tab" id="mm-tab-learn" aria-controls="mm-panel-learn" aria-selected="true">Key Learnings</button>
+        <button type="button" class="mm-tab" role="tab" id="mm-tab-skills" aria-controls="mm-panel-skills" aria-selected="false" tabindex="-1">Key Skills Developed</button>
+        <button type="button" class="mm-tab" role="tab" id="mm-tab-links" aria-controls="mm-panel-links" aria-selected="false" tabindex="-1">Course Connections</button>
+      </div>
+      <div class="mm-tab-panel" role="tabpanel" id="mm-panel-learn" aria-labelledby="mm-tab-learn">
+        <ul>
+          <li>A model's written reasoning is not proof of its real reasoning. Reasoning models admitted a hint they used only 25% to 39% of the time.</li>
+          <li>Interpretability (looking inside) and explainability (a reason a person can act on) are different goals, and both are needed.</li>
+          <li>Inside-the-model tools such as sparse autoencoders and circuit tracing are promising but still early, so validation and stress tests carry most of the trust today.</li>
+          <li>Open models and open tools let outside researchers verify claims, which turns explainability into a shared effort.</li>
+        </ul>
+      </div>
+      <div class="mm-tab-panel" role="tabpanel" id="mm-panel-skills" aria-labelledby="mm-tab-skills" hidden>
+        <ul>
+          <li><strong>Research synthesis.</strong> Turning research papers, system cards, and regulation into four short sections.</li>
+          <li><strong>Evidence first.</strong> Pairing each claim with a source and a number, and stating the limit of each technique.</li>
+          <li><strong>Applied metrics.</strong> Using my own model to show how the choice of metric and threshold changes a decision.</li>
+          <li><strong>Information design.</strong> Numbered sections, one color per section, and one headline number per card.</li>
+        </ul>
+      </div>
+      <div class="mm-tab-panel" role="tabpanel" id="mm-panel-links" aria-labelledby="mm-tab-links" hidden>
+        <ul>
+          <li><strong>Credit risk model (Activity 4.3).</strong> The threshold trade-off on the infographic comes straight from that model's test results.</li>
+          <li><strong>Patient Readmission Support.</strong> Our team found that an 80% recall can hide real problems, the same lesson about metrics in a healthcare setting.</li>
+          <li><strong>How LLMs are trained.</strong> Alignment and evaluation, two steps in that pipeline, are where explainability and validation happen.</li>
+        </ul>
+      </div>
+      <p class="mm-quote">“A model's account of its own reasoning is not proof. Until inside-the-model tools mature, validation, the right metrics, and stress tests are the main evidence for trust.”</p>
+    </section>
+
+    <section class="mm-card lt-refs">
+      <h3>References</h3>
+      <p>Anthropic. (2025a). <em>Tracing the thoughts of a large language model</em>. https://www.anthropic.com/research/tracing-thoughts-language-model</p>
+      <p>Anthropic. (2025b). <em>Reasoning models don't always say what they think</em>. https://www.anthropic.com/research/reasoning-models-dont-say-think</p>
+      <p>Equal Credit Opportunity Act (Regulation B), 12 C.F.R. § 1002.9.</p>
+      <p>Gao, L., la Tour, T. D., Tillman, H., Goh, G., Troll, R., Radford, A., Sutskever, I., Leike, J., &amp; Wu, J. (2024). <em>Scaling and evaluating sparse autoencoders</em> (arXiv:2406.04093). arXiv. https://doi.org/10.48550/arXiv.2406.04093</p>
+      <p>Google DeepMind. (2025). <em>Gemma Scope 2</em>.</p>
+      <p>He, Z., Shu, W., Ge, X., Chen, L., Wang, J., Zhou, Y., Liu, F., Guo, Q., Huang, X., Wu, Z., Jiang, Y.-G., &amp; Qiu, X. (2024). <em>Llama Scope: Extracting millions of features from Llama-3.1-8B with sparse autoencoders</em> (arXiv:2410.20526). arXiv. https://doi.org/10.48550/arXiv.2410.20526</p>
+      <p>Heaven, W. D. (2026). Mechanistic interpretability. <em>MIT Technology Review</em>.</p>
+      <p>Lundberg, S. M., &amp; Lee, S.-I. (2017). A unified approach to interpreting model predictions. <em>Advances in Neural Information Processing Systems</em>, <em>30</em>.</p>
+      <p>OpenAI. (2026). <em>GPT-6 Astra system card</em>.</p>
+      <p>Regulation (EU) 2024/1689 of the European Parliament and of the Council (Artificial Intelligence Act), and the Digital Omnibus on AI.</p>
+      <p>Ribeiro, M. T., Singh, S., &amp; Guestrin, C. (2016). “Why should I trust you?” Explaining the predictions of any classifier. <em>Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining</em>, 1135–1144. https://doi.org/10.1145/2939672.2939778</p>
+      <p>Templeton, A., Conerly, T., Marcus, J., et al. (2024). <em>Scaling monosemanticity: Extracting interpretable features from Claude 3 Sonnet</em>. Anthropic. https://transformer-circuits.pub/2024/scaling-monosemanticity/</p>
+    </section>
+  </div>
+</div>
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-cta">
+      <p class="eyebrow" data-reveal>Get in touch</p>
+      <h2 data-split>Turning complex data into <span class="grad-text">decisions.</span></h2>
+      <a class="btn btn-primary" href="https://www.linkedin.com/in/sagar9792/" target="_blank" rel="noopener noreferrer" data-magnetic data-reveal>Connect on LinkedIn <span class="arrow">↗</span></a>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Sagar S. Alande</span>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="index.html">Home</a><a href="insight.html">From Website to Insight</a><a href="artifacts.html">Artifacts</a><a href="about.html">About Me</a>
+      </nav>
+      <button class="to-top" type="button" data-top>Back to top ↑</button>
+    </div>
+  </div>
+</footer>
+
+<div class="cursor-dot" aria-hidden="true"></div>
+<div class="cursor-ring" aria-hidden="true"></div>
+<div class="page-curtain" aria-hidden="true"></div>
+<script src="assets/js/motion.js?v=20261104"></script>
+<script>
+(function(){
+  function el(id){ return document.getElementById(id); }
+  function tabs(rootId, panelId, items, label){
+    var root = el(rootId);
+    items.forEach(function(p, i){
+      var b = document.createElement('button'); b.type = 'button'; b.className = 'mm-step'; b.setAttribute('role','tab');
+      b.innerHTML = '<span>' + label + ' ' + (i + 1) + '</span>' + p[0];
+      b.addEventListener('click', function(){ show(i); });
+      root.appendChild(b);
+    });
+    function show(i){
+      root.querySelectorAll('.mm-step').forEach(function(b, j){ b.setAttribute('aria-selected', j === i ? 'true' : 'false'); b.tabIndex = j === i ? 0 : -1; });
+      el(panelId).innerHTML = '<p>' + items[i][1] + '</p>';
+    }
+    show(0);
+  }
+
+  /* ---------- The four sections ---------- */
+  tabs('xai-sections', 'xai-section-panel', [
+    ['What and why', 'Explainable AI is the set of methods that let people understand why a model produced an output, either by tracing what happens inside the model or by explaining its behavior from the outside. It matters for trust, for accountability (US lenders must give specific reasons for denying credit), for safety (looking inside can catch hidden problems), and for finding and fixing bias.'],
+    ['Challenges', 'Knowledge is spread across billions of weights, so no single part explains an output. Written reasoning is not proof of real reasoning: reasoning models admitted a hint they used only 25% to 39% of the time. Models absorb bias from their data, reading a model\'s reasoning can reveal less as models change, and regulation such as the EU AI Act phases in duties faster than explanation methods mature.'],
+    ['Validation and metrics', 'Trust comes from evidence: test on unseen data, pick metrics that fit the risk (accuracy, precision, recall, F1, ROC-AUC, calibration), stress-test with red teaming and bias audits, and document the results and limits in system and model cards. My credit risk model shows why: the threshold with lower accuracy had the lower error cost.'],
+    ['Industry solutions', 'Anthropic traces circuits and maps millions of features inside Claude; OpenAI maps features at scale and monitors chain-of-thought; Google DeepMind releases Gemma Scope so outsiders can look inside Gemma; Meta\'s open LLaMA weights let anyone inspect the model, with community tools such as Llama Scope. A broader toolkit (SHAP, LIME, attention maps, probing) completes the picture, each with its limit shown.']
+  ], 'Section');
+
+  /* ---------- Process ---------- */
+  tabs('mm-steps', 'mm-step-panel', [
+    ['Research', 'I studied the course resources, then research from Anthropic, OpenAI, Google DeepMind, and Meta, plus regulation that requires explanations, such as the EU AI Act and the US rule that lenders give specific reasons for denying credit.'],
+    ['Select', 'I kept the findings that best answer each part of the brief and dropped anything I could not trace to a source. Each section got one headline fact.'],
+    ['Connect', 'For the metrics section, I used my own Activity 4.3 credit risk model, so the point that the right metric depends on the cost of errors is shown with real numbers.'],
+    ['Design', 'I laid out four numbered sections in the order of the brief, gave each its own color, and added a short note on the limit of every technique in the toolkit.'],
+    ['Explain', 'I wrote an explanatory text that summarizes the key points, reinforces how explainability, validation, and metrics build trust, and explains the design choices.']
+  ], 'Step');
+
+  /* ---------- Considerations ---------- */
+  var CONS = [
+    ['Opacity and complexity', 'Decisions emerge from non-linear interactions across billions of weights. The infographic says so plainly under "Opacity and scale," and shows the inside-the-model tools, such as feature maps and circuit tracing, that are starting to address it.'],
+    ['Post-hoc explanations and trustworthiness', 'Explanations written after a decision may not match the real reasoning. The 25% faithfulness result leads the page for that reason, and the takeaways say that a model\'s own account has to be checked against what it actually does.'],
+    ['Data quality and bias', 'Models inherit the flaws in their data. The challenges section notes that a model can sound neutral and still treat groups differently, and the validation section adds bias audits and calibration as checks.'],
+    ['Attention visualization and probing', 'These tools show what a model weighs or stores, but not the whole story. The toolkit row lists both with their limits: attention is not the full explanation, and probing finds a concept, not its use.'],
+    ['Chain-of-thought reasoning', 'Step-by-step reasoning is useful and freely available, but it can be unfaithful. The infographic shows it as a tool with a warning, and pairs it with OpenAI\'s chain-of-thought monitoring and Anthropic\'s honesty tests.']
+  ];
+  el('mm-accordion').innerHTML = CONS.map(function(c, i){
+    return '<details class="mm-acc"' + (i ? '' : ' open') + '><summary><span class="mm-acc-num">' + (i + 1) + '</span>' + c[0] + '</summary><div class="mm-acc-body"><p>' + c[1] + '</p></div></details>';
+  }).join('');
+
+  /* ---------- Reflection tabs ---------- */
+  var ts = el('xai-reftabs').querySelectorAll('.mm-tab');
+  ts.forEach(function(t, i){
+    t.addEventListener('click', function(){
+      ts.forEach(function(x, j){
+        x.setAttribute('aria-selected', j === i ? 'true' : 'false'); x.tabIndex = j === i ? 0 : -1;
+        el(x.getAttribute('aria-controls')).hidden = j !== i;
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>

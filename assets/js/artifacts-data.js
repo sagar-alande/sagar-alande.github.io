@@ -3,6 +3,39 @@
    a section can be plain text, a list of paragraphs, or a list of [label, text] pairs. */
 window.ARTIFACTS = [
   {
+    title: `Explainable AI`,
+    fullTitle: `Opening the Black Box: Explainable AI for GPT, Claude, Gemini, and LLaMA, and How Validation Builds Trust`,
+    label: `MODEL DEVELOPMENT`, emoji: `🔍🧠`,
+    accent: `#7e22ce`, dark: `#1e1035`,
+    blurb: `An infographic on why large language models are hard to explain, how validation and metrics build trust, and what Anthropic, OpenAI, Google DeepMind, and Meta are doing about it.`,
+    intro: `This artifact explains why the decisions of large language models such as GPT, Claude, Gemini, and LLaMA are hard to understand, and how the field is responding. It was developed for AIML-501 Model Development and is a one-page infographic in four sections with a short explanatory text. It connects the research to a real result from my own credit risk model.`,
+    objective: `Create a professional infographic that defines explainable AI and why transparency matters, highlights the challenges of explaining large models, shows how validation and performance metrics assess reliability and build trust, and visualizes the approaches industry leaders use to improve explainability.`,
+    process: [
+      `This was an individual assignment. I started with the course resources and then studied research and system cards from Anthropic, OpenAI, Google DeepMind, and Meta, along with regulation that requires explanations, such as the EU AI Act and the US rule that lenders give specific reasons for denying credit.`,
+      `I organized the findings into four numbered sections that follow the brief: what explainable AI is and why it matters, the challenges, validation and performance metrics, and current solutions. Each section leads with one key fact, such as reasoning models admitting a hint they used only 25% to 39% of the time.`,
+      `For the metrics section, I used my own Activity 4.3 credit risk model. Lowering the decision threshold cut accuracy from 78.5% to 56.5% but lowered the error cost from 151 to 119, because missing a bad loan costs five times more than flagging a good customer.`
+    ],
+    tools: [`Infographic (HTML and CSS)`, `Research papers and system cards`, `Interpretability research`, `scikit-learn (credit risk model)`, `Course resources`, `APA 7th edition`],
+    value: [
+      [`Unique Value`, `This artifact shows that I can turn a fast-moving research area into a clear picture for a non-specialist reader and support it with evidence from my own work. It treats an explanation as a claim to test, not as proof, and shows the limit of every technique next to what it does.`],
+      [`Relevance`, `In financial services, models that affect customers must be explainable, validated, and documented, and credit decisions need specific reasons. The credit risk example shows the habit that matters most: choose the metric by what an error costs, not by what looks best.`]
+    ],
+    audience: [
+      [`Adaptations Made`, `The infographic is written for readers with no background in AI. Four numbered sections follow the order of the brief, each has its own color and icons, and large numbers carry the key evidence so the main point is clear at a glance.`],
+      [`Relevance`, `A business or compliance reader can see why explanations alone are not enough and what evidence to ask for, while a technical reader can follow the sources to the research behind each claim.`]
+    ],
+    reflection: [
+      [`Significance`, `I selected this artifact because it changed how I judge AI systems. A model that explains itself is not automatically a model we can trust.`],
+      [`Lessons Learned`, `A model's written reasoning is not proof of its real reasoning, and inside-the-model tools are promising but early. Until they mature, validation on unseen data, metrics that match the risk, and stress tests carry most of the weight for trust.`]
+    ],
+    references: `Anthropic. (2025a). Tracing the thoughts of a large language model. · Anthropic. (2025b). Reasoning models don't always say what they think. · Gao, L., et al. (2024). Scaling and evaluating sparse autoencoders. · Templeton, A., et al. (2024). Scaling monosemanticity. · He, Z., et al. (2024). Llama Scope. · Lundberg, S. M., &amp; Lee, S.-I. (2017). SHAP. · Ribeiro, M. T., et al. (2016). LIME. · Regulation (EU) 2024/1689 (AI Act). · 12 C.F.R. § 1002.9 (Regulation B).`,
+    links: [
+      [`🔍 Dive Deep →`, `xai.html`],
+      [`🖼️ View the Infographic →`, `xai-infographic.html`],
+      [`📄 Download the PDF →`, `assets/projects/xai-infographic.pdf`]
+    ]
+  },
+  {
     title: `Patient Readmission Support`,
     fullTitle: `Patient Readmission Support: A Daily Follow-Up List That Informs, Never Replaces, Clinical Judgment`,
     label: `HEALTHCARE AI`, emoji: `🏥📋`,

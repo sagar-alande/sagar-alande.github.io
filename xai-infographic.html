@@ -1,0 +1,234 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#0F1E33"><title>Explainable AI Infographic | Sagar S. Alande</title><meta name="description" content="Opening the Black Box: why GPT, Claude, Gemini and LLaMA are hard to explain, how validation and metrics build trust, and what industry leaders are doing.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..900&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0F1E33;--ink:#0F172A;--body:#334155;--muted:#64748B;--line:#DCE3EC;--bg:#F4F6F9;
+--teal:#0F766E;--tealT:#E6F4F2;--blue:#1D4ED8;--blueT:#EAF0FE;--purple:#7E22CE;--purpleT:#F4ECFC;--orange:#C2410C;--orangeT:#FFF0E6;
+--red:#BE123C;--redT:#FDECEF;--amber:#B45309;--amberT:#FEF3E2}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:#0F1E33}body{background:#0F1E33;font-family:Inter,Arial,sans-serif;color:var(--ink)}.igx-page{width:2560px;background:#fff;margin:0 auto;transform-origin:top left}.ig-bar{position:sticky;top:0;z-index:10;display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;padding:12px 16px;background:rgba(15,30,51,.94);backdrop-filter:blur(8px);border-bottom:1px solid #2C4366;font-size:14px}.ig-bar a{color:#fff;text-decoration:none;padding:8px 14px;border-radius:999px;border:1px solid #2C4366;background:#1A2C47;font-weight:600}.ig-bar a:hover{background:#24395A}.ig-bar span{color:#C9D6E8}.igx-fit{overflow:hidden}
+.disp{font-family:"Inter Display",Inter,Arial,sans-serif}
+header{background:var(--navy);color:#fff;padding:56px 80px 52px;display:grid;grid-template-columns:1fr 600px;gap:60px;align-items:center}
+.kick{font-size:22px;letter-spacing:.18em;font-weight:700;color:#8DB8FF}
+h1{font-size:88px;line-height:1.02;font-weight:800;margin:16px 0 18px;letter-spacing:-.01em}
+.sub{font-size:30px;line-height:1.42;color:#C9D6E8;max-width:1560px}
+.scale{background:#1A2C47;border:1px solid #2C4366;border-radius:22px;padding:30px 34px}
+.scale .lbl{font-size:18px;letter-spacing:.14em;font-weight:700;color:#F4A261}
+.scale .big{font-size:84px;font-weight:800;margin:4px 0 4px;color:#fff}
+.scale p{font-size:23px;line-height:1.45;color:#C9D6E8}
+section{padding:50px 80px 0}
+.sh{display:flex;align-items:center;gap:20px;margin-bottom:24px}
+.sh .n{width:56px;height:56px;border-radius:14px;color:#fff;font-size:28px;font-weight:800;display:flex;align-items:center;justify-content:center;flex:none}
+.sh h2{font-size:36px;letter-spacing:.07em;font-weight:800;color:var(--navy)}
+.sh span{font-size:24px;color:var(--muted)}
+.card{background:#fff;border:2px solid var(--line);border-radius:20px;padding:26px 28px}
+.card h3{font-size:29px;line-height:1.15;font-weight:800;margin-bottom:10px}
+.card p{font-size:23px;line-height:1.45;color:var(--body)}
+.ic{width:58px;height:58px;border-radius:16px;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.ic svg{width:34px;height:34px}
+.src{font-size:17px;color:var(--muted);margin-top:12px;line-height:1.35}
+/* S1 */
+.s1{display:grid;grid-template-columns:1.25fr 1fr 1fr 1fr 1fr;gap:20px}
+.def{background:var(--navy);color:#fff;border:none}
+.def h3{color:#fff;font-size:32px}
+.def p{color:#D5E0EF;font-size:25px}
+.def .q{margin-top:16px;padding-top:14px;border-top:1px solid #2C4366;font-size:21px;color:#9FB3CF;line-height:1.45}
+/* S2 */
+.s2{display:grid;grid-template-columns:repeat(5,1fr);gap:20px}
+.stat{font-size:58px;font-weight:800;line-height:1;margin:6px 0 8px}
+.tl{display:flex;flex-direction:column;gap:10px;margin-top:6px}
+.tl div{display:grid;grid-template-columns:118px 1fr;gap:12px;font-size:20px;line-height:1.35;color:var(--body);align-items:start}
+.tl b{font-size:18px;color:var(--ink);background:var(--amberT);border-radius:8px;padding:4px 8px;text-align:center}
+/* S3 */
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:34px;position:relative}
+.fstep{border-radius:20px;padding:24px 26px;position:relative;border:2px solid var(--line);background:#fff}
+.fstep:not(:last-child)::after{content:"";position:absolute;right:-27px;top:50%;margin-top:-13px;border-left:18px solid #94A3B8;border-top:13px solid transparent;border-bottom:13px solid transparent}
+.fstep .tag{font-size:16px;letter-spacing:.14em;font-weight:800;margin-bottom:8px}
+.fstep h3{font-size:28px;font-weight:800;margin-bottom:10px}
+.fstep p{font-size:22px;line-height:1.42;color:var(--body)}
+.mets{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+.mets span{font-size:19px;font-weight:700;background:var(--blueT);color:var(--blue);border-radius:9px;padding:7px 10px;text-align:center}
+.trust{background:var(--teal);color:#fff;border:none}
+.trust .tag{color:#B7E4DE}.trust h3{color:#fff}.trust p{color:#E2F4F1}
+.s3b{display:grid;grid-template-columns:1.05fr 1fr;gap:20px;margin-top:22px}
+.chart{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-top:14px}
+.chart h4{font-size:20px;letter-spacing:.08em;color:var(--muted);margin-bottom:10px}
+.bar{display:grid;grid-template-columns:150px 1fr 90px;gap:12px;align-items:center;margin-bottom:12px;font-size:20px;color:var(--body)}
+.track{height:30px;background:#EEF2F7;border-radius:8px;overflow:hidden}
+.fill{height:100%;border-radius:8px}
+.bar b{font-size:22px;color:var(--ink);text-align:right}
+/* S4 */
+.s4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.org{border-radius:20px;overflow:hidden;border:2px solid var(--line);display:flex;flex-direction:column;background:#fff}
+.org .top{padding:20px 26px;color:#fff}
+.org .top h3{font-size:31px;font-weight:800}
+.org .top small{font-size:19px;opacity:.85;display:block;margin-top:2px}
+.org ul{list-style:none;padding:18px 26px 8px;flex:1}
+.org li{font-size:21px;line-height:1.42;color:var(--body);margin-bottom:14px;padding-left:20px;position:relative}
+.org li::before{content:"";position:absolute;left:0;top:11px;width:9px;height:9px;border-radius:50%;background:currentColor;opacity:.6}
+.org li b{color:var(--ink)}
+.org .ft{font-size:17px;color:var(--muted);background:#F8FAFC;border-top:1px solid #EEF2F7;padding:12px 26px;line-height:1.35}
+.kit{display:grid;grid-template-columns:240px repeat(4,1fr);gap:16px;margin-top:20px;align-items:stretch}
+.kit .lab{background:var(--navy);color:#fff;border-radius:18px;padding:22px;font-size:24px;font-weight:800;line-height:1.25;display:flex;align-items:center}
+.kit .k{background:var(--bg);border-radius:18px;padding:20px 22px}
+.kit .k h4{font-size:24px;font-weight:800;margin-bottom:6px}
+.kit .k p{font-size:20px;line-height:1.4;color:var(--body)}
+.kit .k em{display:block;font-style:normal;font-size:17px;color:var(--red);margin-top:8px;font-weight:600}
+/* takeaways */
+.take{margin:50px 80px 0;background:var(--navy);border-radius:24px;padding:34px 40px;display:grid;grid-template-columns:300px repeat(3,1fr);gap:30px;color:#fff;align-items:center}
+.take h2{font-size:34px;letter-spacing:.06em;font-weight:800;color:#F4A261;line-height:1.15}
+.take div p{font-size:23px;line-height:1.45;color:#D5E0EF}
+.take div b{display:block;font-size:26px;color:#fff;margin-bottom:6px}
+footer{padding:30px 80px 44px;font-size:16px;line-height:1.55;color:var(--muted)}
+footer b{color:var(--body)}
+</style></head><body>
+<nav class="ig-bar" aria-label="Infographic">
+ <a href="xai.html">&larr; Back to the deep dive</a>
+ <span>Pinch or zoom to read details</span>
+ <a href="assets/projects/xai-infographic.pdf" download>Download PDF</a>
+ <a href="artifacts.html">All artifacts</a>
+</nav>
+<div class="igx-fit"><div class="igx-page">
+
+<header>
+ <div>
+  <div class="kick">AIML-501 · MODEL DEVELOPMENT · EXPLAINABLE AI</div>
+  <h1 class="disp">Opening the Black Box</h1>
+  <div class="sub">How researchers try to explain the decisions of GPT, Claude, Gemini, and LLaMA, why it is so hard, and how validation and metrics build trust while explanations are still catching up.</div>
+ </div>
+ <div class="scale">
+  <div class="lbl">REALITY CHECK</div>
+  <div class="big disp">25%</div>
+  <p>When Claude 3.7 Sonnet used a hint to answer, its written reasoning admitted it only 25% of the time. DeepSeek R1 did so 39% of the time (Anthropic, 2025b).</p>
+ </div>
+</header>
+
+<!-- 1 -->
+<section>
+ <div class="sh"><div class="n" style="background:var(--blue)">1</div><h2>WHAT IS EXPLAINABLE AI AND WHY IT MATTERS</h2></div>
+ <div class="s1">
+  <div class="card def">
+   <h3>Explainable AI (XAI)</h3>
+   <p>Methods that let people understand why a model produced a given output, either by tracing what happens inside the model or by explaining its behavior from the outside.</p>
+   <div class="q">Two levels. <b style="color:#fff">Interpretability</b> looks inside the model. <b style="color:#fff">Explainability</b> gives a reason a person can act on.</div>
+  </div>
+  <div class="card"><div class="ic" style="background:var(--blueT)"><svg viewBox="0 0 24 24" fill="none" stroke="#1D4ED8" stroke-width="2" stroke-linecap="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+   <h3>Trust</h3><p>People rely on a model's answer only when they can check how it got there. Hundreds of millions now use chatbots daily.</p></div>
+  <div class="card"><div class="ic" style="background:var(--tealT)"><svg viewBox="0 0 24 24" fill="none" stroke="#0F766E" stroke-width="2" stroke-linecap="round"><path d="M12 3v18M5 7h14M5 7l-3 7a3 3 0 006 0zM19 7l-3 7a3 3 0 006 0z"/></svg></div>
+   <h3>Accountability</h3><p>US lenders must give specific reasons for denying credit. The EU AI Act adds transparency duties for AI systems.</p></div>
+  <div class="card"><div class="ic" style="background:var(--redT)"><svg viewBox="0 0 24 24" fill="none" stroke="#BE123C" stroke-width="2" stroke-linecap="round"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9L2.4 18a2 2 0 001.7 3h15.8a2 2 0 001.7-3L13.7 3.9a2 2 0 00-3.4 0z"/></svg></div>
+   <h3>Safety</h3><p>Looking inside a model can catch hidden problems, such as reward hacking or deception, that its final answer conceals.</p></div>
+  <div class="card"><div class="ic" style="background:var(--purpleT)"><svg viewBox="0 0 24 24" fill="none" stroke="#7E22CE" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div>
+   <h3>Bias and debugging</h3><p>Explanations show which inputs drove a decision, so teams can find unfair patterns and fix the cause, not just the symptom.</p></div>
+ </div>
+</section>
+
+<!-- 2 -->
+<section>
+ <div class="sh"><div class="n" style="background:var(--red)">2</div><h2>CHALLENGES IN EXPLAINABILITY</h2><span>Why LLM decisions are hard to explain</span></div>
+ <div class="s2">
+  <div class="card"><div class="ic" style="background:var(--redT)"><svg viewBox="0 0 24 24" fill="none" stroke="#BE123C" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 8h8v8H8z" fill="#BE123C" opacity=".25"/></svg></div>
+   <h3>Opacity and scale</h3><p>Knowledge is spread across billions of weights, and each neuron mixes many unrelated concepts. No single part explains an output.</p></div>
+  <div class="card"><div class="ic" style="background:var(--redT)"><svg viewBox="0 0 24 24" fill="none" stroke="#BE123C" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h10M4 18h6"/><path d="M17 15l4 4M21 15l-4 4"/></svg></div>
+   <h3>Unfaithful explanations</h3><div class="stat disp" style="color:var(--red)">25–39%</div><p>How often reasoning models admitted a hint they used. Written reasoning is not proof of real reasoning.</p></div>
+  <div class="card"><div class="ic" style="background:var(--redT)"><svg viewBox="0 0 24 24" fill="none" stroke="#BE123C" stroke-width="2" stroke-linecap="round"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v12c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12c0 1.7 3.1 3 7 3s7-1.3 7-3"/></svg></div>
+   <h3>Data and bias</h3><p>Models absorb the biases in their training data. A model can sound neutral when asked directly but still treat groups differently in its decisions.</p></div>
+  <div class="card"><div class="ic" style="background:var(--redT)"><svg viewBox="0 0 24 24" fill="none" stroke="#BE123C" stroke-width="2" stroke-linecap="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><path d="M3 3l18 18"/></svg></div>
+   <h3>Monitoring can erode</h3><p>OpenAI reports that GPT-6 Astra's chain-of-thought monitorability decreased compared with GPT-5.6 Sol, so reading its reasoning reveals less.</p></div>
+  <div class="card" style="background:var(--amberT);border-color:#F5D9A8"><div class="ic" style="background:#fff"><svg viewBox="0 0 24 24" fill="none" stroke="#B45309" stroke-width="2" stroke-linecap="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div>
+   <h3>Regulatory pressure</h3><p style="font-size:21px">The EU AI Act phases in duties faster than explanation methods mature.</p>
+   <div class="tl"><div><b>Aug 2025</b><span>General-purpose AI model duties</span></div><div><b>Aug 2026</b><span>Article 50 transparency rules</span></div><div><b>Dec 2027</b><span>High-risk system rules, delayed by the Digital Omnibus</span></div></div></div>
+ </div>
+</section>
+
+<!-- 3 -->
+<section>
+ <div class="sh"><div class="n" style="background:var(--teal)">3</div><h2>VALIDATION AND PERFORMANCE METRICS</h2><span>Trust comes from evidence, not from explanations alone</span></div>
+ <div class="flow">
+  <div class="fstep"><div class="tag" style="color:var(--blue)">STEP 1 · VALIDATE</div><h3>Test on unseen data</h3><p>Held-out test sets and cross-validation show how a model performs on data it never learned from.</p></div>
+  <div class="fstep"><div class="tag" style="color:var(--blue)">STEP 2 · MEASURE</div><h3>Pick metrics that fit the risk</h3>
+   <div class="mets"><span>Accuracy</span><span>Precision</span><span>Recall</span><span>F1 score</span><span>ROC-AUC</span><span>Calibration</span></div></div>
+  <div class="fstep"><div class="tag" style="color:var(--blue)">STEP 3 · STRESS-TEST</div><h3>Attack and audit</h3><p>Red teaming, jailbreak regression tests, and bias audits check behavior beyond the benchmark.</p></div>
+  <div class="fstep trust"><div class="tag">STEP 4 · DOCUMENT</div><h3>Earn trust</h3><p>System cards and model cards publish the results, the known limits, and what was not tested.</p></div>
+ </div>
+ <div class="s3b">
+  <div class="card">
+   <h3>Why the metric matters: my credit risk model</h3>
+   <p>Lowering the decision threshold made accuracy worse but cut error cost, because missing a bad loan costs five times more than flagging a good customer.</p>
+   <div class="chart">
+    <div><h4>ACCURACY (HIGHER LOOKS BETTER)</h4>
+     <div class="bar"><span>Threshold 0.5</span><div class="track"><div class="fill" style="width:78.5%;background:#94A3B8"></div></div><b>78.5%</b></div>
+     <div class="bar"><span>Threshold 0.15</span><div class="track"><div class="fill" style="width:56.5%;background:#94A3B8"></div></div><b>56.5%</b></div></div>
+    <div><h4>ERROR COST (LOWER IS BETTER)</h4>
+     <div class="bar"><span>Threshold 0.5</span><div class="track"><div class="fill" style="width:100%;background:var(--red)"></div></div><b>151</b></div>
+     <div class="bar"><span>Threshold 0.15</span><div class="track"><div class="fill" style="width:78.8%;background:var(--teal)"></div></div><b>119</b></div></div>
+   </div>
+   <div class="src">Logistic regression on the German Credit test set, 200 applicants, 5:1 cost rule (Activity 4.3).</div>
+  </div>
+  <div class="card">
+   <h3>How metrics support explanations</h3>
+   <p><b style="color:var(--ink)">Explanations say why.</b> Metrics say how often the model is right, for whom, and at what cost.</p>
+   <p style="margin-top:12px"><b style="color:var(--ink)">Explanations need validation too.</b> A feature or reasoning trace counts only if tests show it truly drives the output.</p>
+   <p style="margin-top:12px"><b style="color:var(--ink)">Neither is enough alone.</b> High accuracy can hide unfair errors, and a fluent explanation can hide the real cause.</p>
+  </div>
+ </div>
+</section>
+
+<!-- 4 -->
+<section>
+ <div class="sh"><div class="n" style="background:var(--purple)">4</div><h2>CURRENT SOLUTIONS FROM INDUSTRY LEADERS</h2><span>From reading outputs to looking inside the model</span></div>
+ <div class="s4">
+  <div class="org"><div class="top" style="background:#9A3412"><h3>Anthropic</h3><small>Claude</small></div>
+   <ul style="color:#9A3412">
+    <li><b>Feature maps.</b> Sparse autoencoders found millions of human-readable concepts inside Claude 3 Sonnet (2024).</li>
+    <li><b>Circuit tracing.</b> Attribution graphs showed Claude 3.5 Haiku plans rhymes before writing them (2025).</li>
+    <li><b>Honesty tests.</b> Measured how faithfully reasoning models report their own reasoning.</li></ul>
+   <div class="ft">Circuit-tracing tools released as open source.</div></div>
+  <div class="org"><div class="top" style="background:#0F172A"><h3>OpenAI</h3><small>GPT</small></div>
+   <ul style="color:#0F172A">
+    <li><b>Feature maps at scale.</b> Trained a sparse autoencoder with 16 million features on GPT-4 (2024).</li>
+    <li><b>Chain-of-thought monitoring.</b> Monitors read full reasoning traces to catch misbehavior.</li>
+    <li><b>Public disclosure.</b> Astra's system card reports the drop in monitorability openly.</li></ul>
+   <div class="ft">Explainability treated as a safety control, not just a feature.</div></div>
+  <div class="org"><div class="top" style="background:#1D4ED8"><h3>Google DeepMind</h3><small>Gemini and Gemma</small></div>
+   <ul style="color:#1D4ED8">
+    <li><b>Gemma Scope 2.</b> Autoencoders and transcoders for every layer of Gemma 3, from 270M to 27B parameters (2025).</li>
+    <li><b>Largest open release.</b> Needed about 110 petabytes of data and over 1 trillion trained parameters.</li>
+    <li><b>Use cases.</b> Diagnosing jailbreaks, refusals, and hallucinations.</li></ul>
+   <div class="ft">Open tools let outside researchers audit the model.</div></div>
+  <div class="org"><div class="top" style="background:#0F766E"><h3>Meta</h3><small>LLaMA</small></div>
+   <ul style="color:#0F766E">
+    <li><b>Open weights.</b> Anyone can inspect the internals of LLaMA directly.</li>
+    <li><b>Community tools.</b> Llama Scope released 256 sparse autoencoders for Llama-3.1-8B (Fudan University, 2024).</li>
+    <li><b>Independent checks.</b> Researchers outside Meta can reproduce and verify findings on the same weights.</li></ul>
+   <div class="ft">Openness turns explainability into a shared research effort.</div></div>
+ </div>
+ <div class="kit">
+  <div class="lab">The broader XAI toolkit</div>
+  <div class="k"><h4>Feature attribution</h4><p>SHAP and LIME score how much each input pushed a prediction up or down.</p><em>Best for smaller models</em></div>
+  <div class="k"><h4>Attention maps</h4><p>Show which words the model weighed most when producing an answer.</p><em>Attention is not the full explanation</em></div>
+  <div class="k"><h4>Probing</h4><p>Simple classifiers test whether a concept is stored inside a layer.</p><em>Finds a concept, not its use</em></div>
+  <div class="k"><h4>Chain-of-thought</h4><p>The model writes its reasoning step by step before answering.</p><em>Often unfaithful, 25–39%</em></div>
+ </div>
+</section>
+
+<div class="take">
+ <h2>KEY TAKEAWAYS</h2>
+ <div><b>Explanations can mislead</b><p>A model's own account of its reasoning is not proof. It has to be checked against what the model actually does.</p></div>
+ <div><b>Metrics carry the weight today</b><p>Until inside-the-model tools mature, validation, the right metrics, and stress tests are the main evidence for trust.</p></div>
+ <div><b>Openness speeds progress</b><p>Open tools such as circuit tracing, Gemma Scope, and Llama Scope let independent researchers verify claims.</p></div>
+</div>
+
+<footer>
+ <b>Sources.</b> Anthropic (2025a), Tracing the thoughts of a large language model · Anthropic (2025b), Reasoning models don't always say what they think · Gao et al. (2024), Scaling and evaluating sparse autoencoders, OpenAI · Google DeepMind (2025), Gemma Scope 2 · He et al. (2024), Llama Scope · Heaven (2026), Mechanistic interpretability, MIT Technology Review · OpenAI (2026), GPT-6 Astra system card · Regulation (EU) 2026/1744, Digital Omnibus on AI · Equal Credit Opportunity Act, Regulation B, 12 C.F.R. § 1002.9 · Templeton et al. (2024), Scaling monosemanticity, Anthropic · Lundberg &amp; Lee (2017), SHAP · Ribeiro et al. (2016), LIME · Credit risk results from my Activity 4.3 model. Created by Sagar Alande, AIML-501, Indiana Wesleyan University, November 2026.
+</footer>
+</div></div>
+<script>
+(function(){
+ var ig=document.querySelector('.igx-page'),fit=document.querySelector('.igx-fit');
+ function size(){var s=Math.min(1,document.documentElement.clientWidth/2560);
+  ig.style.transform='scale('+s+')';fit.style.height=(ig.offsetHeight*s)+'px';
+  ig.style.marginLeft=s<1?'0':'auto';}
+ window.addEventListener('resize',size);window.addEventListener('load',size);size();
+})();
+</script>
+</body></html>
